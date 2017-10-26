@@ -4,7 +4,7 @@ package chapter11.Question02;
 /**
  * Created by blindcant on 3/05/17.
  */
-public class TestPeople
+public class Main
 {
 	//INSTANCE VARIABLES
 	private static Person[] people = new Person[8];
