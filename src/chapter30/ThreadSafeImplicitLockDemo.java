@@ -51,7 +51,8 @@ public class ThreadSafeImplicitLockDemo
 		public void run()
 		{
 			//account.depositNotThreadSafe(1);
-			account.depositThreadSafe(1);
+			//account.depositThreadSafeViaMethod(1);
+			account.depositThreadSafeViaCodeBlock(1);
 		}
 	}
 	
@@ -82,8 +83,8 @@ public class ThreadSafeImplicitLockDemo
 			balance = newBalance;
 		}
 		
-		//this method is thread safe because of the synchronized keyword - which uses implict object/class locking to resource handling
-		public synchronized void depositThreadSafe(int amount)
+		//this method is thread safe because of the synchronized keyword in the header - which uses implict object/class locking to resource handling
+		public synchronized void depositThreadSafeViaMethod(int amount)
 		{
 			int newBalance = balance + amount;
 			
@@ -98,6 +99,27 @@ public class ThreadSafeImplicitLockDemo
 			}
 			
 			balance = newBalance;
+		}
+		
+		//this method is thread safe because of the synchronized keyword inside of it - which uses implict object/class locking to resource handling
+		public void depositThreadSafeViaCodeBlock(int amount)
+		{
+			synchronized (this)
+			{
+				int newBalance = balance + amount;
+				
+				// This delay is deliberately added to magnify the
+				// data-corruption problem and make it easy to see.
+				try
+				{
+					Thread.sleep(5);
+				} catch (InterruptedException ex)
+				{
+					ex.printStackTrace();
+				}
+				
+				balance = newBalance;
+			}
 		}
 	}
 }
