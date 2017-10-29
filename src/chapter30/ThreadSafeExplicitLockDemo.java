@@ -93,7 +93,7 @@ public class ThreadSafeExplicitLockDemo
 			}
 			finally
 			{
-				//release the lock always
+				//release the lock always - if we don't there will be a deadlock
 				aLock.unlock();
 			}
 		}

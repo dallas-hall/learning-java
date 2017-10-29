@@ -25,8 +25,12 @@ public class ThreadCooperationDemo
 	{
 		// Create a thread pool with two threads
 		ExecutorService executor = Executors.newFixedThreadPool(2);
+		
+		//create 2 Runnable tasks that can be executed in the thread pool
 		executor.execute(new DepositTask());
 		executor.execute(new WithdrawTask());
+		
+		//close the executor once it has finished running its threads
 		executor.shutdown();
 		
 		System.out.println("Thread 1\t\tThread 2\t\tBalance");
@@ -94,6 +98,7 @@ public class ThreadCooperationDemo
 				while (balance < amount)
 				{
 					System.out.println("\t\t\tWait for a deposit");
+					// Signal to all threads wanting to withdraw that they must wait
 					newDeposit.await();
 				}
 				
@@ -116,7 +121,7 @@ public class ThreadCooperationDemo
 				balance += amount;
 				System.out.println("Deposit " + amount + "\t\t\t\t\t" + getBalance());
 				
-				// Signal thread waiting on the condition
+				// Signal to all threads wanting to withdraw that they can now withdraw
 				newDeposit.signalAll();
 			} finally
 			{
