@@ -16,7 +16,7 @@ import java.util.concurrent.ThreadLocalRandom;
  */
  
 
-public class CreateAndReadTextFileUsingJavaNIO
+public class BufferedTextWriterAndReaderWithJavaNIO
 {
 	//@@@ INSTANCE VARIABLES @@@
 	private Path filePath;
@@ -26,11 +26,11 @@ public class CreateAndReadTextFileUsingJavaNIO
 	//@@@ MAIN METHOD @@@
 	public static void main(String[] args)
 	{
-		CreateAndReadTextFileUsingJavaNIO runtime = new CreateAndReadTextFileUsingJavaNIO(100);
+		BufferedTextWriterAndReaderWithJavaNIO runtime = new BufferedTextWriterAndReaderWithJavaNIO(100);
 	}
 	
 	//@@@ CONSTRUCTOR(S) @@@
-	public CreateAndReadTextFileUsingJavaNIO(int amount)
+	public BufferedTextWriterAndReaderWithJavaNIO(int amount)
 	{
 		try
 		{
@@ -113,9 +113,4 @@ public class CreateAndReadTextFileUsingJavaNIO
 		}
 		
 	}
-	
-	
-	//### HELPERS ###
-	
-	//@@@ INNER CLASS(ES) @@@
 }

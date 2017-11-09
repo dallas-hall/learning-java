@@ -1,41 +1,47 @@
 package chapter17;
 
 import java.io.*;
-import java.util.Arrays;
-import java.util.Date;
+import java.nio.file.Files;
+import java.nio.file.Path;
+import java.nio.file.Paths;
 
 /**
- * Created by blindcant on 2/11/17.
+ * Created by blindcant on 08/11/17.
+ *
+ * Question 2
+ * ObjectInputStream and ObjectOutputStream can write both primitive types and objects.
+ * This example is wrapped with a BufferedReader and BufferedWriter to improve performance when reading from and writing to a file
  */
-public class ObjectStreamFilterForBinaryFile
+public class ObjectsAsBianryWithBufferedObjectReaderAndWriter
 {
 	//@@@ INSTANCE VARIABLES @@@
 	private String[][] students;
 	private java.util.Date[] date;
+	private Path filePath;
 	
 	//@@@ MAIN METHOD @@@
 	public static void main(String[] args)
 	{
-		ObjectStreamFilterForBinaryFile runtime = new ObjectStreamFilterForBinaryFile();
+		ObjectsAsBianryWithBufferedObjectReaderAndWriter runtime = new ObjectsAsBianryWithBufferedObjectReaderAndWriter();
 	}
 	
 	//@@@ CONSTRUCTOR(S) @@@
-	public ObjectStreamFilterForBinaryFile()
+	public ObjectsAsBianryWithBufferedObjectReaderAndWriter()
 	{
 		try
 		{
 			//write elements individually
-			String filename = "students_with_ObjectStream.dat";
+			filePath = Paths.get("students_with_ObjectStream.dat");
 			createData();
 			System.out.println("@@@ Individual Element Processing @@@");
-			writeData(filename, students, date);
-			readData(filename);
+			writeData(filePath, students, date);
+			readData(filePath);
 			
 			//write the entire array at once
-			System.out.println("@@@ Array Processing @@@");
-			filename = "arrays_with_ObjectStream.dat";
-			writeArrays(filename);
-			readArrays(filename);
+	/*		System.out.println("@@@ Array Processing @@@");
+			filePath = Paths.get("arrays_with_ObjectStream.dat");
+			writeArrays(filePath);
+			readArrays(filePath);*/
 		}
 		catch (IOException e)
 		{
@@ -50,7 +56,7 @@ public class ObjectStreamFilterForBinaryFile
 	
 	//@@@ METHODS @@@
 	//### GETTERS ###
-	private void readData(String filename) throws IOException, ClassNotFoundException
+	private void readData(Path filePath) throws IOException, ClassNotFoundException
 	{
 		/*
 		Create a ObjectInputStream which is used to write objects and primitive types as binary.
@@ -60,7 +66,7 @@ public class ObjectStreamFilterForBinaryFile
 		It is also using a try-with-resources statement, so the resources are closed automatically after use.
 		
 		 */
-		try (ObjectInputStream objectInputStream = new ObjectInputStream(new BufferedInputStream(new FileInputStream(filename)));)
+		try (ObjectInputStream objectInputStream = new ObjectInputStream(new BufferedInputStream(new FileInputStream(filePath.toFile())));)
 		{
 			//keep looping until EOF
 			try
@@ -83,9 +89,9 @@ public class ObjectStreamFilterForBinaryFile
 		}
 	}
 	
-	private void readArrays(String filename) throws IOException
+	private void readArrays(Path filePath) throws IOException
 	{
-		try (ObjectInputStream objectInputStream = new ObjectInputStream(new BufferedInputStream(new FileInputStream(filename)));)
+		try (ObjectInputStream objectInputStream = new ObjectInputStream(new BufferedInputStream(new FileInputStream(filePath.toFile())));)
 		{
 			try
 			{
@@ -146,7 +152,7 @@ public class ObjectStreamFilterForBinaryFile
 		
 	}
 	
-	private void writeData(String filename, String[][] inputData, java.util.Date[] date) throws IOException
+	private void writeData(Path filePath, String[][] inputData, java.util.Date[] date) throws IOException
 	{
 		/*
 		Create a ObjectOutputStream which is used to write objects and primitive types as binary.
@@ -156,8 +162,25 @@ public class ObjectStreamFilterForBinaryFile
 		It is also using a try-with-resources statement, so the resources are closed automatically after use.
 		
 		 */
-		try (ObjectOutputStream objectOutputStream = new ObjectOutputStream(new BufferedOutputStream(new FileOutputStream(filename)));)
+		//check if the file exists, if it does append to it, else create it and write to it
+		boolean append = false;
+		if(Files.exists(filePath))
 		{
+			//append = true;
+		}
+		
+		try (ObjectOutputStream objectOutputStream = new ObjectOutputStream(new BufferedOutputStream(new FileOutputStream(filePath.toFile(), append)));)
+		{
+			/*
+				When writing, the header 0xAC will be written if the stream resets.  This needs to be catered for with reset();
+				https://stackoverflow.com/a/2395269
+				
+			*/
+/*			if (append)
+			{
+				objectOutputStream.reset();
+			}*/
+
 			for (int i = 0; i < inputData.length; i++)
 			{
 				for (int j = 0; j < inputData[i].length; j++)
@@ -179,10 +202,26 @@ public class ObjectStreamFilterForBinaryFile
 		}
 	}
 	
-	private void writeArrays(String filename) throws IOException
+	private void writeArrays(Path filePath) throws IOException
 	{
-		try (ObjectOutputStream objectOutputStream = new ObjectOutputStream(new BufferedOutputStream(new FileOutputStream(filename)));)
+		//check if the file exists, if it does append to it, else create it and write to it
+		boolean append = false;
+		if(Files.exists(filePath))
 		{
+			//append = true;
+		}
+		
+		try (ObjectOutputStream objectOutputStream = new ObjectOutputStream(new BufferedOutputStream(new FileOutputStream(filePath.toFile(), append)));)
+		{
+			/*
+				When writing, the header 0xAC will be written if the stream resets.  This needs to be catered for with reset();
+				https://stackoverflow.com/a/2395269
+			*/
+/*			if (append)
+			{
+				objectOutputStream.reset();
+			}*/
+			
 			//write the student and date arrays
 			objectOutputStream.writeObject(students);
 			objectOutputStream.writeObject(date);
