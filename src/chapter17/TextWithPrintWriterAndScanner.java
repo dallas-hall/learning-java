@@ -8,7 +8,7 @@ import java.util.Scanner;
  * <p>
  * Question 1 - text I/O with java.io
  */
-public class CreateAndReadATextFileUsingPrintWriterAndScanner
+public class TextWithPrintWriterAndScanner
 {
 	//@@@ INSTANCE VARIABLES @@@
 	private File file;
@@ -17,11 +17,11 @@ public class CreateAndReadATextFileUsingPrintWriterAndScanner
 	//@@@ MAIN METHOD @@@
 	public static void main(String[] args)
 	{
-		CreateAndReadATextFileUsingPrintWriterAndScanner runtime = new CreateAndReadATextFileUsingPrintWriterAndScanner(100);
+		TextWithPrintWriterAndScanner runtime = new TextWithPrintWriterAndScanner(100);
 	}
 	
 	//@@@ CONSTRUCTOR(S) @@@
-	public CreateAndReadATextFileUsingPrintWriterAndScanner(int amount)
+	public TextWithPrintWriterAndScanner(int amount)
 	{
 		file = new File(amount + "_integers.txt");
 		try

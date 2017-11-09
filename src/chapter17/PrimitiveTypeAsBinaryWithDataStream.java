@@ -4,8 +4,11 @@ import java.io.*;
 
 /**
  * Created by blindcant on 2/11/17.
+ *
+ * The DataInputStream and DataOutputStream can only read and write primitive types.
+ * This example shows reading from and writing to files.
  */
-public class DataStreamFilterForBinaryFile
+public class PrimitiveTypeAsBinaryWithDataStream
 {
 	//@@@ INSTANCE VARIABLES @@@
 	private String[][] students = {{"Johnny", "66.9"}, {"Jane", "88.3"}, {"Harry", "55.8"}, {"Nancy", "75.8"}};
@@ -13,11 +16,11 @@ public class DataStreamFilterForBinaryFile
 	//@@@ MAIN METHOD @@@
 	public static void main(String[] args)
 	{
-		DataStreamFilterForBinaryFile runtime = new DataStreamFilterForBinaryFile();
+		PrimitiveTypeAsBinaryWithDataStream runtime = new PrimitiveTypeAsBinaryWithDataStream();
 	}
 	
 	//@@@ CONSTRUCTOR(S) @@@
-	public DataStreamFilterForBinaryFile()
+	public PrimitiveTypeAsBinaryWithDataStream()
 	{
 		String filename = "students_with_DataStream.dat";
 		try
@@ -36,6 +39,7 @@ public class DataStreamFilterForBinaryFile
 	//### GETTERS ###
 	private void readData(String filename) throws IOException
 	{
+		//data streams write primitive types
 		try (DataInputStream dataInputStream = new DataInputStream(new FileInputStream(filename));)
 		{
 			//keep looping until EOF
