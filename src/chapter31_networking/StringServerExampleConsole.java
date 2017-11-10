@@ -3,6 +3,7 @@ package chapter31_networking;
 import java.io.IOException;
 import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
+import java.net.InetAddress;
 import java.net.ServerSocket;
 import java.net.Socket;
 
@@ -22,8 +23,6 @@ public class StringServerExampleConsole
 	private Socket socket;
 	private int port = 8000;
 	private String ipAddress = "127.0.0.1";
-	
-	boolean setupDone;
 	
 	//@@@ MAIN METHOD @@@
 	public static void main(String[] args)
@@ -51,9 +50,17 @@ public class StringServerExampleConsole
 				dataForClient = new ObjectOutputStream(socket.getOutputStream());
 				dataFromClient = new ObjectInputStream(socket.getInputStream());
 				
+				// Get client details
+				InetAddress inetAddress = socket.getInetAddress();
+				
 				// Infintite loop to keep listening for the client's messages
 				while (true)
 				{
+					// Display client connection
+					
+					System.out.println("A client connected from IP address " + inetAddress.getHostAddress() + " which resolves to "
+					                   + inetAddress.getCanonicalHostName());
+					
 					// Receive String from client
 					String clientInput = dataFromClient.readUTF();
 					
