@@ -1,9 +1,6 @@
 package chapter31_networking;
 
-import java.io.EOFException;
-import java.io.IOException;
-import java.io.ObjectInputStream;
-import java.io.ObjectOutputStream;
+import java.io.*;
 import java.net.InetAddress;
 import java.net.ServerSocket;
 import java.net.Socket;
@@ -66,7 +63,7 @@ public class StringServerExampleConsole
 				System.out.println("The client said: " + clientInput);
 				
 				// Send ACK to client
-				dataForClient.writeUTF("*Red Alert Russian Accent* Acknowledged!");
+				dataForClient.writeUTF("*Red Alert Russian Accent* Acknowledged transmission of - " + clientInput);
 				dataForClient.flush();
 			}
 		} catch (EOFException eof)
