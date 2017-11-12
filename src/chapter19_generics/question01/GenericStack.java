@@ -1,12 +1,13 @@
 package chapter19_generics.question01;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 
 /**
  * Created by blindcant on 27/09/17.
  */
-public class GenericStack<E>
+public class GenericStack<E> implements Serializable
 {
 	//@@@ INSTANCE VARIABLES @@@
 	private List<E> genericList;
