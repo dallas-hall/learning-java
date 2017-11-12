@@ -5,12 +5,20 @@ package chapter19_generics.question01;
  */
 public class TestGenericStack
 {
+	private GenericStack<String> stack1;
+	private GenericStack<Integer> stack2;
+	
 	//@@@ MAIN METHOD @@@
 	public static void main(String[] args)
 	{
+		TestGenericStack runtime = new TestGenericStack();
+	}
+	
+	public TestGenericStack()
+	{
 		//### create stacks ###
-		GenericStack<String> stack1 = new GenericStack<>();
-		GenericStack<Integer> stack2 = new GenericStack<>();
+		stack1 = new GenericStack<>();
+		stack2 = new GenericStack<>();
 		//GenericStack<String>[] stack3 = new GenericStack[2];
 		
 		//### push to stacks ###
@@ -43,6 +51,16 @@ public class TestGenericStack
 		stack2.peekAtStackPrint();
 		
 		//System.out.println("\n@@@ E[] stack3 @@@");
+	}
+	
+	public GenericStack<String> getStringStack()
+	{
+		return stack1;
+	}
+	
+	public GenericStack<Integer> getIntegerStack()
+	{
+		return stack2;
 	}
 	
 }

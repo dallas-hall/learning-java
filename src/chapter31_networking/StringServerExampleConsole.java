@@ -50,7 +50,7 @@ public class StringServerExampleConsole
 			System.out.println("A client connected from IP address " + inetAddress.getHostAddress() + " which resolves to " + inetAddress.getCanonicalHostName());
 			
 			// Send the MOTD
-			dataForClient.writeUTF("Client from " + inetAddress.getHostAddress() + " successfully connected.  Welcome to our humble abode!\n");
+			dataForClient.writeUTF("@@@ MOTD @@@\nClient from " + inetAddress.getHostAddress() + " successfully connected.  Welcome to our humble abode!\n");
 			dataForClient.flush();
 			
 			// Infintite loop to keep listening for the client's messages
