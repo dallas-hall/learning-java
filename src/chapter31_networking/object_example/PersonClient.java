@@ -171,7 +171,10 @@ public class PersonClient
 	{
 		try
 		{
+			// Make sure to reset the Object so you can send the latest version
+			toServer.reset();
 			toServer.writeObject(aPerson);
+			// Make sure to flush the buffer so you actually send all the data
 			toServer.flush();
 			Thread.sleep(250);
 		} catch (Exception e)
