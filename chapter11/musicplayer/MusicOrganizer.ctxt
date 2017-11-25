@@ -1,0 +1,19 @@
+#BlueJ class context
+comment0.params=folderName
+comment0.target=MusicOrganizer(java.lang.String)
+comment0.text=\n\ Create\ a\ MusicOrganizer.\n\ @param\ folderName\ The\ folder\ of\ audio\ files.\n
+comment1.params=filename
+comment1.target=void\ addFile(java.lang.String)
+comment1.text=\n\ Add\ a\ track\ file\ to\ the\ collection.\n\ @param\ filename\ The\ file\ name\ of\ the\ track\ to\ be\ added.\n
+comment2.params=
+comment2.target=int\ getNumberOfTracks()
+comment2.text=\n\ Return\ the\ number\ of\ tracks\ in\ the\ collection.\n\ @return\ The\ number\ of\ tracks\ in\ the\ collection.\n
+comment3.params=index
+comment3.target=void\ removeTrack(int)
+comment3.text=\n\ Remove\ a\ track\ from\ the\ collection.\n\ @param\ index\ The\ index\ of\ the\ track\ to\ be\ removed.\n
+comment4.params=index
+comment4.target=boolean\ indexValid(int)
+comment4.text=\n\ Determine\ whether\ the\ given\ index\ is\ valid\ for\ the\ collection.\n\ Print\ an\ error\ message\ if\ it\ is\ not.\n\ @param\ index\ The\ index\ to\ be\ checked.\n\ @return\ true\ if\ the\ index\ is\ valid,\ false\ otherwise.\n
+comment5.params=folderName
+comment5.target=void\ readLibrary(java.lang.String)
+numComments=6

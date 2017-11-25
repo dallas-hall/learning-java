@@ -1,0 +1,58 @@
+/**
+ * Simulates a Heater.
+ * 
+ * @author (Dallas) 
+ * @version (12/04/12)
+ */
+public class Heater
+{
+    private double temperature;   
+    private double min;
+    private double max;
+    private double increment;
+
+    public Heater(double heaterMin, double heaterMax)
+    {
+      temperature = 15.0;
+      increment = 5.0;
+      min = heaterMin;
+      max = heaterMax;
+      
+    }
+
+    public void setIncrement(double newIncrement)
+    {
+        if (newIncrement <= 0) {
+            System.out.println("Please enter a number larger then 0");
+        }
+        else {
+            increment = newIncrement;
+        }
+    }
+    
+    public double heaterWarmer()
+    {
+        if (temperature < max) {
+            temperature = temperature + increment;
+        }
+        else {
+            System.out.println("The maximum has been reached.");
+        }
+        return increment;
+    }
+    
+    public void heaterColder()
+    {
+        if (temperature > min) {
+            temperature = temperature - increment;
+        }
+        else {
+            System.out.println("The minimum has been reached.");
+        }
+    }
+    
+    public double currentTemp()
+    {
+        return temperature;
+    }
+}
