@@ -1,0 +1,41 @@
+K 25
+svn:wc:ra_dav:version-url
+V 41
+/svn/bluej/!svn/ver/11/music-organizer-v5
+END
+README.TXT
+K 25
+svn:wc:ra_dav:version-url
+V 52
+/svn/bluej/!svn/ver/12/music-organizer-v5/README.TXT
+END
+TrackReader.java
+K 25
+svn:wc:ra_dav:version-url
+V 58
+/svn/bluej/!svn/ver/12/music-organizer-v5/TrackReader.java
+END
+Track.java
+K 25
+svn:wc:ra_dav:version-url
+V 52
+/svn/bluej/!svn/ver/12/music-organizer-v5/Track.java
+END
+MusicOrganizer.java
+K 25
+svn:wc:ra_dav:version-url
+V 61
+/svn/bluej/!svn/ver/12/music-organizer-v5/MusicOrganizer.java
+END
+package.bluej
+K 25
+svn:wc:ra_dav:version-url
+V 55
+/svn/bluej/!svn/ver/12/music-organizer-v5/package.bluej
+END
+MusicPlayer.java
+K 25
+svn:wc:ra_dav:version-url
+V 58
+/svn/bluej/!svn/ver/12/music-organizer-v5/MusicPlayer.java
+END

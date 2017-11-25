@@ -1,0 +1,8 @@
+#BlueJ class context
+comment0.params=name\ major\ graduated
+comment0.target=Student(java.lang.String,\ java.lang.String,\ boolean)
+comment1.params=
+comment1.target=java.lang.String\ getMajor()
+comment2.params=
+comment2.target=boolean\ hasGraduated()
+numComments=3

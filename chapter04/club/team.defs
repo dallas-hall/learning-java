@@ -1,0 +1,15 @@
+#Wed Jul 22 18:36:46 AEST 2015
+bluej.teamsettings.groupname=
+bluej.teamsettings.subversion.server=127.0.1.1
+bluej.teamsettings.user=blindcant
+bluej.teamsettings.ignore8=\\.DS_Store
+bluej.teamsettings.vcs=subversion
+bluej.teamsettings.ignore7=.*\\\#backup
+bluej.teamsettings.ignore6=.*\\\#
+bluej.teamsettings.ignore5=.*\\~
+bluej.teamsettings.ignore4=.*\\.ctxt
+bluej.teamsettings.ignore3=team\\.defs
+bluej.teamsettings.subversion.repositoryPrefix=/svn/bluej/
+bluej.teamsettings.ignore2=bluej\\.pkh
+bluej.teamsettings.ignore1=.*\\.class
+bluej.teamsettings.subversion.protocol=http

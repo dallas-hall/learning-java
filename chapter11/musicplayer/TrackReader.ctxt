@@ -1,0 +1,8 @@
+#BlueJ class context
+comment0.params=
+comment0.target=TrackReader()
+comment0.text=\n\ Create\ the\ track\ reader,\ ready\ to\ read\ tracks\ from\ the\ music\ library\ folder.\n
+comment1.params=dir\ name
+comment1.target=boolean\ accept(java.io.File,\ java.lang.String)
+comment1.text=\n\ Accept\ files\ with\ matching\ suffix.\n\ @param\ dir\ The\ directory\ containing\ the\ file.\n\ @param\ name\ The\ name\ of\ the\ file.\n\ @return\ true\ if\ the\ name\ ends\ with\ the\ suffix.\n
+numComments=2

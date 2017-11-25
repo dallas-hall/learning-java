@@ -1,0 +1,11 @@
+#BlueJ class context
+comment0.params=
+comment0.target=void\ incrementAge()
+comment0.text=\n\ Increase\ the\ age.\n\ This\ could\ result\ in\ the\ rabbit's\ death.\n
+comment1.params=
+comment1.target=int\ breed()
+comment1.text=\n\ Generate\ a\ number\ representing\ the\ number\ of\ births,\n\ if\ it\ can\ breed.\n\ @return\ The\ number\ of\ births\ (may\ be\ zero).\n
+comment2.params=
+comment2.target=boolean\ canBreed()
+comment2.text=\n\ A\ rabbit\ can\ breed\ if\ it\ has\ reached\ the\ breeding\ age.\n\ @return\ true\ if\ the\ rabbit\ can\ breed,\ false\ otherwise.\n
+numComments=3

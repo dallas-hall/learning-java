@@ -1,0 +1,5 @@
+#BlueJ class context
+comment0.params=xPosition\ yPosition\ ballDiameter\ ballColor\ drawingCanvas
+comment0.target=BoxBall(int,\ int,\ int,\ java.awt.Color,\ Canvas)
+comment0.text=\n\ Constructor\ for\ objects\ of\ class\ BoxBall\n
+numComments=1
