@@ -1,13 +1,14 @@
 /**
  *
  */
-package chapter01_introduction;
+package chapter01_introduction.string_printing;
 
 /**
  * @author: blindcant
  * @version: 0.1
  * @date: 4 Mar 2017
  * @program: calculate area of a rectangle
+ * @tags: String printing
  */
 public class Exercise_09
 {

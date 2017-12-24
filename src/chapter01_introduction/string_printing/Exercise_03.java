@@ -1,13 +1,14 @@
 /**
  *
  */
-package chapter01_introduction;
+package chapter01_introduction.string_printing;
 
 /**
  * @author: blindcant
  * @version: 0.1
  * @date: 2-3-17
  * @program: display a message across multiple lines
+ * @tags: String printing; arrays; for loop
  */
 public class Exercise_03
 {

@@ -1,17 +1,17 @@
 /**
  *
  */
-package chapter01_introduction;
+package chapter01_introduction.string_printing;
 
 /**
  * @author: blindcant
  * @version: 0.1
  * @date: 2-3-17
  * @program: display 3 messages
+ * @tags: String printing
  */
 public class Exercise_01
 {
-	
 	public static void main(String[] args)
 	{
 		//create strings
@@ -21,5 +21,4 @@ public class Exercise_01
 		// display strings
 		System.out.println(message1 + message2 + message3);
 	}
-	
 }

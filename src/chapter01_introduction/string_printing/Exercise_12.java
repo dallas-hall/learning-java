@@ -1,14 +1,15 @@
 /**
  * 
  */
-package chapter01_introduction;
+package chapter01_introduction.string_printing;
 
 /**
  * @author:		blindcant
  * @version:	0.1
  * @date:		4 Mar 2017
  * @program:    calculate average speed in km, starting in miles
- * 
+ * @tags: String printing; constants
+ *
  *              1.609 kilometers - 1 mile
  *              Distance = Rate x Time
  *              Rate = Distance / Time

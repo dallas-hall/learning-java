@@ -1,13 +1,14 @@
 /**
  *
  */
-package chapter01_introduction;
+package chapter01_introduction.string_printing;
 
 /**
  * @author: blindcant
  * @version: 0.1
  * @date: 2 Mar 2017
  * @program: Mathematical computation
+ * @tags: String printing
  */
 public class Exercise_05
 {
