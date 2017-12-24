@@ -1,7 +1,7 @@
 /**
  * 
  */
-package chapter01_introduction;
+package chapter01_introduction.string_printing;
 
 /**
  * @author:		blindcant

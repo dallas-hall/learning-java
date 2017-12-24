@@ -1,13 +1,14 @@
 /**
  * 
  */
-package chapter01_introduction;
+package chapter01_introduction.string_printing;
 
 /**
  * @author:		blindcant
  * @version:	0.1
  * @date:		4 Mar 2017
  * @program:	compute the perimeter / area of a circle
+ * @tags: String printing; PI
  */
 public class Exercise_08 {
 

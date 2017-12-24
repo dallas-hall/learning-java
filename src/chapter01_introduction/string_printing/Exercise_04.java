@@ -1,13 +1,14 @@
 /**
  * 
  */
-package chapter01_introduction;
+package chapter01_introduction.string_printing;
 
 /**
  * @author:		blindcant
  * @version:	0.1
  * @date:		2-3-17
  * @program:	print a table, 3 columns, 5 rows
+ * @tags: String printing; exponents
  */
 public class Exercise_04
 {

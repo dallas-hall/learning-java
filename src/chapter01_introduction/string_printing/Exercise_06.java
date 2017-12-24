@@ -1,13 +1,14 @@
 /**
  *
  */
-package chapter01_introduction;
+package chapter01_introduction.string_printing;
 
 /**
  * @author: blindcant
  * @version: 0.1
  * @date: 2 Mar 2017
  * @program: Sum some numbers (1 to 9)
+ * @tags: String printing; while loop; for loop
  */
 public class Exercise_06
 {

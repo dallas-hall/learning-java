@@ -1,13 +1,14 @@
 /**
  *
  */
-package chapter01_introduction;
+package chapter01_introduction.string_printing;
 
 /**
  * @author: blindcant
  * @version: 0.1
  * @date: 4 Mar 2017
  * @program: population projection
+ * @tags: String printing; constants
  * <p>
  * one birth every 7 seconds
  * one death every 13 seconds
