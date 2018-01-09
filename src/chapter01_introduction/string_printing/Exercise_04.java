@@ -1,21 +1,20 @@
-/**
- * 
- */
 package chapter01_introduction.string_printing;
 
 /**
- * @author:		blindcant
- * @version:	0.1
- * @date:		2-3-17
- * @program:	print a table, 3 columns, 5 rows
- * @tags: String printing; exponents
+ * <h1>Print Messages</h1>
+ * <p>
+ * This program will print a table, 3 columns, 5 rows
+ * </p>
+ * <p>
+ * tags:	String printing; exponents;
+ * </p>
+ *
+ * @author blindcant
+ * @version 0.1 - 2-3-17
  */
-public class Exercise_04
-{
 
-	public static void main(String[] args)
-	{
-		
+public class Exercise_04 {
+	public static void main(String[] args) {
 		// HARD CODED
 		System.out.println("HARD CODED");
 		System.out.println("a\t\ta^2\t\ta^3");
@@ -36,5 +35,4 @@ public class Exercise_04
 		//4 x 4 (4^4) and 4 x 4 x 4 (4^4)
 		System.out.println("4\t\t" + Math.pow(4, 2) + "\t" + Math.pow(4, 3));
 	}
-
 }
