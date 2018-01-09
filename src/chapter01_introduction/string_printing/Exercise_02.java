@@ -1,40 +1,37 @@
-/**
- *
- */
 package chapter01_introduction.string_printing;
 
 /**
- * @author: blindcant
- * @version: 0.1
- * @date: 2-3-17
- * @program: display 5 messages
- * @tags: String printing; while loop
+ * <h1>Print Messages</h1>
+ * <p>
+ * This program will display 5 messages using a for loop and a while loop.
+ * </p>
+ * <p>
+ * tags:	String printing;while loop;
+ * </p>
+ *
+ * @author blindcant
+ * @version 0.1 - 2-3-17
  */
-public class Exercise_02
-{
-	
-	public static void main(String[] args)
-	{
-		
-		//Create Strings
+
+public class Exercise_02 {
+	public static void main(String[] args) {
+		// Create Strings
 		String message1 = new String("Welcome to Dubai, gentlemen.");
 		String message2 = new String("Welcome to Dubai, gentlemen!!!");
-		int index = 1;
 		
-		//print the message 5 times
-		while (index <= 5)
-		{
+		// Print the message 5 times
+		int index = 1;
+		while (index <= 5) {
 			System.out.println(message1);
 			index++;
 		}
 		
+		// Add a blank line
 		System.out.println();
 		
-		for (int i = 0; i < 5; i++)
-		{
+		// Print the message 5 times
+		for (int i = 0; i < 5; i++) {
 			System.out.println(message2);
 		}
-		
 	}
-	
 }

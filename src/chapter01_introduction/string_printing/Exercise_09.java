@@ -1,21 +1,20 @@
-/**
- *
- */
 package chapter01_introduction.string_printing;
 
 /**
- * @author: blindcant
- * @version: 0.1
- * @date: 4 Mar 2017
- * @program: calculate area of a rectangle
- * @tags: String printing
+ * <h1>Print Messages</h1>
+ * <p>
+ * This program will calculate area of a rectangle
+ * </p>
+ * <p>
+ * tags:	String printing; math;
+ * </p>
+ *
+ * @author blindcant
+ * @version 0.1 - 4-3-17
  */
-public class Exercise_09
-{
-	
-	public static void main(String[] args)
-	{
-		
+
+public class Exercise_09 {
+	public static void main(String[] args) {
 		//set variables
 		double width = 2.5;
 		double height = 7.9;
