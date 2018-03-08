@@ -1,7 +1,7 @@
 package chapter04_data_types;
 
 /**
- * <h1>Decimal to Binary</h1>
+ * <h1>Decimal to Hex</h1>
  * <p>
  * This program will convert decimal 0-255 (ASCII range) into binary.
  * </p>
@@ -30,7 +30,6 @@ public class ASCIIHex {
 				System.out.println();
 			}
 		}
-		//System.out.println(runtime.getHex(16));
 	}
 	
 	//@@@ CONSTRUCTOR(S) @@@
@@ -65,9 +64,7 @@ public class ASCIIHex {
 			aStringBuffer.append('0');
 		return aStringBuffer.toString();
 	}
-	
-	//### SETTERS ###
-	
+
 	//### HELPERS ###
 	private String convertDecimalToHex(int number) {
 		switch (number) {
@@ -87,6 +84,4 @@ public class ASCIIHex {
 				return (Integer.toString(number));
 		}
 	}
-	
-	//@@@ INNER CLASS(ES) @@@
 }
