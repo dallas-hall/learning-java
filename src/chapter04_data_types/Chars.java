@@ -8,20 +8,20 @@ public class Chars
 	public static void main(String[] args)
 	{
 		//SHOW Chars DECIMAL CODE FOR Chars CHARS
-		System.out.println("1 has the Unicode/Chars of " + (int) '1');
-		System.out.println("'A' has the Unicode/Chars of " + (int) 'A');
-		System.out.println("'Z' has the Unicode/Chars of " + (int) 'Z');
-		System.out.println("'a' has the Unicode/Chars of " + (int) 'a');
-		System.out.println("'z' has the Unicode/Chars of " + (int) 'z');
-		System.out.println("'0' has the Unicode/Chars of " + (int) '0');
-		System.out.println("'9' has the Unicode/Chars of " + (int) '9');
+		System.out.println("1 has the ASCII codepoint of " + (int) '1');
+		System.out.println("'A' has the ASCII codepoint of " + (int) 'A');
+		System.out.println("'Z' has the ASCII codepoint of " + (int) 'Z');
+		System.out.println("'a' has the ASCII codepoint of " + (int) 'a');
+		System.out.println("'z' has the ASCII codepoint of " + (int) 'z');
+		System.out.println("'0' has the ASCII codepoint of " + (int) '0');
+		System.out.println("'9' has the ASCII codepoint of " + (int) '9');
 		System.out.println();
 		//SHOW Chars CHAR FOR DECIMAL CODES
-		System.out.println("40 is Unicode/Chars for " + (char) 40);
-		System.out.println("59 is Unicode/Chars for " + (char) 59);
-		System.out.println("79 is Unicode/Chars for " + (char) 79);
-		System.out.println("85 is Unicode/Chars for " + (char) 85);
-		System.out.println("90 is Unicode/Chars for " + (char) 90);
+		System.out.println("40 is the ASCII codepoint for " + (char) 40);
+		System.out.println("59 is the ASCII codepoint for " + (char) 59);
+		System.out.println("79 is the ASCII codepoint for " + (char) 79);
+		System.out.println("85 is the ASCII codepoint for " + (char) 85);
+		System.out.println("90 is the ASCII codepoint for " + (char) 90);
 		System.out.println();
 		//SHOW HEX CODES OF DECIMAL NUMBERS
 		System.out.println("40 is hex-code for: " + (byte) '\u0040');
@@ -68,19 +68,19 @@ public class Chars
 		//GENERATE RANDOM LOWER CASE LETTER (a + Math.random() * b) returns random number between a and a+b, excluding a+b
 		//'a' = 97 and 'z' = 122 : 122 - 97 = 25.  But we want to get z, so 25 + 1 = 26.
 		int randomLowerChar = 97 + (int) (Math.random() * 26);
-		System.out.println("Random generated char is: " + (char) randomLowerChar);
+		System.out.println("Random generated lowercase char is: " + (char) randomLowerChar);
 		//GENERATE RANDOM UPPER CASE LETTER (a + Math.random() * b) returns random number between a and a+b, excluding a+b
 		//'A' = 65 and 'Z' = 90 : 90 - 65 = 25.  But we want to get Z, so 25 + 1 = 26.
 		int randomUpperChar = 65 + (int) (Math.random() * 26);
-		System.out.println("Random generated char is: " + (char) randomUpperChar);
+		System.out.println("Random generated uppercase char is: " + (char) randomUpperChar);
 		System.out.println();
 		//OUTPUT OF CHAR COMPARISON
-		System.out.println('a' < 'b');
-		System.out.println('a' <= 'A');
-		System.out.println('a' > 'b');
-		System.out.println('a' >= 'A');
-		System.out.println('a' == 'a');
-		System.out.println('a' != 'b');
+		System.out.println("Is 'a' < 'b'?\t" + ('a' < 'b'));
+		System.out.println("Is 'a' <= 'A'?\t" + ('a' <= 'A'));
+		System.out.println("Is 'a' > 'b''?\t" + ('a' > 'b'));
+		System.out.println("Is 'a' >= 'A'?\t" + ('a' >= 'A'));
+		System.out.println("Is 'a' == 'a'?\t" + ('a' == 'a'));
+		System.out.println("Is 'a' != 'b'?\t" + ('a' != 'b'));
 		System.out.println();
 		
 		System.out.printf("%6b%-8s\n", (1 > 2), "Java");

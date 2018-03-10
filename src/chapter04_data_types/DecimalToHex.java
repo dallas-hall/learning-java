@@ -12,7 +12,7 @@ package chapter04_data_types;
  * @author blindcant
  * @version 0.1 - 2018-03-08
  */
-public class ASCIIHex {
+public class DecimalToHex {
 	//@@@ INSTANCE VARIABLES @@@
 	// ASCII range is 0-127, 'extended' is 128-255
 	public static final int START_NUMBER = 0;
@@ -21,7 +21,7 @@ public class ASCIIHex {
 	
 	//@@@ MAIN METHOD @@@
 	public static void main(String[] args) {
-		ASCIIHex runtime = new ASCIIHex();
+		DecimalToHex runtime = new DecimalToHex();
 		int printCounter = 0;
 		for(int i = START_NUMBER; i <= FINAL_NUMBER; i++) {
 			System.out.print(runtime.getHex(i) + " ");
@@ -34,7 +34,7 @@ public class ASCIIHex {
 	}
 	
 	//@@@ CONSTRUCTOR(S) @@@
-	public ASCIIHex() {
+	public DecimalToHex() {
 		System.out.println("@@@ ASCII Range As Hex @@@");
 	}
 	
@@ -42,7 +42,7 @@ public class ASCIIHex {
 	//### GETTERS ###
 	public String getHex(int current_number) {
 		StringBuffer aStringBuffer = new StringBuffer();
-		aStringBuffer.append("0x");
+		//aStringBuffer.append("0x");
 		boolean padding = false;
 		
 		// Check if start number is 0 or evenly divisible by 16
@@ -69,7 +69,7 @@ public class ASCIIHex {
 		// If starting number a multiple of 16, we need to pad an extra 0 at the end
 		if (padding)
 			aStringBuffer.append('0');
-		return aStringBuffer.toString();
+		return String.format("0x%-4s", aStringBuffer.toString());
 	}
 
 	//### HELPERS ###
