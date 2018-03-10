@@ -4,10 +4,16 @@
 package chapter03_selections;
 
 /**
- * @author:		blindcant
- * @version:	0.1
- * @date:		13 Mar 2017
- * @program:	random month generator
+ * <h1>Month Generator/h1>
+ * <p>
+ * This program will generate a random number that represents a month. It gives a demonstration of switch / case statements.
+ * </p>
+ * <p>
+ * tags:	String printing; math; Math.random; switch; case;
+ * </p>
+ *
+ * @author blindcant
+ * @version 0.1 - 2017-03-13
  */
 public class Exercise04
 {
