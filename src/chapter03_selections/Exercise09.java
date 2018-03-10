@@ -15,7 +15,7 @@ import java.util.Scanner;
  * @author blindcant
  * @version 0.1 - 2018-03-10
  */
-public class Exercise_09 {
+public class Exercise09 {
 	//@@@ MAIN METHOD @@@
 	public static void main(String[] args){
 		Scanner stdin = new Scanner(System.in);
