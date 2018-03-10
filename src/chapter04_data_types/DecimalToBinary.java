@@ -12,7 +12,7 @@ package chapter04_data_types;
  * @author blindcant
  * @version 0.1 - 2018-03-07
  */
-public class ASCIIBinary {
+public class DecimalToBinary {
 	//@@@ INSTANCE VARIABLES @@@
 	// ASCII range is 0-127, 'extended' is 128-255
 	public static final int START_NUMBER = 0;
@@ -21,7 +21,7 @@ public class ASCIIBinary {
 	
 	//@@@ MAIN METHOD @@@
 	public static void main(String[] args) {
-		ASCIIBinary runtime = new ASCIIBinary();
+		DecimalToBinary runtime = new DecimalToBinary();
 		int printCounter = 0;
 		for(int i = START_NUMBER; i <= FINAL_NUMBER; i++) {
 			System.out.print(runtime.getBinary(i) + " ");
@@ -34,7 +34,7 @@ public class ASCIIBinary {
 	}
 	
 	//@@@ CONSTRUCTOR(S) @@@
-	public ASCIIBinary() {
+	public DecimalToBinary() {
 		System.out.println("@@@ ASCII Range As Binary @@@");
 	}
 	
@@ -63,6 +63,6 @@ public class ASCIIBinary {
 			aStringBuffer.append('0');
 		}
 		aStringBuffer.reverse();
-		return aStringBuffer.toString();
+		return String.format("%-8s", aStringBuffer.toString());
 	}
 }
