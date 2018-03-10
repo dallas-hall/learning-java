@@ -17,7 +17,6 @@ import java.util.Scanner;
  */
 public class Exercise_09 {
 	//@@@ MAIN METHOD @@@
-	// 198526663 should be 5
 	public static void main(String[] args){
 		Scanner stdin = new Scanner(System.in);
 		long input = 0;
@@ -67,13 +66,12 @@ public class Exercise_09 {
 		}
 		System.out.println("numbers: " + Arrays.toString(numbers));
 		
-		// Calculate IBSN Check Digit - https://isbn-information.com/the-10-digit-isbn.html
+		// Calculate IBSN Check Digit - using the books way of d1 + 1 - d9 + 9
 		int checkDigit = 0;
-		int counter = 10;
 		StringBuffer aStringBuffer = new StringBuffer();
 		for (int i = 0; i < numbers.length; i++) {
-			System.out.println("index: " + i + "\ncounter: " + counter);
-			checkDigit += counter-- * numbers[i];
+			System.out.println("index: " + i);
+			checkDigit += (i + 1) * numbers[i];
 			aStringBuffer.append(numbers[i]);
 		}
 		System.out.println("checkDigit before modulo 11: " + checkDigit);
@@ -89,6 +87,8 @@ public class Exercise_09 {
 				aStringBuffer.append(checkDigit);
 		}
 		
+		// 013601267 should be 1
+		// 013031997 should be X
 		System.out.println("The ISBN-10 with check digit is : " + aStringBuffer.toString());
 	}
 }
