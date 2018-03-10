@@ -2,39 +2,45 @@ package chapter02_basic_programming;
 
 import java.util.Scanner;
 
-public class ComputeLoan
-{
+/**
+ * <h1>Print Messages</h1>
+ * <p>
+ * This program calculate loan repayments.
+ * </p>
+ * <p>
+ * tags:	String printing;
+ * </p>
+ *
+ * @author blindcant
+ * @version 0.1 - 5-3-17
+ */
 
-    public static void main(String[] args)
-    {
-        //Create a Scanner
-        Scanner input = new Scanner(System.in);
-
-        // Enter annual interest rate in percentage, e.g., 7.25%
-        System.out.print("Enter annual interest rate, e.g., 7.25%: ");
-        double annualInterestRate = input.nextDouble();
-
-        // Obtain monthly interest rate
-        double monthlyInterestRate = annualInterestRate / 1200;
-
-        // Enter number of years
-        System.out.print(
-                "Enter number of years as an integer, e.g., 5: ");
-        int numberOfYears = input.nextInt();
-
-        // Enter loan amount
-        System.out.print("Enter loan amount, e.g., 120000.95: ");
-        double loanAmount = input.nextDouble();
-
-        // Calculate payment
-        double monthlyPayment = loanAmount * monthlyInterestRate / (1
-                - 1 / Math.pow(1 + monthlyInterestRate, numberOfYears * 12));
-        double totalPayment = monthlyPayment * numberOfYears * 12;
-
-        // Display results
-        System.out.println("The monthly payment is $" +
-                (int)(monthlyPayment * 100) / 100.0);
-        System.out.println("The total payment is $" +
-                (int)(totalPayment * 100) / 100.0);
-    }
+public class ComputeLoan {
+	public static void main(String[] args) {
+		//Create a Scanner
+		Scanner input = new Scanner(System.in);
+		
+		// Enter annual interest rate in percentage, e.g., 7.25%
+		System.out.print("Enter annual interest rate, e.g., 7.25%: ");
+		double annualInterestRate = input.nextDouble();
+		
+		// Obtain monthly interest rate
+		double monthlyInterestRate = annualInterestRate / 1200;
+		
+		// Enter number of years
+		System.out.print("Enter number of years as an integer, e.g., 5: ");
+		int numberOfYears = input.nextInt();
+		
+		// Enter loan amount
+		System.out.print("Enter loan amount, e.g., 120000.95: ");
+		double loanAmount = input.nextDouble();
+		
+		// Calculate payment
+		double monthlyPayment = loanAmount * monthlyInterestRate / (1 - 1 / Math.pow(1 + monthlyInterestRate, numberOfYears * 12));
+		double totalPayment = monthlyPayment * numberOfYears * 12;
+		
+		// Display results
+		System.out.println("The monthly payment is $" + (int) (monthlyPayment * 100) / 100.0);
+		System.out.println("The total payment is $" + (int) (totalPayment * 100) / 100.0);
+	}
 }

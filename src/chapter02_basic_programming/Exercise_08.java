@@ -6,10 +6,16 @@ package chapter02_basic_programming;
 import java.util.Scanner;
 
 /**
- * @author: blindcant
- * @version: 0.1
- * @date: 13 Mar 2017
- * @program:
+ * <h1>Time Conversion</h1>
+ * <p>
+ * This program will print the current time for GMT, and then convert that to another GMT timezone based on the user's input.
+ * </p>
+ * <p>
+ * tags:	String printing; math; Scanner; nextLong;
+ * </p>
+ *
+ * @author blindcant
+ * @version 0.1 - 5-3-17
  */
 public class Exercise_08
 {

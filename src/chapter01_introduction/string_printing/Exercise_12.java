@@ -32,5 +32,4 @@ public class Exercise_12 {
 		System.out.println("The runner ran " + (distance_in_km / one_mile_in_km) + " miles"); //convert to miles
 		System.out.println("The average speed was: " + (((distance_in_km * one_mile_in_km) / time_in_seconds) * 3600) + " km per hour");
 	}
-	
 }

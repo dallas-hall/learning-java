@@ -6,10 +6,16 @@ package chapter02_basic_programming;
 import java.util.Scanner;
 
 /**
- * @author:		blindcant
- * @version:	0.1
- * @date:		13 Mar 2017
- * @program:	
+ * <h1>Pounds to Kilograms</h1>
+ * <p>
+ * This program will convert pounds to kilograms, using the users input.
+ * </p>
+ * <p>
+ * tags: math; Scanner; nextDouble;
+ * </p>
+ *
+ * @author blindcant
+ * @version 0.1 - 2017-03-13
  */
 public class Exercise_04
 {
