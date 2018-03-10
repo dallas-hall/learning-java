@@ -3,13 +3,20 @@ package chapter03_selections;
 import java.util.Scanner;
 
 /**
- * @author:		blindcant
- * @version:	0.1
- * @date:		13 Mar 2017
- * @program:	find future dates
+ * <h1>Future Day Calculator</h1>
+ * <p>
+ * This program ask for a number representing today and for a number representing days into the future. It will return the text representation of both.
+ * </p>
+ * <p>
+ * tags:	String printing; math; Scanner; nextInt;
+ * </p>
+ *
+ * @author blindcant
+ * @version 0.1 - 2017-03-13
  */
 public class Exercise05
 {
+    private static final String[] days = {"Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"};
 
     public static void main(String[] args)
     {
@@ -17,13 +24,13 @@ public class Exercise05
         Scanner keyboard = new Scanner(System.in);
         
         //create variables
-        final String DAY0 = "Sunday";
+/*        final String DAY0 = "Sunday";
         final String DAY1 = "Monday";
         final String DAY2 = "Tuesday";
         final String DAY3 = "Wednesday";
         final String DAY4 = "Thursday";
         final String DAY5 = "Friday";
-        final String DAY6 = "Saturday";
+        final String DAY6 = "Saturday";*/
         
         //get user input
         System.out.print("Enter today's number (Sun = 0 & Saturday = 6): ");
@@ -40,7 +47,8 @@ public class Exercise05
         int newDay = (currentDay + daysElapsed) % 7;
         
         //display results
-        switch (currentDay)
+        printMessage(currentDay, newDay);
+/*        switch (currentDay)
         {
             case 0: 
                 if (newDay == 0)
@@ -353,7 +361,12 @@ public class Exercise05
             
             default: System.out.println("Error: invalid number");
             System.exit(1);
-        }
+        }*/
     }
 
+    private static void printMessage(int currentDay, int newDay) {
+        System.out.println("Today is " + days[currentDay] + " and the future day"
+                           + " is " + days[newDay]);
+    
+    }
 }

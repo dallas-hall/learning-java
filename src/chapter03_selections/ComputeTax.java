@@ -1,5 +1,14 @@
 /**
- * 
+ * <h1>Calculate Tax</h1>
+ * <p>
+ * This program will Calculate the taxable income based on the person's current marital status.
+ * </p>
+ * <p>
+ * tags:	String printing; math; Scanner; nextDouble; for loop; switch; case; nested if;
+ * </p>
+ *
+ * @author blindcant
+ * @version 0.1 - 2017-03-13
  */
 package chapter03_selections;
 
