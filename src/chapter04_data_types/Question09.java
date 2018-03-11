@@ -23,6 +23,4 @@ public class Question09 {
 		//display Unicode number
 		System.out.println("The Unicode for the character " + userInput + " is 0x" + Integer.toHexString(userInput));
 	}
-	
-	//METHODS
 }
