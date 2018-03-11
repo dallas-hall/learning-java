@@ -1,4 +1,4 @@
-package chapter04_data_types;
+package chapter05_loops;
 
 /**
  * <h1>Decimal to Hex</h1>
@@ -12,7 +12,8 @@ package chapter04_data_types;
  * @author blindcant
  * @version 0.1 - 2018-03-08
  */
-public class DecimalToHex {
+public class DecimalToHex
+{
 	//@@@ INSTANCE VARIABLES @@@
 	// ASCII range is 0-127, 'extended' is 128-255
 	public static final int START_NUMBER = 0;
@@ -20,60 +21,67 @@ public class DecimalToHex {
 	public static final int RADIX = 16;
 	
 	//@@@ MAIN METHOD @@@
-	public static void main(String[] args) {
+	public static void main(String[] args)
+	{
 		DecimalToHex runtime = new DecimalToHex();
 		int printCounter = 0;
-		for(int i = START_NUMBER; i <= FINAL_NUMBER; i++) {
+		for (int i = START_NUMBER; i <= FINAL_NUMBER; i++) {
 			System.out.print(runtime.getHex(i) + " ");
 			// Print in 16 items to a line
 			printCounter++;
-			if(printCounter % 16 == 0) {
+			if (printCounter % 16 == 0) {
 				System.out.println();
 			}
 		}
 	}
 	
 	//@@@ CONSTRUCTOR(S) @@@
-	public DecimalToHex() {
+	public DecimalToHex()
+	{
 		System.out.println("@@@ ASCII Range As Hex @@@");
 	}
 	
 	//@@@ METHODS @@@
 	//### GETTERS ###
-	public String getHex(int current_number) {
+	public String getHex(int current_number)
+	{
 		StringBuffer aStringBuffer = new StringBuffer();
 		//aStringBuffer.append("0x");
 		boolean padding = false;
 		
 		// Check if start number is 0 or evenly divisible by 16
-		if(current_number == 0) {
+		if (current_number == 0) {
 			aStringBuffer.append('0');
-		} else if (current_number % 16 == 0) {
+		}
+		else if (current_number % 16 == 0) {
 			padding = true;
 		}
 		
 		// Process the number as many times as necessary
-		while(current_number > 0) {
-			if(current_number >= RADIX) {
+		while (current_number > 0) {
+			if (current_number >= RADIX) {
 				// Integer division by 16
 				int answer = current_number / RADIX;
 				// Convert answer to hex
 				aStringBuffer.append(convertDecimalToHex(answer));
 				// Get the remainder
 				current_number -= (RADIX * answer);
-			} else {
+			}
+			else {
 				aStringBuffer.append(convertDecimalToHex(current_number));
 				current_number -= current_number;
 			}
 		}
 		// If starting number a multiple of 16, we need to pad an extra 0 at the end
-		if (padding)
+		if (padding) {
 			aStringBuffer.append('0');
+		}
 		return String.format("0x%-4s", aStringBuffer.toString());
 	}
-
+	
 	//### HELPERS ###
-	private String convertDecimalToHex(int number) {
+	private String convertDecimalToHex(int number)
+	{
 		switch (number) {
 			case 10:
 				return ("A");
