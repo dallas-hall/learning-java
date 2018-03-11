@@ -1,4 +1,4 @@
-package chapter04_data_types;
+package chapter05_loops;
 
 /**
  * <h1>Decimal to Binary</h1>

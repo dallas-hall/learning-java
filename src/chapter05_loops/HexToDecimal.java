@@ -1,4 +1,4 @@
-package chapter04_data_types;
+package chapter05_loops;
 
 import java.util.Arrays;
 import java.util.Scanner;
