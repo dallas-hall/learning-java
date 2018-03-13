@@ -1,7 +1,16 @@
 package chapter06_methods;
 
 /**
- * Created by blindcant on 24/04/17.
+ * <h1>>Reverse Numbers</h1>
+ * <p>
+ * This program will ask for an integer and display it reversed.
+ * </p>
+ * <p>
+ * tags: while loop; if else;
+ * </p>
+ *
+ * @author blindcant
+ * @version 0.1 - 2017-04-24
  */
 public class Question04
 {

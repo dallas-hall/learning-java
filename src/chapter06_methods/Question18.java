@@ -1,13 +1,19 @@
 package chapter06_methods;
 
 /**
- * Created by blindcant on 24/04/17.
+ * <h1>Regex Password Validation</h1>
+ * <p>
+ * This program uses regular expressions to validate passwords against really bad password rules.
+ * </p>
+ * <p>
+ * tags: Math.random; if else;
+ * </p>
+ *
+ * @author blindcant
+ * @version 0.1 - 2017-04-24
  */
 public class Question18
 {
-	//INSTANCE VARIABLES
-	
-	
 	//MAIN METHOD
 	public static void main(String[] args)
 	{
