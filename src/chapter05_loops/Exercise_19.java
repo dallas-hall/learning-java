@@ -91,10 +91,13 @@ public class Exercise_19
 			for (int i = 0; i < numbersToPrint; i++)
 			{
 				int middle = numbersToPrint / 2;
-				// Print every number with a width of 4 chars
-				if(i < middle)
-					System.out.format("%4d", (int)Math.pow(2, i));
+				// Print powers of 2 in descending order after the middle
+				if (i > middle)
+					// Need i + 1 to get the right power
+					System.out.format("%4d", (int)Math.pow(2, numbersToPrint - (i + 1)));
+				// Print powers of 2 in ascending order up until the middle
 				else
+					// Print every number with a width of 4 chars
 					System.out.format("%4d", (int)Math.pow(2, i));
 			}
 			
