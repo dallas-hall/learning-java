@@ -13,15 +13,18 @@ package chapter01_introduction.string_printing;
  * @version 0.1 - 2-3-17
  */
 
-public class Exercise_06 {
-	public static void main(String[] args) {
+public class Exercise_06
+{
+	public static void main(String[] args)
+	{
 		// Create variables
 		int finalAnswer = 0;
 		int index = 1;
 		
 		// While loop
 		System.out.println("@@@ Sum Using While Loop @@@");
-		while (index < 10) {
+		while (index < 10)
+		{
 			finalAnswer = finalAnswer + index;
 			index++;
 		}
@@ -32,7 +35,8 @@ public class Exercise_06 {
 		
 		// For loop
 		System.out.println("\n@@@ Sum Using For Loop @@@");
-		for (int i = 0; i < 10; i++) {
+		for (int i = 0; i < 10; i++)
+		{
 			finalAnswer += i;
 		}
 		System.out.println("The answer is: " + finalAnswer);

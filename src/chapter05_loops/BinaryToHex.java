@@ -14,9 +14,11 @@ import java.util.*;
  * @author blindcant
  * @version 0.1 - 2018-03-10
  */
-public class BinaryToHex {
+public class BinaryToHex
+{
 	//@@@ MAIN METHOD @@@
-	public static void main(String[] args) {
+	public static void main(String[] args)
+	{
 		Map<Integer, String> decimalToBinary = new HashMap<>();
 		decimalToBinary.put(0, "0");
 		decimalToBinary.put(1, "1");
@@ -43,17 +45,21 @@ public class BinaryToHex {
 		boolean debugging = false;
 		
 		// Get user input
-		do {
+		do
+		{
 			errorFound = false;
-			try {
+			try
+			{
 				System.out.println("Enter a binary number, leading zeros are optional.");
 				stringBinaryNumber = stdin.nextLine();
 				// Check user input
-				if (!stringBinaryNumber.matches("^[01]+$")) {
+				if (!stringBinaryNumber.matches("^[01]+$"))
+				{
 					throw new Exception();
 				}
 			}
-			catch (Exception e) {
+			catch (Exception e)
+			{
 				System.out.println("Binary numbers can only contain 0 and 1.");
 				errorFound = true;
 			}
@@ -65,12 +71,15 @@ public class BinaryToHex {
 		// Convert binary numbers in nibbles
 		int[] tempIntArray = new int[4];
 		int counter = tempIntArray.length - 1;
-		for (int i = stringBinaryNumberLength - 1; i >= 0; i--, counter--) {
-			if (debugging) {
+		for (int i = stringBinaryNumberLength - 1; i >= 0; i--, counter--)
+		{
+			if (debugging)
+			{
 				System.out.println(stringBinaryNumber.charAt(i));
 			}
 			tempIntArray[counter] = Integer.parseInt(String.valueOf(stringBinaryNumber.charAt(i)));
-			if (counter == 0 || i == 0) {
+			if (counter == 0 || i == 0)
+			{
 				// Add the nibble, reset the current array, and the counter
 				binaryIntArrays.add(tempIntArray);
 				tempIntArray = new int[4];
@@ -82,22 +91,29 @@ public class BinaryToHex {
 		// Iterate through each nibble and calculate its decimal value
 		StringBuffer aStringBuffer = new StringBuffer();
 		int subtotal = 0;
-		for (int[] anIntArray : binaryIntArrays) {
+		for (int[] anIntArray : binaryIntArrays)
+		{
 			int anIntArrayLength = anIntArray.length;
-			if (debugging) {
+			if (debugging)
+			{
 				System.out.println(Arrays.toString(anIntArray));
 			}
-			for (int i = 0; i < anIntArrayLength; i++) {
-				if (i == 0 && anIntArray[i] != 0) {
+			for (int i = 0; i < anIntArrayLength; i++)
+			{
+				if (i == 0 && anIntArray[i] != 0)
+				{
 					subtotal += 8;
 				}
-				else if (i == 1 && anIntArray[i] != 0) {
+				else if (i == 1 && anIntArray[i] != 0)
+				{
 					subtotal += 4;
 				}
-				else if (i == 2 && anIntArray[i] != 0) {
+				else if (i == 2 && anIntArray[i] != 0)
+				{
 					subtotal += 2;
 				}
-				else if (i == 3 && anIntArray[i] != 0) {
+				else if (i == 3 && anIntArray[i] != 0)
+				{
 					subtotal += 1;
 				}
 			}

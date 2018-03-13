@@ -15,8 +15,10 @@ import java.util.Scanner;
  * @version 0.1 - 5-3-17
  */
 
-public class ComputeLoan {
-	public static void main(String[] args) {
+public class ComputeLoan
+{
+	public static void main(String[] args)
+	{
 		//Create a Scanner
 		Scanner input = new Scanner(System.in);
 		

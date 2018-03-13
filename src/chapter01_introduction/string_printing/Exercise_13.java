@@ -17,7 +17,9 @@ package chapter01_introduction.string_printing;
  * @version 0.1 - 4-3-17
  */
 
-public class Exercise_13 {
-	public static void main(String[] args) {
+public class Exercise_13
+{
+	public static void main(String[] args)
+	{
 	}
 }

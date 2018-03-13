@@ -7,7 +7,6 @@ import java.util.Scanner;
  */
 public class Question11
 {
-	
 	//INSTANCE VARIABLES
 	private Scanner keyboard = new Scanner(System.in);
 	
@@ -53,6 +52,4 @@ public class Question11
 			System.out.println("Invalid input.");
 		}
 	}
-	
-	//METHODS
 }

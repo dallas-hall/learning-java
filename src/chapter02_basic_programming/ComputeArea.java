@@ -14,9 +14,11 @@ import java.util.Scanner;
  * @author blindcant
  * @version 0.1 - 2018-01-09
  */
-public class ComputeArea {
+public class ComputeArea
+{
 	//@@@ MAIN METHOD @@@
-	public static void main(String[] args) {
+	public static void main(String[] args)
+	{
 		// Step 1, get the radius
 		Scanner stdin = new Scanner(System.in);
 		System.out.println("Enter the circle's radius: ");

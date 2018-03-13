@@ -13,8 +13,10 @@ package chapter01_introduction.string_printing;
  * @version 0.1 - 4-3-17
  */
 
-public class Exercise_09 {
-	public static void main(String[] args) {
+public class Exercise_09
+{
+	public static void main(String[] args)
+	{
 		//set variables
 		double width = 2.5;
 		double height = 7.9;

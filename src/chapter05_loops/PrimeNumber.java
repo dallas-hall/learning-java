@@ -39,8 +39,11 @@ public class PrimeNumber
 				{
 					// Display the number and advance to the new line
 					System.out.println(number);
-				} else
+				}
+				else
+				{
 					System.out.print(number + " ");
+				}
 			}
 			
 			// Check if the next number is prime

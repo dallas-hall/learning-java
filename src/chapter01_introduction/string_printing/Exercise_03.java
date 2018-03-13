@@ -13,12 +13,14 @@ package chapter01_introduction.string_printing;
  * @version 0.1 - 2-3-17
  */
 
-public class Exercise_03 {
+public class Exercise_03
+{
 	// Declare the array
 	private static String[] message = {"  ▄▄▄▄▄ ██       ▄   ██ ", "▄▀  █   █ █       █  █ █ ", "    █   █▄▄█ █     █ █▄▄█", " ▄ █    █  █  █    █ █  █ ", "  ▀        █   █  █     █ ", "          █     █▐     █ ", "         ▀      ▐     ▀ "};
 	
 	// Run the program
-	public static void main(String[] args) {
+	public static void main(String[] args)
+	{
 		System.out.println("\nHardcoded Version\n");
 		System.out.println("  ▄▄▄▄▄ ██       ▄   ██ ");
 		System.out.println("▄▀  █   █ █       █  █ █ ");
@@ -28,7 +30,8 @@ public class Exercise_03 {
 		System.out.println("          █     █▐     █ ");
 		System.out.println("         ▀      ▐     ▀ ");
 		System.out.println("\nLoop Through String[] Version\n");
-		for (int i = 0; i < message.length; i++) {
+		for (int i = 0; i < message.length; i++)
+		{
 			System.out.println(message[i]);
 		}
 	}

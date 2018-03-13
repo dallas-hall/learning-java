@@ -13,8 +13,10 @@ package chapter01_introduction.string_printing;
  * @version 0.1 - 2-3-17
  */
 
-public class Exercise_04 {
-	public static void main(String[] args) {
+public class Exercise_04
+{
+	public static void main(String[] args)
+	{
 		// HARD CODED
 		System.out.println("HARD CODED");
 		System.out.println("a\t\ta^2\t\ta^3");

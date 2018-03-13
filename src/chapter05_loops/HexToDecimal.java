@@ -15,10 +15,11 @@ import java.util.Scanner;
  * @author blindcant
  * @version 0.1 - 2018-03-10
  */
-public class HexToDecimal {
-	
+public class HexToDecimal
+{
 	//@@@ MAIN METHOD @@@
-	public static void main(String[] args) {
+	public static void main(String[] args)
+	{
 		boolean debugging = false;
 		System.out.println("@@@ Hex To Decimal @@@");
 		Scanner stdin = new Scanner(System.in);
@@ -26,17 +27,22 @@ public class HexToDecimal {
 		String hexInput = null;
 		
 		// ### Get user input ###
-		do {
-			try {
+		do
+		{
+			try
+			{
 				// Reset in case of previous failures
 				errorFound = false;
 				System.out.println("Enter a hexadecimal number.");
 				hexInput = stdin.nextLine().toUpperCase();
 				// Check for valid input
 				if (!hexInput.matches("^[0-9A-F-a-f]+$"))
+				{
 					throw new Exception();
+				}
 			}
-			catch (Exception e) {
+			catch (Exception e)
+			{
 				System.out.println("Hexadecimal numbers can only contain [0-9A-Fa-f].");
 				errorFound = true;
 			}
@@ -59,8 +65,10 @@ public class HexToDecimal {
 		j is the usual for loop style, starts at length - 1 and decrements b y 1
 		only loop while i is less than length - middle number, so we only process half the array otherwise we undo the start work
 		 */
-		for (int i = 0, j = hexCharsLittleEndianLength - 1; i < hexCharsLittleEndianLength - hexCharsLittleEndianMiddleIndex; i++, j--) {
-			if(debugging) {
+		for (int i = 0, j = hexCharsLittleEndianLength - 1; i < hexCharsLittleEndianLength - hexCharsLittleEndianMiddleIndex; i++, j--)
+		{
+			if (debugging)
+			{
 				System.out.println("Before swap, hexCharsLittleEndian[" + i + "] is: " + hexCharsLittleEndian[i]);
 				System.out.println("Before swap,hexCharsLittleEndian[" + j + "] is: " + hexCharsLittleEndian[j]);
 			}
@@ -70,7 +78,8 @@ public class HexToDecimal {
 			hexCharsLittleEndian[j] = hexCharsLittleEndian[i];
 			// Insert element towards to the start into the element towards the end
 			hexCharsLittleEndian[i] = tmpChar;
-			if(debugging) {
+			if (debugging)
+			{
 				System.out.println("After swap, hexCharsLittleEndian[" + i + "] is: " + hexCharsLittleEndian[i]);
 				System.out.println("After swap,hexCharsLittleEndian[" + j + "] is: " + hexCharsLittleEndian[j]);
 				System.out.println();
@@ -80,8 +89,10 @@ public class HexToDecimal {
 		
 		// *** Convert from hex to decimal ***
 		int[] decimalLittleEndian = new int[hexCharsLittleEndianLength];
-		for(int i = 0; i < hexCharsLittleEndianLength; i++) {
-			switch(hexCharsLittleEndian[i]) {
+		for (int i = 0; i < hexCharsLittleEndianLength; i++)
+		{
+			switch (hexCharsLittleEndian[i])
+			{
 				case '0':
 					decimalLittleEndian[i] = 0;
 					break;
@@ -137,19 +148,23 @@ public class HexToDecimal {
 		
 		// *** Calculate decimal from hex ***
 		int[] decimalBigEndian = new int[hexCharsLittleEndianLength];
-		for (int i = 0, j = hexCharsLittleEndianLength - 1; i < hexCharsLittleEndianLength; i++, j--) {
-			if(debugging)
+		for (int i = 0, j = hexCharsLittleEndianLength - 1; i < hexCharsLittleEndianLength; i++, j--)
+		{
+			if (debugging)
+			{
 				System.out.print("hexCharsLittleEndian[" + i + "] is " + hexCharsLittleEndian[i] + " ");
+			}
 			// Reverse the storage order
-			decimalBigEndian[i] = ((int)Math.pow(16, i)) * decimalLittleEndian[i];
+			decimalBigEndian[i] = ((int) Math.pow(16, i)) * decimalLittleEndian[i];
 		}
 		System.out.println(Arrays.toString(decimalBigEndian));
 		int decimalBigEndianLength = decimalBigEndian.length;
 		int answer = 0;
-		for(int i = 0; i < decimalBigEndianLength; i++) {
+		for (int i = 0; i < decimalBigEndianLength; i++)
+		{
 			answer += decimalBigEndian[i];
 		}
 		System.out.println("The hex number 0x" + hexInput + " is " + answer + " in decimal.");
 	}
-
+	
 }

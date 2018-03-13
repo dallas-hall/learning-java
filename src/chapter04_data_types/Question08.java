@@ -9,6 +9,7 @@ public class Question08
 {
 	//INSTANCE VARIABLES
 	private Scanner keyboard = new Scanner(System.in);
+
 	//MAIN METHOD
 	public static void main(String[] args)
 	{
@@ -22,7 +23,7 @@ public class Question08
 		int userInput = Integer.parseInt(keyboard.nextLine());
 		if (userInput >= 0 && userInput <= 127)
 		{
-			System.out.println("The character in ASCII code for " + userInput + " is: " + (char)userInput);
+			System.out.println("The character in ASCII code for " + userInput + " is: " + (char) userInput);
 		}
 		else
 		{

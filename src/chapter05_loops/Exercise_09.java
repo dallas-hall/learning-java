@@ -1,17 +1,22 @@
 package chapter05_loops;
 
 /**
- * @author:		Dallas Hall
- * @version:	0.1
- * @date:		1 Apr 2017
- * @program:	
+ * <h1>>Student Scoring</h1>
+ * <p>
+ * This program will ask for student names and scores and calculate the winner and the runner up.
+ * </p>
+ * <p>
+ * tags: do while; final;
+ * </p>
+ *
+ * @author blindcant
+ * @version 0.1 - 2017-04-01
  */
 
 import java.util.Scanner;
 
 public class Exercise_09
 {
-
     public static void main(String[] args)
     {
         boolean done = false;
@@ -33,7 +38,7 @@ public class Exercise_09
                 secondHighestScore = highestScore;
                 winnerName = tempName;
                 highestScore = tempScore;
-           }
+            }
             else if (tempScore < highestScore && tempScore > secondHighestScore)
             {
                 runnerupName = tempName;

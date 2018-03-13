@@ -1,23 +1,21 @@
-/**
- * 
- */
 package chapter05_loops;
 
 /**
- * @author: Dallas Hall
- * @version: 0.1
- * @date: 1 Apr 2017
- * @program:
+ * <h1>>Number Printing</h1>
+ * <p>
+ * This program will print all numbers between 0 and 1000 that are divisible by 5 or not 6.
+ * </p>
+ * <p>
+ * tags: for loop; if else;
+ * </p>
+ *
+ * @author blindcant
+ * @version 0.1 - 2017-04-01
  */
 public class Exercise_11
 {
-
-    /**
-     * @param args
-     */
     public static void main(String[] args)
     {
-        // TODO Auto-generated method stub
         // int startNumber = 100;
         final int PRINTS_PER_LINE = 10;
         int count = 0;
