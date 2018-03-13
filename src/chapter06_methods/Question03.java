@@ -1,7 +1,16 @@
 package chapter06_methods;
 
 /**
- * Created by blindcant on 24/04/17.
+ * <h1>>Palindrone Numbers</h1>
+ * <p>
+ * This program will ask for an integer and check if it is a palindrone number.
+ * </p>
+ * <p>
+ * tags: while loop; if else;
+ * </p>
+ *
+ * @author blindcant
+ * @version 0.1 - 2017-04-24
  */
 public class Question03
 {
@@ -16,7 +25,6 @@ public class Question03
 		Question03 run3 = new Question03(123421);
 		Question03 run4 = new Question03(43211234);
 		Question03 run5 = new Question03(4321234);
-		
 	}
 	
 	//CONSTRUCTOR(S)
@@ -37,8 +45,8 @@ public class Question03
 		
 		while (inputNumberAsLong != 0)
 		{
-			//times value by 10 to increase its place value
-			//modulo input long by 10 to extract the value in the ones place (by remove everything that isn't a ones)
+			//times value by 10 to increase its place value, so we can move it up one place value (e.g. 1 becomes 10)
+			//modulo input long by 10 to extract the value in the ones place and add that to our number (e.g. we get 5 and add to the 10 above, so now 15)
 			reversedNumber = reversedNumber * 10 + inputNumberAsLong % 10;
 			//divide by 10 to remove the value in the ones place
 			inputNumberAsLong = inputNumberAsLong / 10;

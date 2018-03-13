@@ -1,13 +1,20 @@
 package chapter06_methods;
 
 /**
- * Created by blindcant on 24/04/17.
+ * <h1>>Digit Addition</h1>
+ * <p>
+ * This program will ask for an integer and sum its digits. It uses modulo by 10 to extract each digit from the 1's place and integer division by 10 to remove the digit in the 1's place.
+ * </p>
+ * <p>
+ * tags: for loop; if else;
+ * </p>
+ *
+ * @author blindcant
+ * @version 0.1 - 2017-04-24
  */
 
 public class Question02
 {
-	//INSTANCE VARIABLES
-	
 	//MAIN METHOD
 	public static void main(String[] args)
 	{

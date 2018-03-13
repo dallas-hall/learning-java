@@ -1,30 +1,36 @@
 package chapter06_methods;
 
 /**
- * Created by blindcant on 24/04/17.
+ * <h1>>Manual Number Sorting</h1>
+ * <p>
+ * This program will generate random numbers and then sort them in ascending and descending order using nested if else logic.
+ * </p>
+ * <p>
+ * tags: Math.random; if else;
+ * </p>
+ *
+ * @author blindcant
+ * @version 0.1 - 2017-04-24
  */
-public class Question05
+public class Question05_Manual_Sorting
 {
-	//INSTANCE VARIABLES
-	
-	
 	//MAIN METHOD
 	public static void main(String[] args)
 	{
 		//create a random number between 0 and 15
-		Question05 run1 = new Question05((int)(Math.random() * 16), (int)(Math.random() * 16), (int)(Math.random() * 16));
+		Question05_Manual_Sorting run1 = new Question05_Manual_Sorting((int)(Math.random() * 16), (int)(Math.random() * 16), (int)(Math.random() * 16));
 		//create a random number between 0.n and 100.5n
-		Question05 run2 = new Question05((double)(Math.random() * 101.5), (double)(Math.random() * 101.5), (double)(Math.random() * 101.5));
+		Question05_Manual_Sorting run2 = new Question05_Manual_Sorting((double)(Math.random() * 101.5), (double)(Math.random() * 101.5), (double)(Math.random() * 101.5));
 		//create a random number between 0 and 1000
-		Question05 run3 = new Question05((int)(Math.random() * 1001), (int)(Math.random() * 1001), (int)(Math.random() * 1001));
+		Question05_Manual_Sorting run3 = new Question05_Manual_Sorting((int)(Math.random() * 1001), (int)(Math.random() * 1001), (int)(Math.random() * 1001));
 	}
 	
 	//CONSTRUCTOR(S)
-	Question05(double inputNumber1, double inputNumber2, double inputNumber3)
+	Question05_Manual_Sorting(double inputNumber1, double inputNumber2, double inputNumber3)
 	{
 		System.out.println("Starting numbers are: " + inputNumber1 + " " + inputNumber2 + " " + inputNumber3);
 		System.out.println("Ascending sorted numbers are: " + displaySortedNumbers(inputNumber1, inputNumber2, inputNumber3, 'a'));
-		System.out.println("Descending sortsortedStringed numbers are: " + displaySortedNumbers(inputNumber1, inputNumber2, inputNumber3, 'd'));
+		System.out.println("Descending sorted numbers are: " + displaySortedNumbers(inputNumber1, inputNumber2, inputNumber3, 'd'));
 		System.out.println();
 	}
 	
