@@ -1,7 +1,16 @@
 package chapter05_loops;
 
 /**
- * Created by blindcant on 24/04/17.
+ * <h1>>Hexadecimal Printing</h1>
+ * <p>
+ * This program will accept 1 valid hexadecimal digit and print its decimal equivalent.
+ * </p>
+ * <p>
+ * tags: for loop; if else;
+ * </p>
+ *
+ * @author blindcant
+ * @version 0.1 - 2017-04-24
  */
 
 import java.util.Scanner;

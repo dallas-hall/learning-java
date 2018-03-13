@@ -17,23 +17,30 @@ import java.util.Scanner;
  * @author blindcant
  * @version 0.1 - 2018-03-10
  */
-public class BinaryToDecimal {
+public class BinaryToDecimal
+{
 	//@@@ MAIN METHOD @@@
-	public static void main(String[] args) {
+	public static void main(String[] args)
+	{
 		System.out.println("@@@ Binary To Hexadecimal @@@");
 		boolean errorFound = false;
 		Scanner stdin = new Scanner(System.in);
 		String stringBinaryNumber = "0";
 		
-		do {
+		do
+		{
 			errorFound = false;
-			try {
+			try
+			{
 				System.out.println("Enter a binary number, leading zeros are optional.");
 				stringBinaryNumber = stdin.nextLine();
 				if (!stringBinaryNumber.matches("^[01]+$"))
+				{
 					throw new Exception();
+				}
 			}
-			catch (Exception e) {
+			catch (Exception e)
+			{
 				System.out.println("Binary numbers can only contain 0 and 1.");
 				errorFound = true;
 			}
@@ -44,7 +51,8 @@ public class BinaryToDecimal {
 		int stringBinaryNumberLength = stringBinaryNumber.length();
 		
 		int total = 0;
-		for (int i = 0, j = stringBinaryNumberLength - 1; i < stringBinaryNumberLength; i++, j--) {
+		for (int i = 0, j = stringBinaryNumberLength - 1; i < stringBinaryNumberLength; i++, j--)
+		{
 			//System.out.println("i is " + i + " and i's value is " + charArrayBinaryNumber[i] + " and j is " + j);
 			// Calculate the current power, and multiple that with the integer value of the char array index
 			total += ((int) Math.pow(2, j)) * Integer.parseInt(String.valueOf(stringBinaryNumber.charAt(i)));

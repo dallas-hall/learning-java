@@ -17,8 +17,10 @@ package chapter01_introduction.string_printing;
  * @version 0.1 - 4-3-17
  */
 
-public class Exercise_12 {
-	public static void main(String[] args) {
+public class Exercise_12
+{
+	public static void main(String[] args)
+	{
 		// Variables
 		final double distance_in_km = 24; //1 = 1km
 		final int time_in_seconds = ((60 * 60) + (60 * 40) + 35); //1 = 1 second, formula: (60 secs * 60 mins) + (60 secs * 40 mins) + 35 secs

@@ -13,8 +13,10 @@ package chapter01_introduction.string_printing;
  * @version 0.1 - 2-3-17
  */
 
-public class Exercise_01 {
-	public static void main(String[] args) {
+public class Exercise_01
+{
+	public static void main(String[] args)
+	{
 		//create strings
 		String message1 = new String("Welcome to Java,\n");
 		String message2 = new String("Welcome to Comp Sci,\n");

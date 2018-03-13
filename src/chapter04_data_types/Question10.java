@@ -7,7 +7,6 @@ import java.util.Scanner;
  */
 public class Question10
 {
-	
 	//INSTANCE VARIABLES
 	private Scanner keyboard = new Scanner(System.in);
 	
@@ -32,32 +31,32 @@ public class Question10
 			else if (userInput == 10)
 			{
 				//A = 65
-				System.out.println("The hex value for " + userInput + " is: " + (char)65);
+				System.out.println("The hex value for " + userInput + " is: " + (char) 65);
 			}
 			else if (userInput == 11)
 			{
 				//B = 66
-				System.out.println("The hex value for " + userInput + " is: " + (char)66);
+				System.out.println("The hex value for " + userInput + " is: " + (char) 66);
 			}
 			else if (userInput == 12)
 			{
 				//C = 67
-				System.out.println("The hex value for " + userInput + " is: " + (char)67);
+				System.out.println("The hex value for " + userInput + " is: " + (char) 67);
 			}
 			else if (userInput == 13)
 			{
 				//D = 68
-				System.out.println("The hex value for " + userInput + " is: " + (char)68);
+				System.out.println("The hex value for " + userInput + " is: " + (char) 68);
 			}
 			else if (userInput == 14)
 			{
 				//E = 69
-				System.out.println("The hex value for " + userInput + " is: " + (char)69);
+				System.out.println("The hex value for " + userInput + " is: " + (char) 69);
 			}
 			else
 			{
 				//F = 70
-				System.out.println("The hex value for " + userInput + " is: " + (char)70);
+				System.out.println("The hex value for " + userInput + " is: " + (char) 70);
 			}
 		}
 		else
@@ -65,6 +64,4 @@ public class Question10
 			System.out.println("Invalid input.");
 		}
 	}
-	
-	//METHODS
 }

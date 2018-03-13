@@ -13,8 +13,10 @@ package chapter01_introduction.string_printing;
  * @version 0.1 - 2-3-17
  */
 
-public class Exercise_08 {
-	public static void main(String[] args) {
+public class Exercise_08
+{
+	public static void main(String[] args)
+	{
 		//declare variables
 		double radius = 5.5;
 		double PI = Math.PI;

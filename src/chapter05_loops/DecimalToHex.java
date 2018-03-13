@@ -25,11 +25,13 @@ public class DecimalToHex
 	{
 		DecimalToHex runtime = new DecimalToHex();
 		int printCounter = 0;
-		for (int i = START_NUMBER; i <= FINAL_NUMBER; i++) {
+		for (int i = START_NUMBER; i <= FINAL_NUMBER; i++)
+		{
 			System.out.print(runtime.getHex(i) + " ");
 			// Print in 16 items to a line
 			printCounter++;
-			if (printCounter % 16 == 0) {
+			if (printCounter % 16 == 0)
+			{
 				System.out.println();
 			}
 		}
@@ -50,16 +52,20 @@ public class DecimalToHex
 		boolean padding = false;
 		
 		// Check if start number is 0 or evenly divisible by 16
-		if (current_number == 0) {
+		if (current_number == 0)
+		{
 			aStringBuffer.append('0');
 		}
-		else if (current_number % 16 == 0) {
+		else if (current_number % 16 == 0)
+		{
 			padding = true;
 		}
 		
 		// Process the number as many times as necessary
-		while (current_number > 0) {
-			if (current_number >= RADIX) {
+		while (current_number > 0)
+		{
+			if (current_number >= RADIX)
+			{
 				// Integer division by 16
 				int answer = current_number / RADIX;
 				// Convert answer to hex
@@ -67,13 +73,15 @@ public class DecimalToHex
 				// Get the remainder
 				current_number -= (RADIX * answer);
 			}
-			else {
+			else
+			{
 				aStringBuffer.append(convertDecimalToHex(current_number));
 				current_number -= current_number;
 			}
 		}
 		// If starting number a multiple of 16, we need to pad an extra 0 at the end
-		if (padding) {
+		if (padding)
+		{
 			aStringBuffer.append('0');
 		}
 		return String.format("0x%-4s", aStringBuffer.toString());
@@ -82,7 +90,8 @@ public class DecimalToHex
 	//### HELPERS ###
 	private String convertDecimalToHex(int number)
 	{
-		switch (number) {
+		switch (number)
+		{
 			case 10:
 				return ("A");
 			case 11:

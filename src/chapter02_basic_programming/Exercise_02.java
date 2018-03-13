@@ -17,12 +17,10 @@ import java.util.Scanner;
  * @author blindcant
  * @version 0.1 - 2017-03-13
  */
-public class Exercise_02 {
-	
-	/**
-	 * @param args
-	 */
-	public static void main(String[] args) {
+public class Exercise_02
+{
+	public static void main(String[] args)
+	{
 		//create variables
 		double PI = Math.PI;
 		

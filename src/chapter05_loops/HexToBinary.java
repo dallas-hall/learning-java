@@ -16,9 +16,11 @@ import java.util.Scanner;
  * @author blindcant
  * @version 0.1 - 2018-03-10
  */
-public class HexToBinary {
+public class HexToBinary
+{
 	//@@@ MAIN METHOD @@@
-	public static void main(String[] args) {
+	public static void main(String[] args)
+	{
 		Map<Character, String> hexToBinary = new HashMap<>();
 		hexToBinary.put('0', "0000");
 		hexToBinary.put('1', "0001");
@@ -42,18 +44,22 @@ public class HexToBinary {
 		boolean errorFound = false;
 		String hexInput = null;
 		
-		do {
-			try {
+		do
+		{
+			try
+			{
 				// Reset in case of previous failures
 				errorFound = false;
 				System.out.println("Enter a hexadecimal number.");
 				hexInput = stdin.nextLine().toLowerCase();
 				// Check for valid input
-				if (!hexInput.matches("^[0-9A-F-a-f]+$")) {
+				if (!hexInput.matches("^[0-9A-F-a-f]+$"))
+				{
 					throw new Exception();
 				}
 			}
-			catch (Exception e) {
+			catch (Exception e)
+			{
 				System.out.println("Hexadecimal numbers can only contain [0-9A-Fa-f].");
 				errorFound = true;
 			}
@@ -62,7 +68,8 @@ public class HexToBinary {
 		
 		// Convert valid hex to binary
 		int hexInputLength = hexInput.length();
-		for (int i = 0; i < hexInputLength; i++) {
+		for (int i = 0; i < hexInputLength; i++)
+		{
 			System.out.print(hexToBinary.get(hexInput.charAt(i)) + " ");
 		}
 	}

@@ -16,12 +16,11 @@ import java.util.Scanner;
  * @author blindcant
  * @version 0.1 - 2018-03-10
  */
-public class Fibonacci {
-	//@@@ INSTANCE VARIABLES @@@
-	
-	
+public class Fibonacci
+{
 	//@@@ MAIN METHOD @@@
-	public static void main(String[] args) {
+	public static void main(String[] args)
+	{
 		int firstNumber = 0;
 		int secondNumber = 1;
 		List<Integer> fibonacciNumbers = new ArrayList<>();
@@ -31,25 +30,35 @@ public class Fibonacci {
 		Scanner stdin = new Scanner(System.in);
 		boolean errorFound = false;
 		
-		do {
+		do
+		{
 			// Reset after previous attempts
 			errorFound = false;
-			try {
+			try
+			{
 				System.out.println("Enter the number to stop at.");
 				limit = stdin.nextInt();
-				if(limit <= 0)
+				if (limit <= 0)
+				{
 					throw new Exception();
-			} catch(Exception e) {
+				}
+			}
+			catch (Exception e)
+			{
 				System.out.println("The number must a positive integer.");
 				errorFound = true;
-			} finally {
+			}
+			finally
+			{
 				// Scanner bug
 				stdin.nextLine();
 			}
-		} while(errorFound);
+		}
+		while (errorFound);
 		
 		// Calculate Fibonacci numbers
-		for(int i = 0; i < limit; i++) {
+		for (int i = 0; i < limit; i++)
+		{
 			int result = firstNumber + secondNumber;
 			fibonacciNumbers.add(Integer.valueOf(result));
 			//System.out.println(firstNumber + " + " + secondNumber + " = " + result);
@@ -60,10 +69,12 @@ public class Fibonacci {
 		
 		// Print Fibonacci numbers
 		int counter = 1;
-		for(Integer anInteger : fibonacciNumbers) {
+		for (Integer anInteger : fibonacciNumbers)
+		{
 			System.out.print(anInteger + " ");
 			counter++;
-			if (counter % 10 == 0) {
+			if (counter % 10 == 0)
+			{
 				System.out.println();
 			}
 		}

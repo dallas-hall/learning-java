@@ -18,8 +18,10 @@ package chapter01_introduction.string_printing;
  * @version 0.1 - 4-3-17
  */
 
-public class Exercise_11 {
-	public static void main(String[] args) {
+public class Exercise_11
+{
+	public static void main(String[] args)
+	{
 		final int seconds_between_births = 7;
 		final int seconds_between_deaths = 13;
 		final int seconds_between_immigrants = 45;

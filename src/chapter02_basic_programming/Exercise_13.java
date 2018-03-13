@@ -17,14 +17,16 @@ import java.util.Scanner;
  * @author blindcant
  * @version 0.1 - 2018-03-10
  */
-public class Exercise_13 {
+public class Exercise_13
+{
 	//@@@ INSTANCE VARIABLES @@@
 	// Using concepts found here - https://stackoverflow.com/a/1359905
 	// Round to 6 decimal places, using 6 as currency conversion uses 6.
 	private static final BigDecimal MONTHLY_INTEREST_RATE = new BigDecimal(0.05 / 12).setScale(6, BigDecimal.ROUND_HALF_EVEN);
 	
 	//@@@ MAIN METHOD @@@
-	public static void main(String[] args) {
+	public static void main(String[] args)
+	{
 		Scanner stdin = new Scanner(System.in);
 		boolean errorFound = false;
 		BigDecimal investmentAmount = new BigDecimal("0.00");
@@ -40,45 +42,64 @@ public class Exercise_13 {
 		aud6Places.setMaximumFractionDigits(6);
 		
 		// Get user inputs
-		do {
+		do
+		{
 			// Reset for each run
 			errorFound = false;
 			System.out.println("Please enter the amount to invest each month.");
-			try {
+			try
+			{
 				investmentAmount = BigDecimal.valueOf(stdin.nextDouble());
 				// Round to 2 decimal places.
 				investmentAmount.setScale(2, BigDecimal.ROUND_HALF_UP);
 				if (investmentAmount.doubleValue() <= 0)
+				{
 					throw new Exception();
-			} catch (Exception e) {
+				}
+			}
+			catch (Exception e)
+			{
 				System.out.println("Please enter positive decimal numbers only.");
 				errorFound = true;
-			} finally {
+			}
+			finally
+			{
 				// Consume the newline character(s)
 				stdin.nextLine();
 			}
-		} while (errorFound);
+		}
+		while (errorFound);
 		
-		do {
+		do
+		{
 			// Reset for each run
 			errorFound = false;
 			System.out.println("Please enter how many months you will invest for.");
-			try {
+			try
+			{
 				investmentMonths = stdin.nextInt();
 				if (investmentMonths <= 0)
+				{
 					throw new Exception();
-			} catch (Exception e) {
+				}
+			}
+			catch (Exception e)
+			{
 				System.out.println("Please enter positive integers only.");
 				errorFound = true;
-			} finally {
+			}
+			finally
+			{
 				// Consume the newline character(s)
 				stdin.nextLine();
 			}
-		} while (errorFound);
+		}
+		while (errorFound);
 		
 		// Calculate and display
 
-		for(int i = 0; i < investmentMonths; i ++) {
+		for (int i = 0; i < investmentMonths; i++)
+		{
 			// Invest money
 			balance = balance.add(investmentAmount);
 			System.out.println("@@@ Month " + (i + 1) + " @@@\nCurrent balance before interest: " + aud2Places.format(balance));
@@ -91,6 +112,5 @@ public class Exercise_13 {
 			System.out.println("Current balance after interest: " + aud2Places.format(balance) + "\n");
 		}
 		System.out.println("Total money earnt was " + aud2Places.format(balance));
-		
 	}
 }

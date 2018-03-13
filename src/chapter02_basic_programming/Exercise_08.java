@@ -19,7 +19,6 @@ import java.util.Scanner;
  */
 public class Exercise_08
 {
-
 	public static void main(String[] args)
 	{
 		//get current time in milliseconds, since UNIX epoch (birth of UNIX)
@@ -63,5 +62,4 @@ public class Exercise_08
 		//display results
 		System.out.println("The current time in +" + (int) timeZoneOffSet + " GMT is: " + (int) adjustedCurrentHours + ":" + currentMinutes + ":" + currentSeconds);
 	}
-
 }
