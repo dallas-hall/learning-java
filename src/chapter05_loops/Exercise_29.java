@@ -42,7 +42,11 @@ public class Exercise_29
 			}
 			catch (Exception e)
 			{
-				System.out.println(e.getMessage());
+				if(e instanceof NumberFormatException)
+					System.out.println("Only numbers can be entered.");
+				else
+					System.out.println(e.getMessage());
+				errorFound = true;
 			}
 		} while (errorFound);
 		boolean isLeapYear = (year % 4 == 0 && year % 100 != 0) || (year % 400 == 0);
@@ -64,7 +68,11 @@ public class Exercise_29
 			}
 			catch (Exception e)
 			{
-				System.out.println(e.getMessage());
+				if(e instanceof NumberFormatException)
+					System.out.println("Only numbers can be entered.");
+				else
+					System.out.println(e.getMessage());
+				errorFound = true;
 			}
 		} while (errorFound);
 		
