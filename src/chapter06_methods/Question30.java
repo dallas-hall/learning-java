@@ -70,6 +70,7 @@ public class Question30
 					if (currentRollTotal == 12 || (currentRollTotal == 7 && currentGamePoint != 0))
 					{
 						System.out.println("Craps. You lose.");
+						currentGamePoint = 0;
 					}
 					else if((currentRollTotal == 7 && currentGamePoint == 0) || (currentRollTotal == 11 && currentGamePoint != 0))
 					{
