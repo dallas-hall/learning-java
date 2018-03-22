@@ -1,13 +1,16 @@
-/**
- * 
- */
 package chapter07_1d_arrays;
 
 /**
- * @author: blindcant
- * @version: 0.1
- * @date: 25 Mar 2017
- * @program:
+ * <h1>Array Reversing</h1>
+ * <p>
+ * This program will reverse an array's elements.
+ * </p>
+ * <p>
+ * tags:	array; array-reversal; for loop; System.arraycopy;
+ * </p>
+ *
+ * @author blindcant
+ * @version 0.1 - 2018-03-25
  */
 
 public class ArraySwapNoMethod
@@ -53,7 +56,6 @@ public class ArraySwapNoMethod
         }
 
         // print the array contents
-        // print the array contents
         System.out.print("{");
         for (int i = 0; i < list.length; i++)
         {
@@ -70,36 +72,3 @@ public class ArraySwapNoMethod
         System.out.println();
     }
 }
-// public class Test
-// {
-// public static void main(String[] args)
-// {
-// int[] list = {1, 2, 3, 5, 4};
-//
-// for (int i = 0; i < list.length; i++)
-// {
-// System.out.print(list[i]);
-// }
-// System.out.println();
-//
-// for (int i = 0, j = list.length - 1; i < list.length; i++, j--)
-// {
-// System.out.println("Before Swap: " + list[i] + " " + list[j]);
-// // Swap list[i] with list[j]
-// int temp = list[i];
-// list[i] = list[j];
-// list[j] = temp;
-// System.out.println("After Swap: " + list[i] + " " + list[j]);
-// for (int i2 = 0; i2 < list.length; i2++)
-// {
-// System.out.print(list[i2]);
-// }
-// System.out.println();
-// }
-//
-// for (int i = 0; i < list.length; i++)
-// {
-// System.out.print(list[i]);
-// }
-// }
-// }

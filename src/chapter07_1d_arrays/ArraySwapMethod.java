@@ -1,8 +1,20 @@
 package chapter07_1d_arrays;
 
+/**
+ * <h1>Array Swapping</h1>
+ * <p>
+ * This program will show the difference between pass by value and pass by reference, by trying to swap ints and array elements.
+ * </p>
+ * <p>
+ * tags:	pass by value; pass by reference;
+ * </p>
+ *
+ * @author blindcant
+ * @version 0.1 - 2018-03-25
+ */
+
 public class ArraySwapMethod
 {
-    /** Main method */
     public static void main(String[] args)
     {
         int[] a = {1, 2};

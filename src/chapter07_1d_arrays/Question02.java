@@ -1,15 +1,18 @@
-/**
- * 
- */
 package chapter07_1d_arrays;
 
 import java.util.Scanner;
 
 /**
- * @author:		blindcant
- * @version:	0.1
- * @date:		17 Apr 2017
- * @program:	
+ * <h1>Array Reversal</h1>
+ * <p>
+ * This program will accept number inputs and then return them in reverse order.
+ * </p>
+ * <p>
+ * tags:	Scanner; nextInt; for loop;
+ * </p>
+ *
+ * @author blindcant
+ * @version 0.1 - 2018-04-17
  */
 public class Question02
 {

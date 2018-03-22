@@ -1,25 +1,23 @@
-/**
- * 
- */
 package chapter07_1d_arrays;
 
 import java.util.Scanner;
 
 /**
- * @author: blindcant
- * @version: 0.1
- * @date: 17 Apr 2017
- * @program:
+ * <h1>Student Grading</h1>
+ * <p>
+ * This program will calculate grades based on the student scores.
+ * </p>
+ * <p>
+ * tags:	Scanner; nextInt; for loop;
+ * </p>
+ *
+ * @author blindcant
+ * @version 0.1 - 2018-04-17
  */
 public class Question01
 {
-
-    /**
-     * @param args
-     */
     public static void main(String[] args)
     {
-        // TODO Auto-generated method stub
         Scanner keyboard = new Scanner(System.in);
         int bestScore = Integer.MIN_VALUE;
 
