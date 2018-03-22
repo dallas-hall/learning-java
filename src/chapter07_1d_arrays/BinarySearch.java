@@ -4,10 +4,16 @@
 package chapter07_1d_arrays;
 
 /**
- * @author:		blindcant
- * @version:	0.1
- * @date:		10 Apr 2017
- * @program:	
+ * <h1>Binary Searching</h1>
+ * <p>
+ * This program will attempt to perform binary searching.
+ * </p>
+ * <p>
+ * tags:	binary searching; if-else; Math.random;
+ * </p>
+ *
+ * @author blindcant
+ * @version 0.1 - 2018-04-10
  */
 public class BinarySearch
 {
@@ -28,7 +34,7 @@ public class BinarySearch
         
         // search condition
         boolean done  = false;
-        
+        int attempts = 0;
         
         System.out.println("Starting binary search for a number between 0 and 100");
         System.out.println(NUMBER_TO_FIND);
@@ -37,18 +43,21 @@ public class BinarySearch
         {
             if (searchNumber == NUMBER_TO_FIND)
             {
-                System.out.println("Found: " + NUMBER_TO_FIND);
+                attempts++;
+                System.out.println("Found: " + NUMBER_TO_FIND + " in " + attempts + " attempts.");
                 done = true;
             }
             else if (searchNumber > NUMBER_TO_FIND)
             {
                 max = searchNumber; 
                 searchNumber = (min + max) / 2;
+                attempts++;
             }
             else if (searchNumber < NUMBER_TO_FIND)
             {
                 min = searchNumber; 
-                searchNumber = (min + max) / 2;              
+                searchNumber = (min + max) / 2;
+                attempts++;
             }
         }
     }

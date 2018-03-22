@@ -3,23 +3,21 @@ package chapter07_1d_arrays;
 import java.util.Scanner;
 
 /**
- * @author:		blindcant
- * @version:	0.1
- * @date:		17 Apr 2017
- * @program:	
+ * <h1>Number Average</h1>
+ * <p>
+ * This program will accept number inputs and then return the average of them as an int and double.
+ * </p>
+ * <p>
+ * tags:	Scanner; nextInt; for loop;
+ * </p>
+ *
+ * @author blindcant
+ * @version 0.1 - 2018-04-17
  */
 public class Question08
 {
-
-    /**
-     * @param args
-     */
-
-    
-    
     public static void main(String[] args)
     {
-        // TODO Auto-generated method stub
 
         Scanner keyboard = new Scanner(System.in);
         double[] number = new double[10];

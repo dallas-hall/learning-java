@@ -1,6 +1,3 @@
-/**
- * 
- */
 package chapter07_1d_arrays;
 
 public class Count

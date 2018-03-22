@@ -1,22 +1,21 @@
-/**
- * 
- */
 package chapter07_1d_arrays;
 
 import java.util.Scanner;
 
 /**
- * @author:		blindcant
- * @version:	0.1
- * @date:		17 Apr 2017
- * @program:	
+ * <h1>Input Counting</h1>
+ * <p>
+ * This program will accept number inputs and return how many times they were inputted.
+ * </p>
+ * <p>
+ * tags:	Scanner; nextInt; for loop;
+ * </p>
+ *
+ * @author blindcant
+ * @version 0.1 - 2018-04-17
  */
 public class Question03
 {
-
-    /**
-     * @param args
-     */
     public static void main(String[] args)
     {
         Scanner keyboard = new Scanner(System.in);
@@ -36,11 +35,7 @@ public class Question03
             {
                 System.out.println("Enter a number between >= 1 or <= 99");
             }
-            else
-            {
-                done = true;
-            }
-        } while (!done);
+        } while (inputCount < 10);
                 
         for (int i = 0; i < inputCount; i++)
         {
