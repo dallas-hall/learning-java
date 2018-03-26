@@ -1,4 +1,4 @@
-package chapter03_selections;
+package chapter04_data_types;
 
 import java.util.Random;
 // PRNG for >= Java 1.7
@@ -27,12 +27,14 @@ public class PseudoRandomNumberGenerator
 	{
 		//create objects
 		PseudoRandomNumberGenerator defaultSeedBit = new PseudoRandomNumberGenerator();
+		PseudoRandomNumberGenerator seedBit8 = new PseudoRandomNumberGenerator(8);
 		PseudoRandomNumberGenerator seedBit128 = new PseudoRandomNumberGenerator(128);
 		PseudoRandomNumberGenerator seedBit256 = new PseudoRandomNumberGenerator(256);
 		PseudoRandomNumberGenerator seedBit512 = new PseudoRandomNumberGenerator(512);
 		
 		//print stuff using objects
 		defaultSeedBit.prngDefault(10);
+		seedBit8.prngUser(16, 8);
 		seedBit128.prngUser(16, 128);
 		seedBit256.prngUser(16, 256);
 		seedBit512.prngUser(16, 512);
