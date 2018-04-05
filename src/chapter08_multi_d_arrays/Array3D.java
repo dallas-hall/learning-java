@@ -1,11 +1,22 @@
 package chapter08_multi_d_arrays;
 
+
 /**
- * Created by blindcant on 30/04/17.
+ * <h1>3D Array Example</h1>
+ * <p>
+ * This program will create a 3 x 3 x 6 and 2 x 2 x 2 3d array. It will demonstrate 3d arrays lengths and processing.
+ * </p>
+ * <p>
+ * tags:	int[][]; nested for loops;
+ * </p>
  *
- * That left to right trick is good, I understand 3D arrays now based on that
+ * The trick to reading multi-dimensional arrays is reading the brackets from left to right, each iteration
+ * of brackets means another level high dimensionally.
  * So for example, int[][][] x = new int[3][3][6]; has 3 rows, 3 columns, with 6 elements in the cell
  * And understanding that multi-dimensional arrays are just an array of arrays really helps as well
+ *
+ * @author blindcant
+ * @version 0.1 - 2017-04-30
  */
 public class Array3D
 {
@@ -35,12 +46,6 @@ public class Array3D
 	
 	public void print3DArray()
 	{
-	/*
-	That left to right trick is good, I understand 3D arrays now based on that
-	So for example, int[][][] x = new array[2][2][2]; has 2 rows, 2 columns, with 2 elements in the cell
-	And understanding that multi-dimensional arrays are just an array of arrays really helps as well
-	*/
-		
 		int[][][] array = {{{1, 2}, {3, 4}}, {{5, 6}, {7, 8}}};
 		
 		System.out.println();

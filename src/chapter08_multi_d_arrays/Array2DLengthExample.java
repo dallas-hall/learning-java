@@ -1,8 +1,18 @@
 package chapter08_multi_d_arrays;
 
 /**
- * Created by blindcant on 30/04/17.
+ * <h1>2D Array Length</h1>
+ * <p>
+ * This program will manually and automatically show the lengths of a 2d array.
+ * </p>
+ * <p>
+ * tags:	char[][]; nested for loops;
+ * </p>
+ *
+ * @author blindcant
+ * @version 0.1 - 2017-04-30
  */
+
 public class Array2DLengthExample
 {
 	public static void main(String[] args)

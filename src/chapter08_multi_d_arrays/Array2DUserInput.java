@@ -3,7 +3,16 @@ package chapter08_multi_d_arrays;
 import java.util.Scanner;
 
 /**
- * Created by blindcant on 30/04/17.
+ * <h1>2D Array & Random Numbers </h1>
+ * <p>
+ * This program will create a 3 x 3 2d array and fill it with numbers inputted by the user.
+ * </p>
+ * <p>
+ * tags:	int[][]; nested for loops;
+ * </p>
+ *
+ * @author blindcant
+ * @version 0.1 - 2017-04-30
  */
 public class Array2DUserInput
 {
