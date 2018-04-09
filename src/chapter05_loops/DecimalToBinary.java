@@ -45,7 +45,7 @@ public class DecimalToBinary
 	
 	//@@@ METHODS @@@
 	//### GETTERS ###
-	private String getBinary(int current_number)
+	public static String getBinary(int current_number)
 	{
 		StringBuffer aStringBuffer = new StringBuffer();
 		

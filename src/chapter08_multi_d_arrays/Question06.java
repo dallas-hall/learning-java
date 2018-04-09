@@ -1,10 +1,9 @@
 package chapter08_multi_d_arrays;
 
-import java.util.Arrays;
 import java.util.concurrent.ThreadLocalRandom;
 
 /**
- * <h1>Matrices Addition</h1>
+ * <h1>Matrices Multiplication</h1>
  * <p>
  * This program will create 2 x 2d arrays with random numbers, and then add each together.
  * </p>
@@ -13,9 +12,9 @@ import java.util.concurrent.ThreadLocalRandom;
  * </p>
  *
  * @author blindcant
- * @version 0.1 - 2018-04-05
+ * @version 0.1 - 2018-04-09
  */
-public class Question05
+public class Question06
 {
 	//@@@ MAIN METHOD @@@
 	public static void main(String[] args) {
@@ -26,7 +25,7 @@ public class Question05
 		setArray(b);
 		printArray(a);
 		printArray(b);
-		int[][] c = addArrays(a, b);
+		int[][] c = multiplyArrays(a, b);
 		//printArray(c);
 		
 	}
@@ -36,18 +35,18 @@ public class Question05
 	public static void setArray(int[][] c) {
 		for(int i = 0; i < c.length; i++) {
 			for(int j = 0; j < c[i].length; j++) {
-				c[i][j] = ThreadLocalRandom.current().nextInt(1,11);
+				c[i][j] = ThreadLocalRandom.current().nextInt(1, 11);
 			}
 		}
 	}
 	
-	public static int[][] addArrays(int[][] a, int[][] b) {
-		System.out.println("[INFO] Calculating input arrays & printing final array.");
+	public static int[][] multiplyArrays(int[][] a, int[][] b) {
+		System.out.println("Calculating input arrays & printing final array.");
 		int[][] c = new int[a.length][b.length];
 		for(int i = 0; i < a.length; i++) {
 			for(int j = 0; j < a[i].length; j++) {
-				System.out.print(a[i][j] + " + " + b[i][j] + " = " + (a[i][j] +  b[i][j]) + " ");
-				c[i][j] = a[i][j] +  b[i][j];
+				System.out.print(a[i][j] + " * " + b[i][j] + " = " + (a[i][j] *  b[i][j]) + " ");
+				c[i][j] = a[i][j] *  b[i][j];
 			}
 			System.out.println();
 		}
@@ -56,7 +55,7 @@ public class Question05
 	
 	//### HELPERS ###
 	public static void printArray(int[][] a) {
-		System.out.println("[INFO] Printing array.");
+		System.out.println("Printing array.");
 		for(int i = 0; i < a.length; i++) {
 			for(int j = 0; j < a[i].length; j++) {
 				System.out.print(a[i][j] + " ");
@@ -65,4 +64,3 @@ public class Question05
 		}
 	}
 }
-
