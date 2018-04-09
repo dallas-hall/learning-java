@@ -25,7 +25,7 @@ public class SelectionSorting
 		System.out.println(java.util.Arrays.toString(list));
 		
 		//go through each index once, hold here for inner loop
-		for (int i = 0; i < list.length - 1; i++)
+		for (int i = 0; i < list.length; i++)
 		{
 			int currentMin = list[i];
 			int currentMinIndex = i;
