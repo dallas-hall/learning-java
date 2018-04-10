@@ -17,56 +17,72 @@ import java.util.concurrent.ThreadLocalRandom;
  */
 public class Question16
 {
+	//@@@ INSTANCE VARIABLES @@@
+	private static boolean debugging = true;
+	
 	//@@@ MAIN METHOD @@@
 	public static void main(String[] args)
 	{
-		int[][] startArray = new int[3][3];
+/*		int[][] startArray = new int[3][3];
 		for (int i = 0; i < startArray.length; i++) {
 			for (int j = 0; j < startArray[i].length; j++) {
 				startArray[i][j] = ThreadLocalRandom.current().nextInt(1, 11);
 			}
-		}
-		System.out.println(Arrays.deepToString(startArray));
+		}*/
+		int[][] startArray = {{4, 2, 2}, {3, 2, 1}, {1, 2, 2}, {6, 1, 1}};
 		sortArray(startArray, true);
 		System.out.println(Arrays.deepToString(startArray));
 	}
 	
 	//@@@ METHODS @@@
-	//### GETTERS ###
-	
 	//### SETTERS ###
-	public static int[][] sortArray(int[][] anArray, boolean ascending)
+	public static void sortArray(int[][] anArray, boolean ascending)
 	{
-		// Row sorting
+		System.out.println("Before column sorting:\n" + Arrays.deepToString(anArray));
+		// Row check
 		for (int i = 0; i < anArray.length; i++) {
+			// Column check
 			for (int j = 0; j < anArray[i].length; j++) {
 				int currentMin = anArray[i][j];
 				int currentMinIndex = j;
-				//search the rest of the array and look for a smaller number
+				// Search all the arrays and swap accordingly (descending or ascending order)
 				for (int k = j + 1; k < anArray[i].length; k++) {
 					// < is ascending, > is descending
-					if(ascending) {
+					if (ascending) {
 						if (anArray[i][k] < currentMin) {
 							currentMin = anArray[i][k];
 							currentMinIndex = k;
 						}
-					} else {
+					}
+					else {
 						if (anArray[i][k] > currentMin) {
 							currentMin = anArray[i][k];
 							currentMinIndex = k;
 						}
 					}
 				}
-				
-				//if one is found and it isn't in the same position, swap
+				// If one is found and it isn't in the same position, swap
 				if (currentMinIndex != j) {
 					anArray[i][currentMinIndex] = anArray[i][j];
 					anArray[i][j] = currentMin;
 				}
 			}
 		}
-		
-		// Column sorting
-		return anArray;
+		System.out.println("Before array sorting:\n" + Arrays.deepToString(anArray));
+		// Row check
+		for (int i = 0; i < anArray.length; i++) {
+			int indexToCheck = 0;
+			// Column check
+			for (int j = 0; j < anArray[i].length; j++) {
+				// Search all the arrays and swap accordingly (descending or ascending order)
+				int[] tempArray;
+				if(anArray[j][indexToCheck] > anArray[j + 1][indexToCheck]) {
+					tempArray = Arrays.copyOf(anArray[j], anArray[j].length);
+					anArray[j] = Arrays.copyOf(anArray[j + 1], anArray[j + 1].length);;
+					anArray[j + 1] = Arrays.copyOf(tempArray, tempArray.length);;
+				}
+			}
+		}
+		System.out.println("After array sorting:\n" + Arrays.deepToString(anArray));
 	}
 }
