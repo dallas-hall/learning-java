@@ -8,7 +8,7 @@ import java.util.concurrent.ThreadLocalRandom;
  * This program generate a 2D array will with random ints and will return the position of the largest value.
  * </p>
  * <p>
- * tags:	<insert concept tags here for training code only>
+ * tags:	Integer.MIN_VALUE; 2d array; nested for loops;
  * </p>
  *
  * @author blindcant

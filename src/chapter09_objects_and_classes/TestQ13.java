@@ -8,7 +8,7 @@ import java.util.Arrays;
  * This program will create the Q13 object and run it.
  * </p>
  * <p>
- * tags:	<insert concept tags here for training code only>
+ * tags:	Arrays.deepToString;
  * </p>
  *
  * @author blindcant
@@ -36,7 +36,5 @@ public class TestQ13
 		System.out.println(Arrays.deepToString(numbers));
 		System.out.println("The maximum value found is: " + runtime.getMaximumValue());
 		System.out.println("The position it was found in was: [" + runtime.getRow() + "," + runtime.getColumn() + "]");
-		
-		
 	}
 }
