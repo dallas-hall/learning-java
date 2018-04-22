@@ -3,25 +3,33 @@ package chapter10_oop;
 import java.awt.geom.Point2D;
 
 /**
- * Created by blindcant on 23/04/17.
+ * <h1>Grid Coordinates</h1>
+ * <p>
+ * This program will create some grid coordinates using the Point2D class and then show the coordinates and calculate the distance between them.
+ * </p>
+ * <p>
+ * tags:	Point2D; grid points; grid coordinates;
+ * </p>
+ *
+ * @author blindcant
+ * @version 0.1 - 2017-04-23
  */
 public class Question04
 {
-	//INSTANCE VARIABLES
+	//@@@ INSTANCE VARIABLES @@@
 	private double x;
 	private double y;
 	
-	//MAIN METHOD
+	//@@@ MAIN METHOD @@@
 	public static void main(String[] args)
 	{
 		//POINT 1 SETUP
-		
 		//manual way
 /*		Question04 point1Coordinates = new Question04(0,0);
 		System.out.println("Current coordinates for point1 are: x:" + point1Coordinates.getX() + " & y:" + point1Coordinates.getY());*/
 		
 		//using Point2D class
-		Point2D point1Object = new Point2D.Double(0,0);
+		Point2D point1Object = new Point2D.Double(0, 0);
 		System.out.println("Current coordinates for point1 are: x:" + point1Object.getX() + " & y:" + point1Object.getY());
 		
 		//POINT 2 SETUP
@@ -30,7 +38,7 @@ public class Question04
 		System.out.println("Current coordinates for point1 are: x:" + point1Coordinates.getX() + " & y:" + point1Coordinates.getY());*/
 		
 		//using Point2D class
-		Point2D point2Object = new Point2D.Double(10,30.5);
+		Point2D point2Object = new Point2D.Double(10, 30.5);
 		System.out.println("Current coordinates for point1 are: x:" + point2Object.getX() + " & y:" + point2Object.getY());
 		
 		//SHOW DISTANCE BETWEEN THE 2 POINTS
@@ -39,19 +47,19 @@ public class Question04
 				")and point2 is (" + point2Coordinates.getX() + " & " + point2Coordinates.getY() + ") is : "+ point1_2D.distance(point2_2D));*/
 		
 		//Using Point2D class
-		System.out.println("The distance between point1 (" + point1Object.getX() + " & " + point1Object.getY() +
-				") and point2 is (" + point2Object.getX() + " & " + point2Object.getY() + ") is : " + point1Object.distance(point2Object));
+		System.out.println("The distance between point1 (" + point1Object.getX() + " & " + point1Object.getY() + ") and point2 is (" + point2Object.getX() + " & " + point2Object.getY() + ") is : " + point1Object.distance(point2Object));
 		System.out.println("Conversely, between point2 and point1 is: " + point1Object.distance(point2Object));
 	}
 	
-	//CONSTRUCTORS
+	//@@@ CONSTRUCTOR(S) @@@
 	public Question04(double x, double y)
 	{
 		this.x = x;
 		this.y = y;
 	}
 	
-	//METHODS
+	//@@@ METHODS @@@
+	//### GETTERS ###
 	public double getX()
 	{
 		return this.x;

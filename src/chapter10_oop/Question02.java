@@ -1,19 +1,30 @@
 package chapter10_oop;
 
 /**
- * Created by blindcant on 23/04/17.
+ * <h1>BMI Calculator</h1>
+ * <p>
+ * This program will calculate BMI.
+ * </p>
+ * <p>
+ * tags:	BMI fomular; kilograms per pound; meters per inch;
+ * </p>
+ *
+ * @author blindcant
+ * @version 0.1 - 2017-04-23
  */
 public class Question02
 {
-	//INSTANCE VARIABLES
+	//@@@ CLASS VARIABLES @@@
+	public static final double KILOGRAMS_PER_POUND = 0.45359237;
+	public static final double METERS_PER_INCH = 0.0254;
+	
+	//@@@ INSTANCE VARIABLES @@@
 	private String name;
 	private int age;
 	private double weight; // in pounds
 	private double height; // in inches
-	public static final double KILOGRAMS_PER_POUND = 0.45359237;
-	public static final double METERS_PER_INCH = 0.0254;
 	
-	//MAIN
+	//@@@ MAIN METHOD @@@
 	public static void main(String[] args)
 	{
 		Question02 bmi1 = new Question02("Dallas", 35, 300, 6, 4);
@@ -21,7 +32,7 @@ public class Question02
 		System.out.println(bmi1.getStatus());
 	}
 	
-	//CONSTRUCTORS
+	//@@@ CONSTRUCTOR(S) @@@
 	public Question02 (String name, int age, double weight, double height)
 	{
 		this.name = name;
@@ -44,7 +55,8 @@ public class Question02
 		this.height = (heightFeet * 12) + heightInches;
 	}
 	
-	//GETTERS
+	//@@@ METHODS @@@
+	//### GETTERS ###
 	public double getBMI()
 	{
 		double bmi = weight * KILOGRAMS_PER_POUND / ((height * METERS_PER_INCH) * (height * METERS_PER_INCH));
