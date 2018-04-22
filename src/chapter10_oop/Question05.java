@@ -5,12 +5,12 @@ import java.util.List;
 import java.util.Scanner;
 
 /**
- * <h1>Grid Coordinates</h1>
+ * <h1>Factor Finder</h1>
  * <p>
- * This program will create some grid coordinates using the Point2D class and then show the coordinates and calculate the distance between them.
+ * This program will find all the factors of an inputted number. It will display the factor pairs and print which factors are prime and which are not.
  * </p>
  * <p>
- * tags:	Point2D; grid points; grid coordinates;
+ * tags:	prime; factor pairs; composite; Scanner; do while; List; ArrayList; int[]; polymorphism
  * </p>
  *
  * @author blindcant
@@ -30,8 +30,25 @@ public class Question05
 	//@@@ MAIN METHOD @@@
 	public static void main(String[] args)
 	{
-		System.out.print("Enter an integer: ");
-		int userInput = Integer.parseInt(keyboard.nextLine());
+		boolean done = false;
+		boolean errorFound = false;
+		int userInput = 0;
+		do {
+			try {
+				// Reset in case of previous run.
+				errorFound = false;
+				System.out.print("Enter an integer: ");
+				userInput = Integer.parseInt(keyboard.nextLine());
+			}
+			catch (Exception e) {
+				System.out.println("You can only enter integers. Try again.");
+				errorFound = true;
+			}
+			if(!errorFound)
+				done = true;
+		}
+		while (!done);
+		
 		Question03 question03 = new Question03();
 		Question05 run1 = new Question05(userInput);
 		run1.runTest(userInput, question03);
@@ -56,10 +73,8 @@ public class Question05
 	{
 		int arraySize = getArraySize();
 		int max = Integer.MIN_VALUE;
-		for (int i = 0; i < arraySize; i++)
-		{
-			if (inputArray[i] > max)
-			{
+		for (int i = 0; i < arraySize; i++) {
+			if (inputArray[i] > max) {
 				max = inputArray[i];
 			}
 		}
@@ -69,11 +84,9 @@ public class Question05
 	//### SETTERS ###
 	public void setFactorsIntoArray(int inputNumber)
 	{
-		for (int i = 0, divisor = 1; divisor <= inputNumber; divisor++)
-		{
-			if (inputNumber % divisor == 0)
-			{
-				factorsArray[i]=divisor;
+		for (int i = 0, divisor = 1; divisor <= inputNumber; divisor++) {
+			if (inputNumber % divisor == 0) {
+				factorsArray[i] = divisor;
 				this.arraySize++;
 				i++;
 			}
@@ -82,10 +95,8 @@ public class Question05
 	
 	public void setFactorsIntoList(int inputNumber)
 	{
-		for (int divisor = 1; divisor <= inputNumber; divisor++)
-		{
-			if (inputNumber % divisor == 0)
-			{
+		for (int divisor = 1; divisor <= inputNumber; divisor++) {
+			if (inputNumber % divisor == 0) {
 				factorsList.add(divisor);
 			}
 		}
@@ -95,8 +106,7 @@ public class Question05
 	public void printFactorsFromArray(int[] inputArray)
 	{
 		int arraySize = getArraySize();
-		for (int i = 0; i < arraySize; i++)
-		{
+		for (int i = 0; i < arraySize; i++) {
 			System.out.print(inputArray[i] + " ");
 		}
 		System.out.println();
@@ -113,8 +123,7 @@ public class Question05
 	public void printFactorPairsFromArray(int[] inputArray)
 	{
 		int arraySize = getArraySize();
-		for (int i = 0; i < arraySize; i++)
-		{
+		for (int i = 0; i < arraySize; i++) {
 			// Use i to get the corresponding factor pairs. E.g. 0 and size -1, 1 and size - 2, etcetera.
 			System.out.print(inputArray[i] + " & " + inputArray[arraySize - (i + 1)] + ". ");
 		}
@@ -134,10 +143,8 @@ public class Question05
 	public void printPrimeFactorsFromArray(int[] inputArray, Question03 question03)
 	{
 		int arraySize = getArraySize();
-		for (int i = 0; i < arraySize; i++)
-		{
-			if (question03.isPrime2(inputArray[i]))
-			{
+		for (int i = 0; i < arraySize; i++) {
+			if (question03.isPrime2(inputArray[i])) {
 				System.out.print(inputArray[i] + " ");
 			}
 		}
@@ -146,9 +153,10 @@ public class Question05
 	
 	public void printPrimeFactorsFromList(Question03 question03)
 	{
-		for(Integer anInt : factorsList) {
-			if (question03.isPrime2(anInt))
+		for (Integer anInt : factorsList) {
+			if (question03.isPrime2(anInt)) {
 				System.out.print(anInt + " ");
+			}
 		}
 		System.out.println();
 	}
@@ -156,10 +164,8 @@ public class Question05
 	public void printNonPrimeFactorsFromArray(int[] inputArray, Question03 question03)
 	{
 		int arraySize = getArraySize();
-		for (int i = 0; i < arraySize; i++)
-		{
-			if (!question03.isPrime2(inputArray[i]))
-			{
+		for (int i = 0; i < arraySize; i++) {
+			if (!question03.isPrime2(inputArray[i])) {
 				System.out.print(inputArray[i] + " ");
 			}
 		}
@@ -168,16 +174,17 @@ public class Question05
 	
 	public void printNonPrimeFactorsFromList(Question03 question03)
 	{
-		for(Integer anInt : factorsList) {
-			if (!question03.isPrime2(anInt))
+		for (Integer anInt : factorsList) {
+			if (!question03.isPrime2(anInt)) {
 				System.out.print(anInt + " ");
+			}
 		}
 		System.out.println();
 	}
 	
 	public void runTest(int startNumber, Question03 question03)
 	{
-		System.out.println("@@@ Array Test @@@");
+		System.out.println("\n@@@ Array Test @@@");
 		setFactorsIntoArray(startNumber);
 		System.out.println("All factors for " + startNumber + " are:");
 		printFactorsFromArray(this.factorsArray);
