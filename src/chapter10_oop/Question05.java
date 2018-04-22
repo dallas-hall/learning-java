@@ -23,7 +23,7 @@ public class Question05
 	
 	//@@@ INSTANCE VARIABLES @@@
 	private int[] factorsArray;
-	private List factorsList;
+	private List<Integer> factorsList;
 	private int arraySize = 0;
 	private final int MAX_NUMBER = 120;
 	
@@ -42,8 +42,7 @@ public class Question05
 	{
 		//assuming that every number will less factors than half of itself + 1
 		factorsArray = new int[startNumber / 2 + 1];
-		factorsList = new ArrayList();
-	
+		factorsList = new ArrayList<>();
 	}
 	
 	//@@@ METHODS @@@
@@ -67,8 +66,8 @@ public class Question05
 		return max;
 	}
 	
-	
-	public void getFactorsFromArray(int inputNumber)
+	//### SETTERS ###
+	public void setFactorsIntoArray(int inputNumber)
 	{
 		for (int i = 0, divisor = 1; divisor <= inputNumber; divisor++)
 		{
@@ -77,6 +76,17 @@ public class Question05
 				factorsArray[i]=divisor;
 				this.arraySize++;
 				i++;
+			}
+		}
+	}
+	
+	public void setFactorsIntoList(int inputNumber)
+	{
+		for (int divisor = 1; divisor <= inputNumber; divisor++)
+		{
+			if (inputNumber % divisor == 0)
+			{
+				factorsList.add(divisor);
 			}
 		}
 	}
@@ -92,12 +102,31 @@ public class Question05
 		System.out.println();
 	}
 	
-	public void printFactorsFromArrayPairs(int[] inputArray)
+	public void printFactorsFromList()
+	{
+		for (Integer anInt : factorsList) {
+			System.out.print(anInt + " ");
+		}
+		System.out.println();
+	}
+	
+	public void printFactorPairsFromArray(int[] inputArray)
 	{
 		int arraySize = getArraySize();
 		for (int i = 0; i < arraySize; i++)
 		{
+			// Use i to get the corresponding factor pairs. E.g. 0 and size -1, 1 and size - 2, etcetera.
 			System.out.print(inputArray[i] + " & " + inputArray[arraySize - (i + 1)] + ". ");
+		}
+		System.out.println();
+	}
+	
+	public void printFactorPairsFromList()
+	{
+		int i = 0;
+		for (Integer anInt : factorsList) {
+			System.out.print(factorsList.get(i) + " & " + factorsList.get(factorsList.size() - (i + 1)) + ". ");
+			i++;
 		}
 		System.out.println();
 	}
@@ -111,10 +140,15 @@ public class Question05
 			{
 				System.out.print(inputArray[i] + " ");
 			}
-			else
-			{
-				continue;
-			}
+		}
+		System.out.println();
+	}
+	
+	public void printPrimeFactorsFromList(Question03 question03)
+	{
+		for(Integer anInt : factorsList) {
+			if (question03.isPrime2(anInt))
+				System.out.print(anInt + " ");
 		}
 		System.out.println();
 	}
@@ -128,25 +162,41 @@ public class Question05
 			{
 				System.out.print(inputArray[i] + " ");
 			}
-			else
-			{
-				continue;
-			}
+		}
+		System.out.println();
+	}
+	
+	public void printNonPrimeFactorsFromList(Question03 question03)
+	{
+		for(Integer anInt : factorsList) {
+			if (!question03.isPrime2(anInt))
+				System.out.print(anInt + " ");
 		}
 		System.out.println();
 	}
 	
 	public void runTest(int startNumber, Question03 question03)
 	{
-		getFactorsFromArray(startNumber);
+		System.out.println("@@@ Array Test @@@");
+		setFactorsIntoArray(startNumber);
 		System.out.println("All factors for " + startNumber + " are:");
 		printFactorsFromArray(this.factorsArray);
 		System.out.println("The factor pairs for " + startNumber + " are:");
-		printFactorsFromArrayPairs(this.factorsArray);
+		printFactorPairsFromArray(this.factorsArray);
 		System.out.println("The prime factors for " + startNumber + " are:");
 		printPrimeFactorsFromArray(this.factorsArray, question03);
 		System.out.println("The non-prime factors for " + startNumber + " are:");
 		printNonPrimeFactorsFromArray(this.factorsArray, question03);
-		//System.out.println(startNumber);
+		
+		System.out.println("\n@@@ ArrayList Test @@@");
+		setFactorsIntoList(startNumber);
+		System.out.println("All factors for " + startNumber + " are:");
+		printFactorsFromList();
+		System.out.println("The factor pairs for " + startNumber + " are:");
+		printFactorPairsFromList();
+		System.out.println("The prime factors for " + startNumber + " are:");
+		printPrimeFactorsFromList(question03);
+		System.out.println("The non-prime factors for " + startNumber + " are:");
+		printNonPrimeFactorsFromList(question03);
 	}
 }
