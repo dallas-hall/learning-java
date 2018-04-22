@@ -1,47 +1,58 @@
 package chapter10_oop;
 
 // PRNG for >= Java 1.7
+
 import java.util.concurrent.ThreadLocalRandom;
 import java.util.Arrays;
 
 /**
- * Write a description of class IntegerArraySorting here.
+ * <h1>Integer Array Sorting</h1>
+ * <p>
+ * This program will sort an integer array in ascending order and print it. It can either use the Java library and a custom method to do this.
+ * </p>
+ * <p>
+ * tags:	ThreadLocalRandom.next(); System.arraycopy; Arrays.sort;
+ * </p>
  *
- * @author (your name)
- * @version (a version number or a date)
+ * @author blindcant
+ * @version 0.1 - 2018-04-23
  */
+
 public class IntegerArraySorting
 {
-	// instance variables - replace the example below with your own
-	private int[] intArray =
-			{
-					ThreadLocalRandom.current().nextInt(1, 101)
-					,ThreadLocalRandom.current().nextInt(1, 101)
-					,ThreadLocalRandom.current().nextInt(1, 101)
-					,ThreadLocalRandom.current().nextInt(1, 101)
-					,ThreadLocalRandom.current().nextInt(1, 101)
-			};
+	//@@@ INSTANCE VARIABLES @@@
+	private int[] intArray;
 	
+	//@@@ MAIN METHOD @@@
 	public static void main(String[] args)
 	{
 		IntegerArraySorting run1 = new IntegerArraySorting();
 	}
 	
-	/**
-	 * Constructor for objects of class IntegerArraySorting
-	 */
+	//@@@ CONSTRUCTOR(S) @@@
 	public IntegerArraySorting()
 	{
+		createArray();
 		printArrayNoSorting();
 		printAutomagicallySortedArray();
 		printManuallySortedArray();
 	}
 	
+	//@@@ METHODS @@@
+	//### SETTERS ###
+	public void createArray()
+	{
+		intArray = new int[ThreadLocalRandom.current().nextInt(4, 9)];
+		for (int i = 0; i < intArray.length; i++) {
+			intArray[i] = ThreadLocalRandom.current().nextInt(0, 101);
+		}
+	}
+	
+	//### HELPERS ###
 	public void printArrayNoSorting()
 	{
 		System.out.println("The unsorted array is...");
-		for (int i = 0; i < intArray.length; i++)
-		{
+		for (int i = 0; i < intArray.length; i++) {
 			System.out.println(intArray[i]);
 		}
 		System.out.println();
@@ -61,8 +72,7 @@ public class IntegerArraySorting
 		Arrays.sort(sortedIntArray);
 		
 		//print the sorted array
-		for (int i = 0; i < intArray.length; i++)
-		{
+		for (int i = 0; i < intArray.length; i++) {
 			System.out.println(sortedIntArray[i]);
 		}
 		System.out.println();
@@ -77,25 +87,21 @@ public class IntegerArraySorting
 		System.arraycopy(intArray, 0, mySortedIntArray, 0, intArray.length);
 		
 		//loop through the unsorted array
-		for (int i = 0; i < mySortedIntArray.length; i++)
-		{
+		for (int i = 0; i < mySortedIntArray.length; i++) {
 			int tmpIndex = i;
 			int tmpMinValue = mySortedIntArray[i];
 			
 			//compare the value in the outter position to all other values later in the array
-			for (int j = (i + 1); j < mySortedIntArray.length; j++)
-			{
+			for (int j = (i + 1); j < mySortedIntArray.length; j++) {
 				// if a value is smaller, store it
 				int tmpInt = mySortedIntArray[j];
-				if (tmpInt < tmpMinValue)
-				{
+				if (tmpInt < tmpMinValue) {
 					tmpIndex = j;
 					tmpMinValue = mySortedIntArray[j];
 				}
 			}
 			// if there was lowe value found, do an update.
-			if (tmpIndex != i && tmpMinValue != intArray[i])
-			{
+			if (tmpIndex != i && tmpMinValue != intArray[i]) {
 				mySortedIntArray[tmpIndex] = mySortedIntArray[i];
 				mySortedIntArray[i] = tmpMinValue;
 			}
@@ -103,8 +109,7 @@ public class IntegerArraySorting
 		
 		// print the sorted array
 		System.out.println("The manually sorted array is...");
-		for (int i = 0; i < mySortedIntArray.length; i++)
-		{
+		for (int i = 0; i < mySortedIntArray.length; i++) {
 			System.out.println(mySortedIntArray[i]);
 		}
 	}
