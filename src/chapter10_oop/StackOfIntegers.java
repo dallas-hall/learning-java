@@ -7,9 +7,9 @@ package chapter10_oop;
  * </p>
  * <p>
  * A stack is a data structure that holds data in a last-in, first-out fashion.
- * <p>
+ *
  * Example will have a stack being empty, having 3 bits of data pushed (loaded) into it and then popped (removed) from it
- * <p>
+ *
  * 1) Start with an empty stack
  * Stack = empty
  * 2) Push 1 data block into the stack (add data1)
@@ -30,7 +30,7 @@ package chapter10_oop;
  * Stace = empty.
  * </p>
  * <p>
- * tags:	stack; call stack; push; pop; peek;
+ * tags:	LIFO; stack; call stack; push; pop; peek;
  * </p>
  *
  * @author blindcant
