@@ -1,14 +1,15 @@
 package chapter10_oop;
 
 import java.util.Arrays;
+import java.util.regex.Pattern;
 
 /**
- * <h1>PROGRAM NAME GOES HERE</h1>
+ * <h1>String Splitting</h1>
  * <p>
- * This program
+ * This program uses String and Regex split to split out Strings using a delimiter, it returns an array with the delimiter included.
  * </p>
  * <p>
- * tags:	<insert concept tags here for training code only>
+ * tags:	java.util.regex.Pattern; Pattern.compile(); String.split();
  * </p>
  *
  * @author blindcant
@@ -26,13 +27,13 @@ public class MySplit
 		System.out.println("[INFO] Test 1.");
 		MySplit runtime = new MySplit("Blind;Can't;Likes;Java", ";");
 		System.out.println("Starting string: " + runtime.getOriginal());
-		System.out.println("Original split: " + Arrays.toString("Blind;Can't;Likes;Java".split(";")));
-		System.out.println("My split: " + Arrays.toString(runtime.getResult()));
+		System.out.println("String.split(delimiter): " + Arrays.toString("Blind;Can't;Likes;Java".split(";")));
+		System.out.println("Regex.split(String): " + Arrays.toString(runtime.getResult()));
 		System.out.println("\n[INFO] Test 2.");
 		MySplit runtime2 = new MySplit("Blind<>Can't<>Likes<>Java", "<>");
 		System.out.println("Starting string: " + runtime2.getOriginal());
-		System.out.println("Original split: " + Arrays.toString("Blind<>Can't<>Likes<>Java".split("<>")));
-		System.out.println("My split: " + Arrays.toString(runtime2.getResult()));
+		System.out.println("String.split(delimiter): " + Arrays.toString("Blind<>Can't<>Likes<>Java".split("<>")));
+		System.out.println("Regex.split(String) " + Arrays.toString(runtime2.getResult()));
 	}
 	
 	//@@@ CONSTRUCTOR(S) @@@
@@ -72,7 +73,17 @@ public class MySplit
 	
 	public String[] mySplit2(String startString, String delimiter)
 	{
-		String[] mySplitResult = null;
+		java.util.regex.Pattern regex = Pattern.compile(delimiter);
+		String[] splitResult = regex.split(startString);
+		// Need -1 to ensure we don't store an extra delimiter
+		String[] mySplitResult = new String[splitResult.length * 2 - 1];
+		for (int i = 0; i < splitResult.length; i++) {
+			// i * 2 will be 0, 2, 4 etc
+			mySplitResult[i * 2] = splitResult[i];
+			// Make sure we don't try to store an extra delimiter
+			if (i != splitResult.length - 1)
+				mySplitResult[i * 2 + 1] = delimiter;
+		}
 		return mySplitResult;
 	}
 }
