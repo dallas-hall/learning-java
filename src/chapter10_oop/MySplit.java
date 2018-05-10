@@ -4,7 +4,7 @@ import java.util.Arrays;
 import java.util.regex.Pattern;
 
 /**
- * <h1>String Splitting</h1>
+ * <h1>My Version Of String Splitting</h1>
  * <p>
  * This program uses String and Regex split to split out Strings using a delimiter, it returns an array with the delimiter included.
  * </p>

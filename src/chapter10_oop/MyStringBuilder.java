@@ -3,7 +3,7 @@ package chapter10_oop;
 import java.util.Arrays;
 
 /**
- * <h1>StringBuilder</h1>
+ * <h1>My version of StringBuilder</h1>
  * <p>
  * This program is my implementation of the StringBuilder class.
  * </p>
