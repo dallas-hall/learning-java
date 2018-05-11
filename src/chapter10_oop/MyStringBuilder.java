@@ -23,17 +23,36 @@ public class MyStringBuilder
 	//@@@ MAIN METHOD @@@
 	public static void main(String[] args)
 	{
-		MyStringBuilder runtime = new MyStringBuilder("blind");
-		runtime.testPrint();
+		System.out.println("[INFO] Starting with nothing.");
+		MyStringBuilder runtime = new MyStringBuilder();
+		runtime.append("Blind");
+		runtime.performTests(runtime);
 		runtime.append("can't");
-		runtime.testPrint();
-		runtime.append(" likes to");
-		runtime.testPrint();
-		runtime.append(" code in Java.");
-		runtime.testPrint();
+		runtime.performTests(runtime);
+		System.out.println(runtime.substring(5));
+
+		System.out.println("\n[INFO] Starting with a String.");
+		MyStringBuilder runtime2 = new MyStringBuilder("Blind");
+		runtime2.performTests(runtime2);
+		runtime2.append("can't");
+		runtime2.performTests(runtime2);
+		System.out.println(runtime2.substring(5));
+		
+		System.out.println("\n[INFO] Starting with char[].");
+		MyStringBuilder runtime3 = new MyStringBuilder(new char[] {'B', 'l', 'i', 'n', 'd'});
+		runtime3.performTests(runtime3);
+		runtime3.append("can't");
+		runtime3.performTests(runtime3);
+		System.out.println(runtime3.substring(5));
 	}
 	
 	//@@@ CONSTRUCTOR(S) @@@
+	public MyStringBuilder()
+	{
+		myStringBuilder = new char[8];
+		size = 0;
+	}
+	
 	public MyStringBuilder(String startString)
 	{
 		myStringBuilder = new char[startString.length()];
@@ -41,6 +60,12 @@ public class MyStringBuilder
 			myStringBuilder[i] = startString.charAt(i);
 		}
 		size = startString.length();
+	}
+	
+	public MyStringBuilder(char[] startChars)
+	{
+		myStringBuilder = Arrays.copyOf(startChars, startChars.length);
+		size = startChars.length;
 	}
 	
 	//@@@ METHODS @@@
@@ -65,12 +90,51 @@ public class MyStringBuilder
 	//### HELPERS ###
 	public String toString()
 	{
-		return new String(myStringBuilder);
+		if(myStringBuilder == null || myStringBuilder[0] == '\u0000')
+			return "";
+		else
+			return new String(myStringBuilder);
 	}
 	
-	public void testPrint()
+	public void performTests(MyStringBuilder myStringBuilder)
 	{
-		System.out.println(new String(myStringBuilder));
-		System.out.println("Size is: " + size);
+		System.out.println("String: " + myStringBuilder.toString());
+		System.out.println("Size is: " + myStringBuilder.size);
+		System.out.println("Reversed: " + myStringBuilder.reverse());
+		System.out.println("Lowercase: " + myStringBuilder.toLowerCase());
+		System.out.println("Uppercase: " + myStringBuilder.toUpperCase());
+	}
+	
+	public MyStringBuilder reverse()
+	{
+		char[] reversed = new char[myStringBuilder.length];
+		for(int i = 0, j = size - 1; i < size; i++, j--) {
+			reversed[i] = myStringBuilder[j];
+		}
+		return new MyStringBuilder(reversed);
+	}
+	
+	public MyStringBuilder toUpperCase()
+	{
+		char[] uppercase = new char[myStringBuilder.length];
+		for (int i = 0; i < myStringBuilder.length; i++) {
+			uppercase[i] = Character.toUpperCase(myStringBuilder[i]);
+		}
+		return new MyStringBuilder(uppercase);
+	}
+	
+	public MyStringBuilder toLowerCase()
+	{
+		char[] lowercase = new char[myStringBuilder.length];
+		for (int i = 0; i < myStringBuilder.length; i++) {
+			lowercase[i] = Character.toLowerCase(myStringBuilder[i]);
+		}
+		return new MyStringBuilder(lowercase);
+	}
+	
+	public MyStringBuilder substring(int startIndex)
+	{
+		// https://docs.oracle.com/javase/9/docs/api/java/util/Arrays.html#copyOfRange-char:A-int-int-
+		return new MyStringBuilder(Arrays.copyOfRange(myStringBuilder, startIndex, myStringBuilder.length));
 	}
 }
