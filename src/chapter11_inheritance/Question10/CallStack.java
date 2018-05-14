@@ -3,29 +3,22 @@ package chapter11_inheritance.Question10;
 import java.util.List;
 import java.util.ArrayList;
 
-
 /**
- * Created by blindcant on 19/09/17.
+ * <h1>Call Stack</h1>
+ * <p>
+ * This program is my implementation a call stack using List data structures. You can push, pop, and peek.
+ * </p>
+ * <p>
+ * tags:	polymorphism; List; ArrayList; call stack;
+ * </p>
+ *
+ * @author blindcant
+ * @version 0.1 - 2017-09-19
  */
 public class CallStack
 {
 	//@@@ INSTANCE VARIABLES @@@
 	private List<Object> callStackElements;
-	
-	//@@@ MAIN METHOD @@@
-	public static void main(String[] args)
-	{
-		CallStack aCallStack = new CallStack(8);
-		System.out.println(aCallStack.toString());
-		System.out.println("Peeking at the call stack yeilds: " + aCallStack.peek());
-		System.out.println("Popping the call stack.");
-		aCallStack.pop();
-		System.out.println("Peeking at the call stack yeilds: " + aCallStack.peek());
-		System.out.println("Pushing 'Z' to the call stack.");
-		aCallStack.push("Z");
-		System.out.println("Peeking at the call stack yeilds: " + aCallStack.peek());
-		System.out.println(aCallStack.toString());
-	}
 	
 	//@@@ CONSTRUCTOR(S) @@@
 	public CallStack(int callStackSize)
@@ -55,10 +48,8 @@ public class CallStack
 		//char aCharacter = 65;
 		//start with the letter A (41 in HEX is A)
 		char aCharacter = '\u0041';
-		for (int i = 0; i < numberOfStackElements; i++)
-		{
-			if (i != 0)
-			{
+		for (int i = 0; i < numberOfStackElements; i++) {
+			if (i != 0) {
 				aCharacter++;
 			}
 			push(String.valueOf(aCharacter));
