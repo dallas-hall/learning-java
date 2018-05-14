@@ -3,19 +3,25 @@ package chapter11_inheritance.Question02;
 import java.util.Date;
 
 /**
- * Created by blindcant on 3/05/17.
+ * <h1>Employee</h1>
+ * <p>
+ * This program is my implementation of an Employee using inheritance and interfaces.
+ * </p>
+ * <p>
+ * tags:	inheritance; extends; super class constructor; over riding;
+ * </p>
+ *
+ * @author blindcant
+ * @version 0.1 - 2017-05-03
  */
 public abstract class Employee extends Person
 {
-	//INSTANCE VARIABLES
+	//@@@ INSTANCE VARIABLES @@@
 	private String office;
 	private double salary;
 	private java.util.Date hireDate;
 	
-	//MAIN METHOD
-	
-	
-	//CONSTRUCTOR(S)
+	//@@@ CONSTRUCTOR(S) @@@
 	public Employee(String name, String streetAddress, String emailAddress, String phoneNumber, String office, double salary)
 	{
 		super(name, streetAddress, emailAddress, phoneNumber);
@@ -29,7 +35,8 @@ public abstract class Employee extends Person
 	
 	}
 	
-	//METHODS
+	//@@@ METHODS @@@
+	//### GETTERS ###
 	public String getOffice()
 	{
 		return office;
@@ -45,6 +52,7 @@ public abstract class Employee extends Person
 		return hireDate;
 	}
 	
+	//### SETTERS ###
 	public void setOffice(String office)
 	{
 		this.office = office;
@@ -55,11 +63,10 @@ public abstract class Employee extends Person
 		this.salary = salary;
 	}
 	
-	//HELPERS
+	//### HELPERS ###
 	@Override
 	public String toString()
 	{
-		return super.toString() + String.format("Office location:\t%s\nSalary:\t\t\t\t$%,.2f\nHire Date:\t\t\t%s\n"
-				,getOffice(), getSalary(), getHireDate());
+		return super.toString() + String.format("Office location:\t%s\nSalary:\t\t\t\t$%,.2f\nHire Date:\t\t\t%s\n", getOffice(), getSalary(), getHireDate());
 	}
 }

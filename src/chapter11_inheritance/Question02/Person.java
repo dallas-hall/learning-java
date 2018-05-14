@@ -3,21 +3,27 @@ package chapter11_inheritance.Question02;
 import java.util.Date;
 
 /**
- * Created by blindcant on 3/05/17.
+ * <h1>Person</h1>
+ * <p>
+ * This program is my implementation of an abstract Person which is used to create other classes from.
+ * </p>
+ * <p>
+ * tags:	inheritance; abstract class; super class; over riding;
+ * </p>
+ *
+ * @author blindcant
+ * @version 0.1 - 2017-05-03
  */
 public abstract class Person
 {
-	//INSTANCE VARIABLES
+	//@@@ INSTANCE VARIABLES @@@
 	private String name;
 	private String streetAddress;
 	private String emailAddress;
 	private String phoneNumber;
 	private java.util.Date creationDate;
 	
-	//MAIN METHOD
-	
-	
-	//CONSTRUCTOR(S)
+	//@@@ CONSTRUCTOR(S) @@@
 	public Person()
 	{
 	
@@ -32,7 +38,8 @@ public abstract class Person
 		this.creationDate = new java.util.Date();
 	}
 	
-	//METHODS
+	//@@@ METHODS @@@
+	//### GETTERS ###
 	public String getName()
 	{
 		return name;
@@ -58,10 +65,9 @@ public abstract class Person
 		return creationDate;
 	}
 	
-	//HELPERS
+	//### HELPERS ###
 	public String toString()
 	{
-		return String.format("Name:\t\t\t\t%s\nAddress:\t\t\t%s\nEmail:\t\t\t\t%s\nPhone:\t\t\t\t%s\nCreation date:\t\t%s\n"
-		,getName(), getStreetAddress(), getEmailAddress(), getPhoneNumber(), getCreationDate());
+		return String.format("Name:\t\t\t\t%s\nAddress:\t\t\t%s\nEmail:\t\t\t\t%s\nPhone:\t\t\t\t%s\nCreation date:\t\t%s\n", getName(), getStreetAddress(), getEmailAddress(), getPhoneNumber(), getCreationDate());
 	}
 }
