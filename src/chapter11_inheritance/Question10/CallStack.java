@@ -38,6 +38,24 @@ public class CallStack
 		return callStackElements.isEmpty();
 	}
 	
+	public Object peek()
+	{
+		return callStackElements.get(getSize() - 1);
+	}
+	
+	//### SETTERS ###
+	public Object pop()
+	{
+		Object o = callStackElements.get(getSize() - 1);
+		callStackElements.remove(getSize() - 1);
+		return o;
+	}
+	
+	public void push(Object anObject)
+	{
+		callStackElements.add(anObject);
+	}
+	
 	//### HELPERS ###
 	private void createAndPopulateStack(int numberOfStackElements)
 	{
@@ -56,26 +74,10 @@ public class CallStack
 		}
 	}
 	
-	public Object peek()
-	{
-		return callStackElements.get(getSize() - 1);
-	}
-	
-	public Object pop()
-	{
-		Object o = callStackElements.get(getSize() - 1);
-		callStackElements.remove(getSize() - 1);
-		return o;
-	}
-	
-	public void push(Object anObject)
-	{
-		callStackElements.add(anObject);
-	}
-	
 	@Override
 	public String toString()
 	{
 		return "Current call stack: " + callStackElements.toString();
 	}
+	
 }
