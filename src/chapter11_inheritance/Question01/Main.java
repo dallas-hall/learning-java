@@ -5,7 +5,16 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- * Created by blindcant on 19/09/17.
+ * <h1>Geometric Object Main Class</h1>
+ * <p>
+ * This is the driver class for Geometric Objects, showcasing inheritance, polymorphism, and interfaces.
+ * </p>
+ * <p>
+ * tags:	Math.PI; inheritance; abstract class; interfaces; implements; polymorphism; static type; dynamic type;
+ * </p>
+ *
+ * @author blindcant
+ * @version 0.1 - 2017-09-20
  */
 public class Main
 {

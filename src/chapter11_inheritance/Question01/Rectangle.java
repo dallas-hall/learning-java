@@ -1,17 +1,23 @@
 package chapter11_inheritance.Question01;
 
 /**
- * Created by blindcant on 19/09/17.
+ * <h1>Rectangle</h1>
+ * <p>
+ * This program is my implementation of a rectangle using inheritance and interfaces.
+ * </p>
+ * <p>
+ * tags:	inheritance; extends; interfaces; implements; super class constructor;
+ * </p>
+ *
+ * @author blindcant
+ * @version 0.1 - 2017-09-20
  */
 public class Rectangle extends GeometricObject
 {
 	//@@@ INSTANCE VARIABLES @@@
 	private double length;
 	private double width;
-	
-	//@@@ MAIN METHOD @@@
-	
-	
+
 	//@@@ CONSTRUCTOR(S) @@@
 	public Rectangle()
 	{
@@ -38,7 +44,7 @@ public class Rectangle extends GeometricObject
 	{
 		return width;
 	}
-
+	
 	
 	public double getArea()
 	{
@@ -65,23 +71,19 @@ public class Rectangle extends GeometricObject
 	@Override
 	public String toString()
 	{
-		return Rectangle.class.getSimpleName() + "\n" + super.toString() + "\nLength: " + length 	+ "\nWidth: " + width
-				+ "\nArea: " + getArea() + "\nPerimeter: " + getPerimeter();
+		return Rectangle.class.getSimpleName() + "\n" + super.toString() + "\nLength: " + length + "\nWidth: " + width + "\nArea: " + getArea() + "\nPerimeter: " + getPerimeter();
 	}
 	
 	@Override
 	public int compareTo(GeometricObject geometricObject)
 	{
-		if(getArea() > ((Rectangle)geometricObject).getArea())
-		{
+		if (getArea() > ((Rectangle) geometricObject).getArea()) {
 			return 1;
 		}
-		else if(getArea() == ((Rectangle)geometricObject).getArea())
-		{
+		else if (getArea() == ((Rectangle) geometricObject).getArea()) {
 			return 0;
 		}
-		else
-		{
+		else {
 			return -1;
 		}
 	}
@@ -96,26 +98,22 @@ public class Rectangle extends GeometricObject
 	public boolean equals(Object anObject)
 	{
 		//are they the same objects
-		if(this == anObject)
-		{
+		if (this == anObject) {
 			return true;
 		}
 		
 		//is the parameter null?
-		if(anObject == null)
-		{
+		if (anObject == null) {
 			return false;
 		}
 		
 		//are the classes the same
-		if (getClass() != anObject.getClass())
-		{
+		if (getClass() != anObject.getClass()) {
 			return false;
 		}
 		
 		//
-		if (!(anObject instanceof Rectangle))
-		{
+		if (!(anObject instanceof Rectangle)) {
 			return false;
 		}
 		

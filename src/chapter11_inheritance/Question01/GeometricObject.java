@@ -1,7 +1,16 @@
 package chapter11_inheritance.Question01;
 
 /**
- * Created by blindcant on 19/09/17.
+ * <h1>Geometric Object Abstract Class</h1>
+ * <p>
+ * This program is my implementation of a circle using inheritance and interfaces.
+ * </p>
+ * <p>
+ * tags:	Math.PI; inheritance; abstract class; interfaces; implements; super class;
+ * </p>
+ *
+ * @author blindcant
+ * @version 0.1 - 2017-09-20
  */
 public abstract class GeometricObject implements Comparable<GeometricObject>
 {
@@ -73,26 +82,22 @@ public abstract class GeometricObject implements Comparable<GeometricObject>
 	public boolean equals(Object anObject)
 	{
 		//are they the same objects
-		if(this == anObject)
-		{
+		if (this == anObject) {
 			return true;
 		}
 		
 		//is the parameter null?
-		if(anObject == null)
-		{
+		if (anObject == null) {
 			return false;
 		}
 		
 		//are the classes the same
-		if (getClass() != anObject.getClass())
-		{
+		if (getClass() != anObject.getClass()) {
 			return false;
 		}
 		
 		//
-		if (!(anObject instanceof GeometricObject))
-		{
+		if (!(anObject instanceof GeometricObject)) {
 			return false;
 		}
 		
