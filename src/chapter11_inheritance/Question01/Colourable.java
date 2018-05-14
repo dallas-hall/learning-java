@@ -1,7 +1,16 @@
 package chapter11_inheritance.Question01;
 
 /**
- * Created by blindcant on 20/09/17.
+ * <h1>Colourable Interface</h1>
+ * <p>
+ * This program is my implementation of an interface for colouring objects.
+ * </p>
+ * <p>
+ * tags:	Math.PI; interfaces; implements
+ * </p>
+ *
+ * @author blindcant
+ * @version 0.1 - 2017-09-20
  */
 public interface Colourable<GeometricObject>
 {

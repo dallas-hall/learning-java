@@ -1,7 +1,16 @@
 package chapter11_inheritance.Question01;
 
 /**
- * Created by blindcant on 19/09/17.
+ * <h1>Triangle</h1>
+ * <p>
+ * This program is my implementation of a triangle using inheritance and interfaces.
+ * </p>
+ * <p>
+ * tags:	inheritance; extends; interfaces; implements; super class constructor;
+ * </p>
+ *
+ * @author blindcant
+ * @version 0.1 - 2017-09-20
  */
 public class Triangle extends GeometricObject
 {
@@ -9,9 +18,6 @@ public class Triangle extends GeometricObject
 	private double side1;
 	private double side2;
 	private double side3;
-	
-	//@@@ MAIN METHOD @@@
-	
 	
 	//@@@ CONSTRUCTOR(S) @@@
 	public Triangle()
@@ -59,36 +65,30 @@ public class Triangle extends GeometricObject
 	
 	public boolean isEqualateral()
 	{
-		if (side1 == side2 && side1 == side3 && side2 == side3)
-		{
+		if (side1 == side2 && side1 == side3 && side2 == side3) {
 			return true;
 		}
-		else
-		{
+		else {
 			return false;
 		}
 	}
 	
 	public boolean isIsosceles()
 	{
-		if (side1 == side2 || side1 == side3 || side2 == side3)
-		{
+		if (side1 == side2 || side1 == side3 || side2 == side3) {
 			return true;
 		}
-		else
-		{
+		else {
 			return false;
 		}
 	}
 	
 	public boolean isScalene()
 	{
-		if (side1 != side2 && side1 != side3 && side2 != side3)
-		{
+		if (side1 != side2 && side1 != side3 && side2 != side3) {
 			return true;
 		}
-		else
-		{
+		else {
 			return false;
 		}
 	}
@@ -113,24 +113,19 @@ public class Triangle extends GeometricObject
 	@Override
 	public String toString()
 	{
-		return Triangle.class.getSimpleName() + "\n" + super.toString() + "\nSide 1: " + side1 + "\nSide 2: " + side2
-				+ "\nSide 3: " + side3 + "\nArea: " + getArea() + "\nPerimeter: " + getPerimeter() + "\nIs equalateral? " +
-				isEqualateral() + "\nIs isoscelese? " + isIsosceles() + "\nIs scalene? " + isScalene();
+		return Triangle.class.getSimpleName() + "\n" + super.toString() + "\nSide 1: " + side1 + "\nSide 2: " + side2 + "\nSide 3: " + side3 + "\nArea: " + getArea() + "\nPerimeter: " + getPerimeter() + "\nIs equalateral? " + isEqualateral() + "\nIs isoscelese? " + isIsosceles() + "\nIs scalene? " + isScalene();
 	}
 	
 	@Override
 	public int compareTo(GeometricObject geometricObject)
 	{
-		if(getPerimeter() > ((Triangle)geometricObject).getPerimeter())
-		{
+		if (getPerimeter() > ((Triangle) geometricObject).getPerimeter()) {
 			return 1;
 		}
-		else if(getPerimeter() == ((Triangle)geometricObject).getPerimeter())
-		{
+		else if (getPerimeter() == ((Triangle) geometricObject).getPerimeter()) {
 			return 0;
 		}
-		else
-		{
+		else {
 			return -1;
 		}
 	}
@@ -145,26 +140,22 @@ public class Triangle extends GeometricObject
 	public boolean equals(Object anObject)
 	{
 		//are they the same objects
-		if(this == anObject)
-		{
+		if (this == anObject) {
 			return true;
 		}
 		
 		//is the parameter null?
-		if(anObject == null)
-		{
+		if (anObject == null) {
 			return false;
 		}
 		
 		//are the classes the same
-		if (getClass() != anObject.getClass())
-		{
+		if (getClass() != anObject.getClass()) {
 			return false;
 		}
 		
 		//
-		if (!(anObject instanceof Triangle))
-		{
+		if (!(anObject instanceof Triangle)) {
 			return false;
 		}
 		

@@ -1,16 +1,21 @@
 package chapter11_inheritance.Question01;
 
 /**
- * Created by blindcant on 19/09/17.
+ * <h1>Square</h1>
+ * <p>
+ * This program is my implementation of a square using inheritance and interfaces.
+ * </p>
+ * <p>
+ * tags:	inheritance; extends; interfaces; implements; super class constructor;
+ * </p>
+ *
+ * @author blindcant
+ * @version 0.1 - 2017-09-20
  */
 public class Square extends GeometricObject
 {
 	//@@@ INSTANCE VARIABLES @@@
 	private double side;
-	
-	
-	//@@@ MAIN METHOD @@@
-	
 	
 	//@@@ CONSTRUCTOR(S) @@@
 	public Square()
@@ -52,23 +57,19 @@ public class Square extends GeometricObject
 	@Override
 	public String toString()
 	{
-		return Square.class.getSimpleName() + "\n" + super.toString() + "\nSide: " + side + "\nArea: " + getArea()
-				+ "\nPerimeter: " + getPerimeter();
+		return Square.class.getSimpleName() + "\n" + super.toString() + "\nSide: " + side + "\nArea: " + getArea() + "\nPerimeter: " + getPerimeter();
 	}
 	
 	@Override
 	public int compareTo(GeometricObject geometricObject)
 	{
-		if(getArea() > ((Square)geometricObject).getArea())
-		{
+		if (getArea() > ((Square) geometricObject).getArea()) {
 			return 1;
 		}
-		else if(getArea() == ((Square)geometricObject).getArea())
-		{
+		else if (getArea() == ((Square) geometricObject).getArea()) {
 			return 0;
 		}
-		else
-		{
+		else {
 			return -1;
 		}
 	}
@@ -83,26 +84,22 @@ public class Square extends GeometricObject
 	public boolean equals(Object anObject)
 	{
 		//are they the same objects
-		if(this == anObject)
-		{
+		if (this == anObject) {
 			return true;
 		}
 		
 		//is the parameter null?
-		if(anObject == null)
-		{
+		if (anObject == null) {
 			return false;
 		}
 		
 		//are the classes the same
-		if (getClass() != anObject.getClass())
-		{
+		if (getClass() != anObject.getClass()) {
 			return false;
 		}
 		
 		//
-		if (!(anObject instanceof Square))
-		{
+		if (!(anObject instanceof Square)) {
 			return false;
 		}
 		
