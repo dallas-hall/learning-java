@@ -39,11 +39,60 @@ public class BinaryMatrix
 		return binaryMatrix;
 	}
 	
+	public String getRow(boolean getLargest)
+	{
+		int total = 0;
+		int row = 0;
+		String rowValues = null;
+		
+		int currentRow = 0;
+		StringBuffer aStringBuffer = new StringBuffer();
+		
+		for (List aList : binaryMatrix) {
+			int currentRowTotal = 0;
+			
+			for (Object anObject : aList) {
+				int currentInt = (Integer) anObject;
+				currentRowTotal += currentInt;
+				aStringBuffer.append(currentInt).append(" ");
+			}
+			
+			if (getLargest) {
+				if (currentRowTotal > total) {
+					total = currentRowTotal;
+					row = currentRow;
+					rowValues = aStringBuffer.toString();
+				}
+			}
+			else {
+				if (currentRow == 0) {
+					total = currentRowTotal;
+					row = currentRow;
+					rowValues = aStringBuffer.toString();
+				}
+				else if (currentRowTotal < total) {
+					total = currentRowTotal;
+					row = currentRow;
+					rowValues = aStringBuffer.toString();
+				}
+			}
+			
+			aStringBuffer.delete(0, aStringBuffer.length());
+			currentRow++;
+		}
+		if (getLargest) {
+			return "The largest row was " + row + " which had " + rowValues;
+		}
+		else {
+			return "The smallest row was " + row + " which had " + rowValues;
+		}
+	}
+	
 	//### SETTERS ###
 	public void populateMatrix()
 	{
 		for (List aList : binaryMatrix) {
-			for(int i = 0; i < amount; i++) {
+			for (int i = 0; i < amount; i++) {
 				// Add 0 or 1
 				aList.add(ThreadLocalRandom.current().nextInt(0, 2));
 			}
@@ -61,6 +110,4 @@ public class BinaryMatrix
 			System.out.println();
 		}
 	}
-	
-	//@@@ INNER CLASS(ES) @@@
 }
