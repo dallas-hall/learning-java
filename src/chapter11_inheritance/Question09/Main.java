@@ -20,5 +20,7 @@ public class Main
 		BinaryMatrix runtime = new BinaryMatrix(4);
 		runtime.populateMatrix();
 		runtime.printBinaryMatrix("Original binary matrix is: ");
+		System.out.println(runtime.getRow(true));
+		System.out.println(runtime.getRow(false));
 	}
 }
