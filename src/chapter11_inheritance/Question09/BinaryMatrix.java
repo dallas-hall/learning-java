@@ -10,7 +10,7 @@ import java.util.concurrent.ThreadLocalRandom;
  * This program creates a binary table and then determines the largest row and column.
  * </p>
  * <p>
- * tags:	<insert concept tags here for training code only>
+ * tags:	ThreadLocalRandom.current().nextInt; nested for each loops; List; ArrayList;
  * </p>
  *
  * @author blindcant
@@ -85,6 +85,63 @@ public class BinaryMatrix
 		}
 		else {
 			return "The smallest row was " + row + " which had " + rowValues;
+		}
+	}
+	
+	public String getColumn(boolean getLargest)
+	{
+		int size = binaryMatrix.size();
+		int[] totals = new int[size];
+		char[][] values = new char[size][size];
+		StringBuffer aStringBuffer = new StringBuffer();
+		
+		// Get the total of each column and the value of each column
+		int i = 0;
+		for (List aList : binaryMatrix) {
+			int j = 0;
+			for (Object anObject : aList) {
+				int currentInt = (Integer) anObject;
+				totals[j] += currentInt;
+				String currentValue = String.valueOf(currentInt);
+				values[j][i] = currentValue.charAt(0);
+				j++;
+			}
+			i++;
+		}
+		
+		// Check for the largest or smallest column
+		int returnColumn = 0;
+		int returnTotal = 0;
+		for (int k = 0; k < size; k++) {
+			
+			if (getLargest) {
+				if (totals[k] > returnTotal) {
+					returnTotal = totals[k];
+					returnColumn = k;
+				}
+			}
+			else {
+				if (k == 0) {
+					returnTotal = totals[k];
+					returnColumn = k;
+				}
+				else if (totals[k] < returnTotal) {
+					returnTotal = totals[k];
+					returnColumn = k;
+				}
+				
+			}
+		}
+		
+		// Get and return column values
+		for (int l = 0; l < size; l++) {
+			aStringBuffer.append(values[returnColumn][l]).append(" ");
+		}
+		if (getLargest) {
+			return "The largest column was " + returnColumn + " which had " + aStringBuffer.toString();
+		}
+		else {
+			return "The smallest column was " + returnColumn + " which had " + aStringBuffer.toString();
 		}
 	}
 	
