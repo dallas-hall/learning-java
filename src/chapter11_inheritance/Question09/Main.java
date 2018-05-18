@@ -3,10 +3,7 @@ package chapter11_inheritance.Question09;
 /**
  * <h1>PROGRAM NAME GOES HERE</h1>
  * <p>
- * This program
- * </p>
- * <p>
- * tags:	<insert concept tags here for training code only>
+ * This program is the driver for the BinaryMatrix class, performing tests for the largest and smallest row and column.
  * </p>
  *
  * @author blindcant
@@ -22,5 +19,7 @@ public class Main
 		runtime.printBinaryMatrix("Original binary matrix is: ");
 		System.out.println(runtime.getRow(true));
 		System.out.println(runtime.getRow(false));
+		System.out.println(runtime.getColumn(true));
+		System.out.println(runtime.getColumn(false));
 	}
 }
