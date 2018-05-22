@@ -14,6 +14,7 @@ package chapter12_exceptions_and_text_io.Question04;
  */
 public class LoanCalculator
 {
+	//@@@ INSTANCE VARIABLES @@@
 	private double annualInterestRate;
 	private int numberOfYears;
 	private double loanAmount;
@@ -45,57 +46,23 @@ public class LoanCalculator
 		}
 	}
 	
-	/**
-	 * Return annualInterestRate
-	 */
+	//@@@ METHODS @@@
+	//### GETTERS ###
 	public double getAnnualInterestRate()
 	{
 		return annualInterestRate;
 	}
 	
-	/**
-	 * Set a new annualInterestRate
-	 */
-	public void setAnnualInterestRate(double annualInterestRate)
-	{
-		this.annualInterestRate = annualInterestRate;
-	}
-	
-	/**
-	 * Return numberOfYears
-	 */
 	public int getNumberOfYears()
 	{
 		return numberOfYears;
 	}
 	
-	/**
-	 * Set a new numberOfYears
-	 */
-	public void setNumberOfYears(int numberOfYears)
-	{
-		this.numberOfYears = numberOfYears;
-	}
-	
-	/**
-	 * Return loanAmount
-	 */
 	public double getLoanAmount()
 	{
 		return loanAmount;
 	}
 	
-	/**
-	 * Set a new loanAmount
-	 */
-	public void setLoanAmount(double loanAmount)
-	{
-		this.loanAmount = loanAmount;
-	}
-	
-	/**
-	 * Find monthly payment
-	 */
 	public double getMonthlyPayment()
 	{
 		double monthlyInterestRate = annualInterestRate / 1200;
@@ -103,20 +70,30 @@ public class LoanCalculator
 		return monthlyPayment;
 	}
 	
-	/**
-	 * Find total payment
-	 */
 	public double getTotalPayment()
 	{
 		double totalPayment = getMonthlyPayment() * numberOfYears * 12;
 		return totalPayment;
 	}
 	
-	/**
-	 * Return loan date
-	 */
 	public java.util.Date getLoanDate()
 	{
 		return loanDate;
+	}
+	
+	//### SETTERS ###
+	public void setAnnualInterestRate(double annualInterestRate)
+	{
+		this.annualInterestRate = annualInterestRate;
+	}
+	
+	public void setNumberOfYears(int numberOfYears)
+	{
+		this.numberOfYears = numberOfYears;
+	}
+	
+	public void setLoanAmount(double loanAmount)
+	{
+		this.loanAmount = loanAmount;
 	}
 }
