@@ -1,11 +1,20 @@
 package chapter12_exceptions_and_text_io;
 
 /**
- * Created by blindcant on 13/05/17.
+ * <h1>BinaryFormatException</h1>
+ * <p>
+ * Custom exception class.
+ * </p>
+ * <p>
+ * tags:	extending Exception; super constructor;
+ * </p>
+ *
+ * @author blindcant
+ * @version 0.0.1 - 2017-05-13
  */
 public class Question09_BinaryFormatException extends Exception
 {
-	//CONSTRUCTOR(S)
+	//@@@ CONSTRUCTOR(S) @@@
 	public Question09_BinaryFormatException()
 	{
 		//call the superclass constructor in Exception, with no arguments
