@@ -1,19 +1,26 @@
-package chapter12_exceptions_and_text_io;
+package chapter12_exceptions_and_text_io.Question04;
 
 /**
- * Created by blindcant on 13/05/17.
+ * <h1>Loan Calculator</h1>
+ * <p>
+ * This program calculates the monthly and total repayments of a loan with fixed interest over a fixed number of years.
+ * </p>
+ * <p>
+ * tags:	java.util.Date; constructor chaining; IllegalArgumentException; Math.Pow;
+ * </p>
+ *
+ * @author blindcant
+ * @version 0.0.1 - 2017-05-13
  */
-public class Question04
+public class LoanCalculator
 {
 	private double annualInterestRate;
 	private int numberOfYears;
 	private double loanAmount;
 	private java.util.Date loanDate;
 	
-	/**
-	 * Default constructor
-	 */
-	public Question04()
+	//@@@ CONSTRUCTOR(S) @@@
+	public LoanCalculator()
 	{
 		this(2.5, 1, 1000);
 	}
@@ -25,14 +32,12 @@ public class Question04
 	 * 13 number of years, and loan amount
 	 * 14
 	 */
-	public Question04(double annualInterestRate, int numberOfYears, double loanAmount)
+	public LoanCalculator(double annualInterestRate, int numberOfYears, double loanAmount)
 	{
-		if (annualInterestRate <= 0 || numberOfYears <= 0 || loanAmount <= 0)
-		{
+		if (annualInterestRate <= 0 || numberOfYears <= 0 || loanAmount <= 0) {
 			throw new IllegalArgumentException("All values must be greater than 0.");
 		}
-		else
-		{
+		else {
 			this.annualInterestRate = annualInterestRate;
 			this.numberOfYears = numberOfYears;
 			this.loanAmount = loanAmount;

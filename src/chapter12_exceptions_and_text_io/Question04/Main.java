@@ -1,24 +1,29 @@
-package chapter12_exceptions_and_text_io;
+package chapter12_exceptions_and_text_io.Question04;
 
 import java.util.Scanner;
 
 /**
- * Created by blindcant on 13/05/17.
+ * <h1>Call Stack Driver</h1>
+ * <p>
+ * This is the driver for the Loan Calculator Stack class. It demonstrates how the loan calculator works.
+ * </p>
+ * <p>
+ * tags:	try catch; Scanner; IllegalArgumentException;
+ * </p>
+ *
+ * @author blindcant
+ * @version 0.0.1 - 2017-05-13
  */
-public class TestQuestion04
+public class Main
 {
-	/**
-	 * Main method
-	 */
+	//@@@ MAIN METHOD @@@
 	public static void main(String[] args)
 	{
-		
 		// Create a Scanner
 		Scanner input = new Scanner(System.in);
 		
 		// Enter annual interest rate
-		try
-		{
+		try {
 			System.out.print("Enter annual interest rate, for example, 8.25: ");
 			double annualInterestRate = input.nextDouble();
 			
@@ -31,13 +36,12 @@ public class TestQuestion04
 			double loanAmount = input.nextDouble();
 			
 			// Create a Loan object
-			Question04 loan = new Question04(annualInterestRate, numberOfYears, loanAmount);
+			LoanCalculator loan = new LoanCalculator(annualInterestRate, numberOfYears, loanAmount);
 			
 			// Display loan date, monthly payment, and total payment
 			System.out.printf("The loan was created on %s\n" + "The monthly payment is %.2f\nThe total payment is %.2f\n", loan.getLoanDate().toString(), loan.getMonthlyPayment(), loan.getTotalPayment());
 		}
-		catch (IllegalArgumentException e)
-		{
+		catch (IllegalArgumentException e) {
 			System.out.println(e.getMessage());
 		}
 	}
