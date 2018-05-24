@@ -5,13 +5,15 @@ import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 /**
- * <h1>PROGRAM NAME GOES HERE</h1>
+ * <h1>Source Code Curly Brace Refactor</h1>
  * <p>
- * This program
+ * This program reads in C style source code from a String or a file, and switches the curly brace location.
  * </p>
  * <p>
- * tags:	<insert concept tags here for training code only>
+ * tags:	Pattern; Matcher; MULTILINE;
  * </p>
+ *
+ * Much help provided from here https://www.regular-expressions.info/java.html
  *
  * @author blindcant
  * @version 0.0.1 - 2018-05-23
@@ -29,13 +31,7 @@ public class MoveSourceCodeCurlyBrace
 	public static void main(String args[])
 	{
 		MoveSourceCodeCurlyBrace runtime = new MoveSourceCodeCurlyBrace();
-		System.out.println("[INFORMATION] Printing new line brace and then switching it to same line brace.");
-		System.out.println(newLine);
-		System.out.println(runtime.stringSwitchToSameLine(newLine));
-		//System.out.println("\n[INFORMATION] Printing same line brace and then switching it to new line brace.");
-		//System.out.println(sameLine);
-		//System.out.println(runtime.stringSwitchToNewline(sameLine));
-		
+		runtime.testString();
 	}
 	
 	//@@@ CONSTRUCTOR(S) @@@
@@ -52,19 +48,30 @@ public class MoveSourceCodeCurlyBrace
 	//### HELPERS ###
 	public String stringSwitchToNewline(String inputString)
 	{
-		// Look for a newline followed by optional spaces/tabs that have a curly brace after it
-		Pattern pattern = Pattern.compile("(?<spaces>[ \t]*)\\{\n");
-		// Replace the above pattern with a space and curly brace
-		return inputString.replaceAll("([ \t]*)([A-Za-z0-9\\p{Punct}]) \\{\n([ \t]*)", "$1$2\n");
+		// Note: WITHOUT MATCHER THE MULTILINE DOESN'T WORK!!!
+		// Capture the space at the start of the line, capture all the text before the {
+		Pattern pattern = Pattern.compile("^([ \t]*)([^{]+) \\{$", Pattern.MULTILINE);
+		Matcher matcher = pattern.matcher(inputString);
+		// Replace the original spacing and text, add a new line and add the original spacing and the {
+		return matcher.replaceAll("$1$2\n$1{");
 	}
 	
 	public String stringSwitchToSameLine(String inputString)
 	{
 		// Look for a newline followed by optional spaces/tabs that have a curly brace after it
 		Pattern pattern = Pattern.compile("\n[ \t]*\\{");
+		Matcher matcher = pattern.matcher(inputString);
 		// Replace the above pattern with a space and curly brace
-		return inputString.replaceAll(pattern.toString(), " {");
+		return matcher.replaceAll(" {");
 	}
 	
-	//@@@ INNER CLASS(ES) @@@
+	public void testString()
+	{
+		System.out.println("[INFORMATION] Printing new line brace and then switching it to same line brace.");
+		System.out.println(newLine);
+		System.out.println(stringSwitchToSameLine(newLine));
+		System.out.println("\n[INFORMATION] Printing same line brace and then switching it to new line brace.");
+		System.out.println(sameLine);
+		System.out.println(stringSwitchToNewline(sameLine));
+	}
 }
