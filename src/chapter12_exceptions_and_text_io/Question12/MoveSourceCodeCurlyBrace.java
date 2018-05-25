@@ -42,10 +42,12 @@ public class MoveSourceCodeCurlyBrace
 	public static void main(String args[])
 	{
 		MoveSourceCodeCurlyBrace runtime = new MoveSourceCodeCurlyBrace();
-		//runtime.testString();
+		runtime.testString();
 		runtime.createFiles();
 		runtime.populateFiles();
 		runtime.readFilesAndPrint();
+		System.out.println(runtime.fileSwitchCurlyBrace(Paths.get(newLineFile), true));
+		System.out.println(runtime.fileSwitchCurlyBrace(Paths.get(sameLineFile), false));
 	}
 	
 	//@@@ CONSTRUCTOR(S) @@@
@@ -56,37 +58,40 @@ public class MoveSourceCodeCurlyBrace
 	
 	//@@@ METHODS @@@
 	//### GETTERS ###
-	
-	//### SETTERS ###
-	
-	//### HELPERS ###
-	public String stringSwitchToNewline(String inputString)
+	public List<Path> getPaths()
 	{
-		// Note: WITHOUT MATCHER THE MULTILINE DOESN'T WORK!!!
-		// Capture the space at the start of the line, capture all the text before the {
-		Pattern pattern = Pattern.compile("^([ \t]*)([^{]+) \\{$", Pattern.MULTILINE);
-		Matcher matcher = pattern.matcher(inputString);
-		// Replace the original spacing and text, add a new line and add the original spacing and the {
-		return matcher.replaceAll("$1$2\n$1{");
+		return paths;
 	}
 	
-	public String stringSwitchToSameLine(String inputString)
+	//### HELPERS ###
+	public String stringSwitchCurlyBrace(String inputString, boolean switchToSameLine)
 	{
-		// Look for a newline followed by optional spaces/tabs that have a curly brace after it
-		Pattern pattern = Pattern.compile("\n[ \t]*\\{");
-		Matcher matcher = pattern.matcher(inputString);
-		// Replace the above pattern with a space and curly brace
-		return matcher.replaceAll(" {");
+		if(switchToSameLine) {
+			// Look for a newline followed by optional spaces/tabs that have a curly brace after it
+			Pattern pattern = Pattern.compile("\n[ \t]*\\{");
+			Matcher matcher = pattern.matcher(inputString);
+			// Replace the above pattern with a space and curly brace
+			return matcher.replaceAll(" {");
+		}
+		else
+		{
+			// Note: WITHOUT MATCHER THE MULTILINE DOESN'T WORK!!!
+			// Capture the space at the start of the line, capture all the text before the {
+			Pattern pattern = Pattern.compile("^([ \t]*)([^{]+) \\{$", Pattern.MULTILINE);
+			Matcher matcher = pattern.matcher(inputString);
+			// Replace the original spacing and text, add a new line and add the original spacing and the {
+			return matcher.replaceAll("$1$2\n$1{");
+		}
 	}
 	
 	public void testString()
 	{
 		System.out.println("[INFORMATION] Printing new line brace and then switching it to same line brace.");
 		System.out.println(newLineString);
-		System.out.println(stringSwitchToSameLine(newLineString));
+		System.out.println(stringSwitchCurlyBrace(newLineString, true));
 		System.out.println("\n[INFORMATION] Printing same line brace and then switching it to new line brace.");
 		System.out.println(sameLineString);
-		System.out.println(stringSwitchToNewline(sameLineString));
+		System.out.println(stringSwitchCurlyBrace(sameLineString, false));
 	}
 	
 	public void createFiles()
@@ -161,5 +166,33 @@ public class MoveSourceCodeCurlyBrace
 				e.printStackTrace();
 			}
 		}
+	}
+	
+	public String fileSwitchCurlyBrace(Path currentPath, boolean switchToSameLine)
+	{
+		StringBuffer input = new StringBuffer();
+		StringBuffer output = new StringBuffer();
+		
+		try {
+			bufferedReader = bufferedReader = new BufferedReader(new FileReader(currentPath.toFile()));
+			// store the current line here
+			String currentLine;
+			// Store the current line as a String into currentLine.  The readLine() method returns null when the end of line is reached.
+			while ((currentLine = bufferedReader.readLine()) != null)
+			{
+				input.append(currentLine).append("\n");
+			}
+			if(switchToSameLine) {
+				output.append(stringSwitchCurlyBrace(input.toString(), switchToSameLine));
+			}
+			else {
+				output.append(stringSwitchCurlyBrace(input.toString(), switchToSameLine));
+			}
+		}
+		catch (IOException e) {
+			System.out.println("[ERROR] Unable to write to file.\n");
+			e.printStackTrace();
+		}
+		return output.toString();
 	}
 }
