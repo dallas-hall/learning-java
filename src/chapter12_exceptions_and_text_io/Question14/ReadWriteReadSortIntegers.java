@@ -11,10 +11,10 @@ import java.util.concurrent.ThreadLocalRandom;
 /**
  * <h1>Read, Write, Read, & Sort A File Of Integers.</h1>
  * <p>
- * This program
+ * This program will try to read in a file with integers. If the file doesn't exist it will create it an populate it. It then reads it in, sorts the integers, and writes the file back out.
  * </p>
  * <p>
- * tags:	<insert concept tags here for training code only>
+ * tags:	Charset; Path; Paths; Files; newBufferedRead; newBufferedWriter; IOException; try with resources; ThreadLocalRandom;
  * </p>
  *
  * @author blindcant
@@ -44,14 +44,17 @@ public class ReadWriteReadSortIntegers
 		System.out.println("Output filename is: " + runtime.getOutputFilename());
 		System.out.println("The amount of integers to create is: " + runtime.getAmount());
 		System.out.println("[INFORMATION] Running program.");
-		runtime.readFile(runtime.getInputAbsolutePath());
+		runtime.storeRandomIntegers(runtime.readFile(runtime.getInputAbsolutePath()));
+		runtime.printIntegers();
+		runtime.sortAndWriteIntegers();
+		runtime.printIntegers(runtime.outputAbsolutePath);
 	}
 	
 	//@@@ CONSTRUCTOR(S) @@@
 	public ReadWriteReadSortIntegers(String inputPath, String outputPath)
 	{
 		inputAbsolutePath = Paths.get(inputPath);
-		outputAbsolutePath =  Paths.get(outputPath);
+		outputAbsolutePath = Paths.get(outputPath);
 		amount = 100;
 		integers = new int[amount];
 	}
@@ -59,7 +62,7 @@ public class ReadWriteReadSortIntegers
 	public ReadWriteReadSortIntegers(String inputPath, String outputPath, int amount)
 	{
 		inputAbsolutePath = Paths.get(inputPath);
-		outputAbsolutePath =  Paths.get(outputPath);
+		outputAbsolutePath = Paths.get(outputPath);
 		this.amount = amount;
 		integers = new int[amount];
 	}
@@ -103,15 +106,22 @@ public class ReadWriteReadSortIntegers
 		return amount;
 	}
 	
-	public int[] getIntegersArray()
+	//### SETTERS ###
+	private void storeRandomIntegers(String output)
 	{
-		return integers;
+		String[] integers = output.split(" ");
+		for(int i = 0; i < integers.length; i++) {
+			this.integers[i] = Integer.valueOf(integers[i]);
+		}
 	}
 	
-	//### SETTERS ###
+	private void sortAndWriteIntegers()
+	{
+		writeIntegers(outputAbsolutePath, amount, false);
+	}
 	
 	//### HELPERS ###
-	public void readFile(Path inputPath)
+	public void createFile(Path inputPath)
 	{
 		// Check if the file exists, if not create it
 		try {
@@ -119,45 +129,62 @@ public class ReadWriteReadSortIntegers
 			if (!Files.exists(inputPath)) {
 				//https://docs.oracle.com/javase/tutorial/essential/io/file.html#creating
 				Files.createFile(inputPath);
-				writeRandomIntegers(inputPath, amount);
+				writeIntegers(inputPath, amount, true);
 			}
 		}
 		catch (IOException e) {
 			System.out.println("[ERROR] File error occurred.\n" + e.getStackTrace());
 		}
-
+	}
+	
+	private String readFile(Path inputPath)
+	{
+		// Check if the file exists, if not create it
+		createFile(inputPath);
+		
 		// Read the file
 		System.out.println("[INFORMATION] Reading file " + inputPath);
-		try (BufferedReader bufferedReader = Files.newBufferedReader(inputPath, UTF8)){
+		StringBuffer stringBuffer = new StringBuffer();
+		
+		// Using NIO & try with resources
+		// https://docs.oracle.com/javase/tutorial/essential/io/file.html#textfiles
+		// https://docs.oracle.com/javase/tutorial/essential/exceptions/tryResourceClose.html
+		try (BufferedReader bufferedReader = Files.newBufferedReader(inputPath, UTF8)) {
 			// store the current line here
 			String currentLine;
-			StringBuffer stringBuffer = new StringBuffer();
 			// Store the current line as a String into currentLine.  The readLine() method returns null when the end of line is reached.
-			while ((currentLine = bufferedReader.readLine()) != null)
-			{
+			while ((currentLine = bufferedReader.readLine()) != null) {
 				stringBuffer.append(currentLine);
 			}
-			String[] integers = stringBuffer.toString().split(" ");
-			for(int i = 0; i < integers.length; i++) {
-				this.integers[i] = Integer.valueOf(integers[i]);
-			}
 		}
 		catch (IOException e) {
 			System.out.println("[ERROR] File error occurred.\n" + e.getStackTrace());
 		}
+		return stringBuffer.toString();
 	}
 	
-	private void writeRandomIntegers(Path outputPath, int amount)
+	private void writeIntegers(Path outputPath, int amount, boolean writingRandom)
 	{
-		System.out.println("[INFORMATION] Writing file with " + amount + "random integers.");
-		ThreadLocalRandom prn = ThreadLocalRandom.current();
-		try(BufferedWriter bufferedWriter = Files.newBufferedWriter(outputPath, UTF8)) {
+		if (writingRandom) {
+			System.out.println("[INFORMATION] Writing file with " + amount + " random integers.");
+		}
+		else {
+			System.out.println("[INFORMATION] Sorting integers and writing to output file.");
+			Arrays.sort(integers);
+		}
+		try (BufferedWriter bufferedWriter = Files.newBufferedWriter(outputPath, UTF8)) {
 			int printCount = 0;
-			for(int i = 0; i < amount; i++) {
-				bufferedWriter.write(prn.nextInt(0, 1000) + " ");
+			for (int i = 0; i < amount; i++) {
+				if (writingRandom) {
+					bufferedWriter.write(ThreadLocalRandom.current().nextInt(0, 1000) + " ");
+				}
+				else {
+					bufferedWriter.write(integers[i] + " ");
+				}
 				printCount++;
-				if(printCount % 10 == 0)
+				if (printCount % 10 == 0) {
 					bufferedWriter.write("\n");
+				}
 			}
 		}
 		catch (IOException e) {
@@ -165,8 +192,30 @@ public class ReadWriteReadSortIntegers
 		}
 	}
 	
-	private void writeSortedIntegers(Path outputPath)
+	public void printIntegers(Path inputPath)
 	{
+		System.out.println("[INFORMATION] Printing integers.");
+		int printCount = 0;
+		String[] fileOutput = readFile(inputPath).split(" ");
+		for (int i = 0; i < amount; i++) {
+			printCount++;
+			System.out.print(fileOutput[i] + " ");
+			if (printCount % 10 == 0) {
+				System.out.println();
+			}
+		}
+	}
 	
+	public void printIntegers()
+	{
+		System.out.println("[INFORMATION] Printing integers.");
+		int printCount = 0;
+		for (int i = 0; i < amount; i++) {
+			printCount++;
+			System.out.print(integers[i] + " ");
+			if (printCount % 10 == 0) {
+				System.out.println();
+			}
+		}
 	}
 }
