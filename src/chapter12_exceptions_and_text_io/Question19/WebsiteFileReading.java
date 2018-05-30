@@ -1,6 +1,5 @@
 package chapter12_exceptions_and_text_io.Question19;
 
-import java.net.MalformedURLException;
 import java.net.URL;
 import java.util.Scanner;
 import java.util.regex.Matcher;
@@ -18,7 +17,7 @@ import java.util.regex.Pattern;
  * @author blindcant
  * @version 0.0.1 - 2018-05-30
  */
-public class WebsiteReading
+public class WebsiteFileReading
 {
 	//@@@ CLASS VARIABLES @@@
 	public static final String WEBSITE_URL = "http://cs.armstrong.edu/liang/data/Lincoln.txt";
@@ -34,18 +33,18 @@ public class WebsiteReading
 	//@@@ MAIN METHOD @@@
 	public static void main(String[] args)
 	{
-		WebsiteReading runtime = new WebsiteReading();
+		WebsiteFileReading runtime = new WebsiteFileReading();
 		runtime.getWebsiteData(WEBSITE_URL);
 		runtime.printResults(WEBSITE_URL);
 	}
 	
 	//@@@ CONSTRUCTOR(S) @@@
-	public WebsiteReading(String websiteURL)
+	public WebsiteFileReading(String websiteURL)
 	{
 		this.websiteURL = websiteURL;
 	}
 	
-	public WebsiteReading()
+	public WebsiteFileReading()
 	{
 	
 	}
