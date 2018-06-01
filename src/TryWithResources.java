@@ -31,6 +31,7 @@ public class TryWithResources
 {
 	//@@@ CLASS VARIABLES @@@
 	public static final Charset UTF_8 = Charset.forName("UTF-8");
+	// http://tutorials.jenkov.com/java-logging/index.html
 	private static final Logger logger = Logger.getLogger(TryWithResources.class.getName());
 	
 	//@@@ INSTANCE VARIABLES @@@
