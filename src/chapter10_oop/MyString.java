@@ -23,11 +23,11 @@ public class MyString
 	public static void main(String[] args)
 	{
 		MyString runtime = new MyString(new char[] {'B', 'l', 'i', 'n', 'd', 'C', 'a', 'n', 't'});
-		for(int i = 0; i < runtime.length(); i++) {
+		for (int i = 0; i < runtime.length(); i++) {
 			System.out.print(runtime.charAt(i));
 		}
 		System.out.println();
-		for(int i = 0; i < runtime.length(); i++) {
+		for (int i = 0; i < runtime.length(); i++) {
 			System.out.print(runtime.valueOf(i).myString);
 		}
 		System.out.println("\nThe MyString is " + runtime.length() + " long.");
@@ -51,51 +51,63 @@ public class MyString
 	
 	//@@@ METHODS @@@
 	//### GETTERS ###
-	public char charAt(int index) {
-		if(index < 0 || index >= myString.length)
+	public char charAt(int index)
+	{
+		if (index < 0 || index >= myString.length) {
 			return '\u0000';
-		else
+		}
+		else {
 			return myString[index];
+		}
 	}
 	
-	public MyString valueOf(int index) {
-		if(index < 0 || index >= myString.length)
+	public MyString valueOf(int index)
+	{
+		if (index < 0 || index >= myString.length) {
 			return null;
+		}
 		else
-			// Use an anonymous array
+		// Use an anonymous array
+		{
 			return new MyString(new char[] {myString[index]});
+		}
 	}
 	
-	public int length() {
+	public int length()
+	{
 		return myString.length;
 	}
 	
-	public char[] toCharArray() {
+	public char[] toCharArray()
+	{
 		return Arrays.copyOf(myString, myString.length);
 	}
 	
 	//### HELPERS ###
-	public MyString substring(int begin, int end) {
+	public MyString substring(int begin, int end)
+	{
 		StringBuffer aStringBuffer = new StringBuffer();
-		if(begin < 0 || begin > myString.length) {
+		if (begin < 0 || begin > myString.length) {
 			return null;
 		}
-		else if(end < 0 || end > myString.length) {
+		else if (end < 0 || end > myString.length) {
 			return null;
 		}
 		else {
-			for(int i = begin; i < end; i++) {
+			for (int i = begin; i < end; i++) {
 				aStringBuffer.append(myString[i]);
 			}
 			return new MyString(aStringBuffer.toString().toCharArray());
 		}
 	}
 	
-	public MyString substring(int begin) {
+	public MyString substring(int begin)
+	{
 		return substring(begin, myString.length);
 	}
 	
-	public MyString toLowerCase() {
+	public MyString toLowerCase()
+	{
 		/*
 		System.out.println(new String(myString));
 		System.out.println(new String(myString).toLowerCase());
@@ -105,22 +117,27 @@ public class MyString
 		return new MyString(new String(myString).toLowerCase().toCharArray());
 	}
 	
-	public MyString toUpperCase() {
+	public MyString toUpperCase()
+	{
 		return new MyString(new String(myString).toUpperCase().toCharArray());
 	}
 	
-	public boolean equals(MyString aMyString) {
-		if(new String(aMyString.myString).equals(new String(myString))) {
+	public boolean equals(MyString aMyString)
+	{
+		if (new String(aMyString.myString).equals(new String(myString))) {
 			return true;
-		} else {
+		}
+		else {
 			return false;
 		}
 	}
 	
-	public int compare(MyString aMyString) {
-		for(int i = 0; i < aMyString.length(); i++) {
-			if(!String.valueOf(aMyString.myString[i]).equals(String.valueOf(this.myString[i])))
+	public int compare(MyString aMyString)
+	{
+		for (int i = 0; i < aMyString.length(); i++) {
+			if (!String.valueOf(aMyString.myString[i]).equals(String.valueOf(this.myString[i]))) {
 				return aMyString.myString[i] - this.myString[i];
+			}
 		}
 		return 0;
 	}

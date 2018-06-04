@@ -30,7 +30,7 @@ public class MyStringBuilder
 		runtime.append("can't");
 		runtime.performTests(runtime);
 		System.out.println(runtime.substring(5));
-
+		
 		System.out.println("\n[INFO] Starting with a String.");
 		MyStringBuilder runtime2 = new MyStringBuilder("Blind");
 		runtime2.performTests(runtime2);
@@ -90,10 +90,12 @@ public class MyStringBuilder
 	//### HELPERS ###
 	public String toString()
 	{
-		if(myStringBuilder == null || myStringBuilder[0] == '\u0000')
+		if (myStringBuilder == null || myStringBuilder[0] == '\u0000') {
 			return "";
-		else
+		}
+		else {
 			return new String(myStringBuilder);
+		}
 	}
 	
 	public void performTests(MyStringBuilder myStringBuilder)
@@ -108,7 +110,7 @@ public class MyStringBuilder
 	public MyStringBuilder reverse()
 	{
 		char[] reversed = new char[myStringBuilder.length];
-		for(int i = 0, j = size - 1; i < size; i++, j--) {
+		for (int i = 0, j = size - 1; i < size; i++, j--) {
 			reversed[i] = myStringBuilder[j];
 		}
 		return new MyStringBuilder(reversed);
