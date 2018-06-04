@@ -65,8 +65,9 @@ public class MySplit
 			// i * 2 will be 0, 2, 4 etc
 			mySplitResult[i * 2] = splitResult[i];
 			// Make sure we don't try to store an extra delimiter
-			if(i != splitResult.length - 1)
+			if (i != splitResult.length - 1) {
 				mySplitResult[i * 2 + 1] = delimiter;
+			}
 		}
 		return mySplitResult;
 	}
@@ -81,8 +82,9 @@ public class MySplit
 			// i * 2 will be 0, 2, 4 etc
 			mySplitResult[i * 2] = splitResult[i];
 			// Make sure we don't try to store an extra delimiter
-			if (i != splitResult.length - 1)
+			if (i != splitResult.length - 1) {
 				mySplitResult[i * 2 + 1] = delimiter;
+			}
 		}
 		return mySplitResult;
 	}
