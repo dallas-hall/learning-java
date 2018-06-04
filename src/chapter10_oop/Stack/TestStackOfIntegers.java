@@ -1,4 +1,4 @@
-package chapter10_oop;
+package chapter10_oop.Stack;
 
 /**
  * <h1>Test StackOfIntegers</h1>
@@ -45,7 +45,8 @@ public class TestStackOfIntegers
 			
 			//try to show the last data element in the stack
 			System.out.println("\nThe last element of the stack currently is: " + stack1.peek());
-		} catch (Exception e) {
+		}
+		catch (Exception e) {
 			System.out.println(e.getMessage());
 		}
 	}

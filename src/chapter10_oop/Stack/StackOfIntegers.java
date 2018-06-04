@@ -1,4 +1,4 @@
-package chapter10_oop;
+package chapter10_oop.Stack;
 
 /**
  * <h1>Stack Data Structure</h1>
@@ -7,9 +7,9 @@ package chapter10_oop;
  * </p>
  * <p>
  * A stack is a data structure that holds data in a last-in, first-out fashion.
- *
+ * <p>
  * Example will have a stack being empty, having 3 bits of data pushed (loaded) into it and then popped (removed) from it
- *
+ * <p>
  * 1) Start with an empty stack
  * Stack = empty
  * 2) Push 1 data block into the stack (add data1)
@@ -59,6 +59,7 @@ public class StackOfIntegers
 	
 	//@@@ METHODS @@@
 	//### GETTERS ###
+	
 	/**
 	 * Return the top element from the stack
 	 */
@@ -94,6 +95,7 @@ public class StackOfIntegers
 	}
 	
 	//### SETTERS ###
+	
 	/**
 	 * Push a new integer to the top of the stack
 	 */
@@ -119,6 +121,7 @@ public class StackOfIntegers
 	}
 	
 	//### HELPERS ###
+	
 	/**
 	 * Checks whether the stack is empty
 	 */

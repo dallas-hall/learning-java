@@ -1,4 +1,4 @@
-package chapter10_oop;
+package chapter10_oop.Queue;
 
 /**
  * <h1>Queue Data Structure</h1>
@@ -80,7 +80,7 @@ public class QueueOfIntegers
 		if (currentQueueSize > 0) {
 			int numberToReturn = queue[0];
 			// Move everything down one and reset the unused queue space.
-			for(int i = 0; i < currentQueueSize - 1; i++) {
+			for (int i = 0; i < currentQueueSize - 1; i++) {
 				queue[i] = queue[i + 1];
 			}
 			queue[currentQueueSize - 1] = 0;
