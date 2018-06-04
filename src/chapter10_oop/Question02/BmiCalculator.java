@@ -1,4 +1,4 @@
-package chapter10_oop;
+package chapter10_oop.Question02;
 
 /**
  * <h1>BMI Calculator</h1>
@@ -12,7 +12,7 @@ package chapter10_oop;
  * @author blindcant
  * @version 0.1 - 2017-04-23
  */
-public class Question02
+public class BmiCalculator
 {
 	//@@@ CLASS VARIABLES @@@
 	public static final double KILOGRAMS_PER_POUND = 0.45359237;
@@ -27,13 +27,13 @@ public class Question02
 	//@@@ MAIN METHOD @@@
 	public static void main(String[] args)
 	{
-		Question02 bmi1 = new Question02("Dallas", 35, 300, 6, 4);
+		BmiCalculator bmi1 = new BmiCalculator("Dallas", 35, 300, 6, 4);
 		System.out.println(bmi1.getHeight());
 		System.out.println(bmi1.getStatus());
 	}
 	
 	//@@@ CONSTRUCTOR(S) @@@
-	public Question02 (String name, int age, double weight, double height)
+	public BmiCalculator(String name, int age, double weight, double height)
 	{
 		this.name = name;
 		this.age = age;
@@ -41,12 +41,12 @@ public class Question02
 		this.height = height;
 	}
 	
-	public Question02(String name, double weight, double height)
+	public BmiCalculator(String name, double weight, double height)
 	{
 		this(name, 20, weight, height);
 	}
 	
-	public Question02 (String name, int age, double weight, double heightFeet, double heightInches)
+	public BmiCalculator(String name, int age, double weight, double heightFeet, double heightInches)
 	{
 		this.name = name;
 		this.age = age;
@@ -66,14 +66,18 @@ public class Question02
 	public String getStatus()
 	{
 		double bmi = getBMI();
-		if (bmi < 18.5)
+		if (bmi < 18.5) {
 			return "Underweight";
-		else if (bmi < 25)
+		}
+		else if (bmi < 25) {
 			return "Normal";
-		else if (bmi < 30)
+		}
+		else if (bmi < 30) {
 			return "Overweight";
-		else
+		}
+		else {
 			return "Obese";
+		}
 	}
 	
 	public String getName()

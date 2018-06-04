@@ -1,4 +1,4 @@
-package chapter10_oop;
+package chapter10_oop.Question01;
 
 /**
  * <h1>Print Current Timestamp</h1>
@@ -12,7 +12,7 @@ package chapter10_oop;
  * @author blindcant
  * @version 0.1 - 2017-04-22
  */
-public class Question01
+public class TimestampPrinting
 {
 	//@@@ INSTANCE VARIABLES @@@
 	private long currentHours;
@@ -25,16 +25,16 @@ public class Question01
 	//@@@ MAIN METHOD @@@
 	public static void main(String[] args)
 	{
-		Question01 time1 = new Question01();
+		TimestampPrinting time1 = new TimestampPrinting();
 		time1.printTime();
-		Question01 time2 = new Question01(555550000);
+		TimestampPrinting time2 = new TimestampPrinting(555550000);
 		time2.printTime();
-		Question01 time3 = new Question01(12, 35, 45);
+		TimestampPrinting time3 = new TimestampPrinting(12, 35, 45);
 		time3.printTime();
 	}
 	
 	//@@@ CONSTRUCTOR(S) @@@
-	public Question01()
+	public TimestampPrinting()
 	{
 		//LONG WAY
 		//get current time in milliseconds, since UNIX epoch (birth of UNIX)
@@ -60,7 +60,7 @@ public class Question01
 		this.currentHours = totalHours % 24;
 	}
 	
-	public Question01(long inputElapsedTime)
+	public TimestampPrinting(long inputElapsedTime)
 	{
 		//convert milliseconds to seconds (divide by 1000) 1 sec = 1000ms
 		long totalSeconds = inputElapsedTime / 1000;
@@ -84,7 +84,7 @@ public class Question01
 		this.currentHours = totalHours % 24;
 	}
 	
-	public Question01(long hours, long minutes, long seconds)
+	public TimestampPrinting(long hours, long minutes, long seconds)
 	{
 		this.currentHours = hours;
 		this.currentMinutes = minutes;

@@ -1,4 +1,6 @@
-package chapter10_oop;
+package chapter10_oop.Question05;
+
+import chapter10_oop.Question03.PrimeNumberCheck;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -16,7 +18,7 @@ import java.util.Scanner;
  * @author blindcant
  * @version 0.1 - 2017-04-23
  */
-public class Question05
+public class FactorFinder
 {
 	//@@@ CLASS VARIABLES @@@
 	private static Scanner keyboard = new Scanner(System.in);
@@ -44,18 +46,19 @@ public class Question05
 				System.out.println("You can only enter integers. Try again.");
 				errorFound = true;
 			}
-			if(!errorFound)
+			if (!errorFound) {
 				done = true;
+			}
 		}
 		while (!done);
 		
-		Question03 question03 = new Question03();
-		Question05 run1 = new Question05(userInput);
+		PrimeNumberCheck question03 = new PrimeNumberCheck();
+		FactorFinder run1 = new FactorFinder(userInput);
 		run1.runTest(userInput, question03);
 	}
 	
 	//@@@ CONSTRUCTOR(S) @@@
-	public Question05(int startNumber)
+	public FactorFinder(int startNumber)
 	{
 		//assuming that every number will less factors than half of itself + 1
 		factorsArray = new int[startNumber / 2 + 1];
@@ -140,7 +143,7 @@ public class Question05
 		System.out.println();
 	}
 	
-	public void printPrimeFactorsFromArray(int[] inputArray, Question03 question03)
+	public void printPrimeFactorsFromArray(int[] inputArray, PrimeNumberCheck question03)
 	{
 		int arraySize = getArraySize();
 		for (int i = 0; i < arraySize; i++) {
@@ -151,7 +154,7 @@ public class Question05
 		System.out.println();
 	}
 	
-	public void printPrimeFactorsFromList(Question03 question03)
+	public void printPrimeFactorsFromList(PrimeNumberCheck question03)
 	{
 		for (Integer anInt : factorsList) {
 			if (question03.isPrime2(anInt)) {
@@ -161,7 +164,7 @@ public class Question05
 		System.out.println();
 	}
 	
-	public void printNonPrimeFactorsFromArray(int[] inputArray, Question03 question03)
+	public void printNonPrimeFactorsFromArray(int[] inputArray, PrimeNumberCheck question03)
 	{
 		int arraySize = getArraySize();
 		for (int i = 0; i < arraySize; i++) {
@@ -172,7 +175,7 @@ public class Question05
 		System.out.println();
 	}
 	
-	public void printNonPrimeFactorsFromList(Question03 question03)
+	public void printNonPrimeFactorsFromList(PrimeNumberCheck question03)
 	{
 		for (Integer anInt : factorsList) {
 			if (!question03.isPrime2(anInt)) {
@@ -182,7 +185,7 @@ public class Question05
 		System.out.println();
 	}
 	
-	public void runTest(int startNumber, Question03 question03)
+	public void runTest(int startNumber, PrimeNumberCheck question03)
 	{
 		System.out.println("\n@@@ Array Test @@@");
 		setFactorsIntoArray(startNumber);

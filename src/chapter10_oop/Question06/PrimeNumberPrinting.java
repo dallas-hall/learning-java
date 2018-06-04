@@ -1,4 +1,4 @@
-package chapter10_oop;
+package chapter10_oop.Question06;
 
 import java.util.Scanner;
 
@@ -15,7 +15,7 @@ import java.util.Scanner;
  * @version 0.1 - 2017-04-23
  */
 
-public class Question06
+public class PrimeNumberPrinting
 {
 	//@@@ CLASS VARIABLES @@@
 	private static Scanner keyboard = new Scanner(System.in);
@@ -27,12 +27,12 @@ public class Question06
 	//@@@ MAIN METHOD @@@
 	public static void main(String[] args)
 	{
-		Question06 runTime = new Question06();
+		PrimeNumberPrinting runTime = new PrimeNumberPrinting();
 		runTime.printPrimeNumberArray();
 	}
 	
 	//@@@ CONSTRUCTOR(S) @@@
-	public Question06()
+	public PrimeNumberPrinting()
 	{
 		getUserInput();
 		createPrimeNumberArray(userInput);
