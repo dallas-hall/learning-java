@@ -1,4 +1,4 @@
-package chapter10_oop;
+package chapter10_oop.Question04;
 
 import java.awt.geom.Point2D;
 
@@ -14,7 +14,7 @@ import java.awt.geom.Point2D;
  * @author blindcant
  * @version 0.1 - 2017-04-23
  */
-public class Question04
+public class GridCoordinates
 {
 	//@@@ INSTANCE VARIABLES @@@
 	private double x;
@@ -25,7 +25,7 @@ public class Question04
 	{
 		//POINT 1 SETUP
 		//manual way
-/*		Question04 point1Coordinates = new Question04(0,0);
+/*		Question04_07_11_to_14 point1Coordinates = new Question04_07_11_to_14(0,0);
 		System.out.println("Current coordinates for point1 are: x:" + point1Coordinates.getX() + " & y:" + point1Coordinates.getY());*/
 		
 		//using Point2D class
@@ -34,7 +34,7 @@ public class Question04
 		
 		//POINT 2 SETUP
 		//manual way
-/*		Question04 point2Coordinates = new Question04(10,30.5);
+/*		Question04_07_11_to_14 point2Coordinates = new Question04_07_11_to_14(10,30.5);
 		System.out.println("Current coordinates for point1 are: x:" + point1Coordinates.getX() + " & y:" + point1Coordinates.getY());*/
 		
 		//using Point2D class
@@ -52,7 +52,7 @@ public class Question04
 	}
 	
 	//@@@ CONSTRUCTOR(S) @@@
-	public Question04(double x, double y)
+	public GridCoordinates(double x, double y)
 	{
 		this.x = x;
 		this.y = y;

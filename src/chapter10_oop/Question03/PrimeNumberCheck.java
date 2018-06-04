@@ -1,4 +1,4 @@
-package chapter10_oop;
+package chapter10_oop.Question03;
 
 /**
  * <h1>Prime Number Checker</h1>
@@ -12,21 +12,21 @@ package chapter10_oop;
  * @author blindcant
  * @version 0.1 - 2017-04-23
  */
-public class Question03
+public class PrimeNumberCheck
 {
 	//@@@ CLASS VARIABLES @@@
 	public static int[] numbersToCheck;
-
+	
 	//@@@ INSTANCE VARIABLES @@@
 	private int value;
 	
 	//@@@ CONSTRUCTOR(S) @@@
-	public Question03(int inputValue)
+	public PrimeNumberCheck(int inputValue)
 	{
 		this.value = inputValue;
 	}
 	
-	public Question03()
+	public PrimeNumberCheck()
 	{
 		numbersToCheck = new int[10];
 		for (int i = 0; i < numbersToCheck.length; i++) {
@@ -37,14 +37,14 @@ public class Question03
 	//@@@ MAIN METHOD @@@
 	public static void main(String[] args)
 	{
-/*		Question03 myInt1 = new Question03(1);
+/*		ArrayIndexException myInt1 = new ArrayIndexException(1);
 		myInt1.checkSingleNumber(myInt1.getValue(), myInt1);
-		Question03 myInt2 = new Question03(2);
+		ArrayIndexException myInt2 = new ArrayIndexException(2);
 		myInt1.checkSingleNumber(myInt2.getValue(), myInt2);
-		Question03 myInt3 = new Question03(3);
+		ArrayIndexException myInt3 = new ArrayIndexException(3);
 		myInt1.checkSingleNumber(myInt3.getValue(), myInt3);*/
 		
-		Question03 intArray = new Question03();
+		PrimeNumberCheck intArray = new PrimeNumberCheck();
 		intArray.checkArrayOfNumbers(intArray);
 		
 		char[] intAsCharArray = {'1', '2', '3'};
@@ -84,8 +84,9 @@ public class Question03
 	{
 		//A prime number is any number that only has 2 factors, 1 and itself.
 		boolean isPrime = true;
-		if (inputValue < 2)
+		if (inputValue < 2) {
 			isPrime = false;
+		}
 		//check for primes by dividing the starting number from 2 up until starting number - 1
 		for (int divisor = 2; divisor <= (inputValue - 1); divisor++) {
 			//if any of these equations = 0 then the number is not prime
@@ -134,7 +135,7 @@ public class Question03
 		}
 	}
 	
-	public boolean equals(Question03 inputObject)
+	public boolean equals(PrimeNumberCheck inputObject)
 	{
 		if (inputObject.getValue() == 3) {
 			return true;
@@ -167,7 +168,8 @@ public class Question03
 		return newValue;
 	}
 	
-	public void checkSingleNumber(int number, Question03 inputObject) {
+	public void checkSingleNumber(int number, PrimeNumberCheck inputObject)
+	{
 		System.out.println(number + " is prime? " + inputObject.isPrime(number));
 		System.out.println(number + " is prime v2? " + inputObject.isPrime2(number));
 		System.out.println(number + " is even? " + inputObject.isEven(number));
@@ -177,9 +179,10 @@ public class Question03
 		System.out.println();
 	}
 	
-	public void checkArrayOfNumbers(Question03 inputObject) {
-		for (int i = 0; i < Question03.numbersToCheck.length; i++) {
-			checkSingleNumber(Question03.numbersToCheck[i], inputObject);
+	public void checkArrayOfNumbers(PrimeNumberCheck inputObject)
+	{
+		for (int i = 0; i < PrimeNumberCheck.numbersToCheck.length; i++) {
+			checkSingleNumber(PrimeNumberCheck.numbersToCheck[i], inputObject);
 		}
 	}
 }
