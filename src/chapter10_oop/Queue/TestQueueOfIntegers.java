@@ -1,4 +1,4 @@
-package chapter10_oop;
+package chapter10_oop.Queue;
 
 import java.util.Arrays;
 import java.util.concurrent.ThreadLocalRandom;
@@ -18,7 +18,8 @@ import java.util.concurrent.ThreadLocalRandom;
 public class TestQueueOfIntegers
 {
 	//@@@ MAIN METHOD @@@
-	public static void main(String[] args) {
+	public static void main(String[] args)
+	{
 		// Create Queue
 		QueueOfIntegers queueOfIntegers = new QueueOfIntegers(20);
 		
@@ -37,7 +38,7 @@ public class TestQueueOfIntegers
 		
 		// Remove an item
 		try {
-			while(!queueOfIntegers.isEmpty()) {
+			while (!queueOfIntegers.isEmpty()) {
 				System.out.println("Processing the queue, currently processing: " + queueOfIntegers.dequeue());
 				
 			}
