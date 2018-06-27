@@ -4,7 +4,16 @@ import chapter11_inheritance.Question01.Colourable;
 import chapter11_inheritance.Question01.GeometricObject;
 
 /**
- * Created by blindcant on 20/09/17.
+ * <h1>CalendarAndDateExample</h1>
+ * <p>
+ * This program showcases the use of the Cloneable interface.
+ * </p>
+ * <p>
+ * tags:	inheritance; interfaces; Cloneable; Comparable; overriding;
+ * </p>
+ *
+ * @author blindcant
+ * @version 0.0.1 - 2017-09-20
  */
 public class Octagon extends GeometricObject implements Colourable, Cloneable
 {
@@ -25,8 +34,7 @@ public class Octagon extends GeometricObject implements Colourable, Cloneable
 		side8 = 1;
 	}
 	
-	public Octagon(String colour, boolean isFilled, double side1, double side2, double side3
-			, double side4, double side5, double side6, double side7, double side8)
+	public Octagon(String colour, boolean isFilled, double side1, double side2, double side3, double side4, double side5, double side6, double side7, double side8)
 	{
 		super(colour, isFilled);
 		this.side1 = side1;
@@ -38,11 +46,12 @@ public class Octagon extends GeometricObject implements Colourable, Cloneable
 		this.side7 = side7;
 		this.side8 = side8;
 	}
+	
 	//@@@ METHODS @@@
 	//### GETTERS ###
 	public double getPerimeter()
 	{
-		return side1 + side2 + side3 + side4 + side5 + side6 + side7 + side8 ;
+		return side1 + side2 + side3 + side4 + side5 + side6 + side7 + side8;
 	}
 	//### SETTERS ###
 	
@@ -50,24 +59,19 @@ public class Octagon extends GeometricObject implements Colourable, Cloneable
 	@Override
 	public String toString()
 	{
-		return Octagon.class.getSimpleName() + "\n" + super.toString() + "\nSide 1: " + side1 + "\nSide 2: " + side2
-				+ "\nSide 3: " + side3 + "\nSide 4: " + side4 + "\nSide 5: " + side5 + "\nSide 6: " + side6 + "\nSide 7: "
-				+ side7 + "\nSide 8: " + side8 + "\nArea: " + Double.NaN + "\nPerimeter: " + getPerimeter();
+		return Octagon.class.getSimpleName() + "\n" + super.toString() + "\nSide 1: " + side1 + "\nSide 2: " + side2 + "\nSide 3: " + side3 + "\nSide 4: " + side4 + "\nSide 5: " + side5 + "\nSide 6: " + side6 + "\nSide 7: " + side7 + "\nSide 8: " + side8 + "\nArea: " + Double.NaN + "\nPerimeter: " + getPerimeter();
 	}
 	
 	@Override
 	public int compareTo(GeometricObject geometricObject)
 	{
-		if(getPerimeter() > ((Octagon)geometricObject).getPerimeter())
-		{
+		if (getPerimeter() > ((Octagon) geometricObject).getPerimeter()) {
 			return 1;
 		}
-		else if(getPerimeter() == ((Octagon)geometricObject).getPerimeter())
-		{
+		else if (getPerimeter() == ((Octagon) geometricObject).getPerimeter()) {
 			return 0;
 		}
-		else
-		{
+		else {
 			return -1;
 		}
 	}
@@ -82,31 +86,27 @@ public class Octagon extends GeometricObject implements Colourable, Cloneable
 	public boolean equals(Object anObject)
 	{
 		//are they the same objects
-		if(this == anObject)
-		{
+		if (this == anObject) {
 			return true;
 		}
 		
 		//is the parameter null?
-		if(anObject == null)
-		{
+		if (anObject == null) {
 			return false;
 		}
 		
 		//are the classes the same
-		if (getClass() != anObject.getClass())
-		{
+		if (getClass() != anObject.getClass()) {
 			return false;
 		}
 		
-		//
-		if (!(anObject instanceof Octagon))
-		{
+		// is it even an octagon?
+		if (!(anObject instanceof Octagon)) {
 			return false;
 		}
 		
 		//cast Object to our specific class and compare state
-		Octagon aTriangle = (Octagon) anObject;
-		return toString().equals(anObject.toString());
+		Octagon aOctagon = (Octagon) anObject;
+		return this.toString().equals(aOctagon.toString());
 	}
 }
