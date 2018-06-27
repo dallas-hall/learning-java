@@ -53,6 +53,11 @@ public class Octagon extends GeometricObject implements Colourable, Cloneable
 	{
 		return side1 + side2 + side3 + side4 + side5 + side6 + side7 + side8;
 	}
+	
+	public double getArea()
+	{
+		return (2 + 4 / Math.sqrt(2)) * side1 * side1;
+	}
 	//### SETTERS ###
 	
 	//### HELPERS ###
@@ -65,10 +70,10 @@ public class Octagon extends GeometricObject implements Colourable, Cloneable
 	@Override
 	public int compareTo(GeometricObject geometricObject)
 	{
-		if (getPerimeter() > ((Octagon) geometricObject).getPerimeter()) {
+		if (getArea() > ((Octagon) geometricObject).getArea()) {
 			return 1;
 		}
-		else if (getPerimeter() == ((Octagon) geometricObject).getPerimeter()) {
+		else if (getArea() == ((Octagon) geometricObject).getArea()) {
 			return 0;
 		}
 		else {
