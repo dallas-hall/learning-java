@@ -81,7 +81,7 @@ public abstract class GeometricObject implements Comparable<GeometricObject>
 	@Override
 	public boolean equals(Object anObject)
 	{
-		//are they the same objects
+		//are they the same object reference
 		if (this == anObject) {
 			return true;
 		}
@@ -103,6 +103,6 @@ public abstract class GeometricObject implements Comparable<GeometricObject>
 		
 		//cast Object to our specific class and compare state
 		GeometricObject aGeometricObject = (GeometricObject) anObject;
-		return toString().equals(anObject.toString());
+		return this.toString().equals(aGeometricObject.toString());
 	}
 }
