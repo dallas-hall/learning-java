@@ -40,4 +40,11 @@ public class MultiStage extends Application
 		stage.setResizable(false);
 		stage.show();
 	}
+	
+	//@@@ MAIN METHOD @@@
+	public static void main(String[] args)
+	{
+		System.out.println("main method");
+		Application.launch(args);
+	}
 }
