@@ -42,6 +42,7 @@ public class MultiStage extends Application
 	}
 	
 	//@@@ MAIN METHOD @@@
+	// This can be omitted because the JVM will automatically invoke this when it is omitted.
 	public static void main(String[] args)
 	{
 		System.out.println("main method");
