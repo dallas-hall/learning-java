@@ -38,8 +38,10 @@ public class SingleStage extends Application
 	
 	//@@@ MAIN METHOD @@@
 	// This is only needed for IDEs with limited JavaFX support. IntelliJ is not one of those.
-/*	public static void main(String[] args)
+	//@@@ MAIN METHOD @@@
+	public static void main(String[] args)
 	{
+		System.out.println("main method");
 		Application.launch(args);
-	}*/
+	}
 }
