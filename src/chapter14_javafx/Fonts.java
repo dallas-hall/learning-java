@@ -1,10 +1,10 @@
 package chapter14_javafx;/**
  * <h1>Fonts</h1>
  * <p>
- * This program
+ * This program shows how to use JavaFX fonts.
  * </p>
  * <p>
- * tags:	<insert concept tags here for training code only>
+ * tags:	JavaFX; StackPane; Font; Circle; Color;
  * </p>
  *
  * @author blindcant
