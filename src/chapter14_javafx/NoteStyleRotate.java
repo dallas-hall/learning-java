@@ -1,10 +1,10 @@
 package chapter14_javafx;/**
  * <h1>NoteStyleRotate</h1>
  * <p>
- * This program
+ * This program shows how nodes can be rotated.
  * </p>
  * <p>
- * tags:	<insert concept tags here for training code only>
+ * tags:	JavaFX; StackPane; Button; setStyle; setRotate;
  * </p>
  *
  * @author blindcant
@@ -19,11 +19,6 @@ import javafx.stage.Stage;
 
 public class NoteStyleRotate extends Application
 {
-	//@@@ CLASS VARIABLES @@@
-	
-	
-	//@@@ INSTANCE VARIABLES @@@
-	
 	//@@@ MAIN METHOD @@@
 	public static void main(String[] args)
 	{
@@ -43,6 +38,7 @@ public class NoteStyleRotate extends Application
 		stackPane.getChildren().add(buttonOk);
 		
 		// Apply some JavaFX CSS
+		//buttonOk.setRotate(45);
 		stackPane.setRotate(45);
 		stackPane.setStyle("-fx-border-color: red; -fx-background-color: lightgray;");
 		
@@ -53,16 +49,4 @@ public class NoteStyleRotate extends Application
 		primaryStage.setScene(scene);
 		primaryStage.show();
 	}
-	
-	//@@@ CONSTRUCTOR(S) @@@
-	
-	
-	//@@@ METHODS @@@
-	//### GETTERS ###
-	
-	//### SETTERS ###
-	
-	//### HELPERS ###
-	
-	//@@@ INNER CLASS(ES) @@@
 }
