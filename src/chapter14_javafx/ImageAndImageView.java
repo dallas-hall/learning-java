@@ -1,10 +1,11 @@
-package chapter14_javafx;/**
+package chapter14_javafx;
+/**
  * <h1>ImageAndImageView</h1>
  * <p>
- * This program
+ * This program shows how to display an image in JavaFx.
  * </p>
  * <p>
- * tags:	<insert concept tags here for training code only>
+ * tags:	Image; ImageView;
  * </p>
  *
  * @author blindcant
