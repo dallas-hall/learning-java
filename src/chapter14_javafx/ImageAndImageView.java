@@ -29,7 +29,7 @@ public class ImageAndImageView extends Application
 	{
 		Pane pane = new HBox(10);
 		pane.setPadding(new Insets(5, 5, 5, 5));
-		Image image = new Image("http://www.cs.armstrong.edu/liang/image/us.gif");
+		Image image = new Image("https://flaglane.com/download/australian-flag/australian-flag-small.gif");
 		pane.getChildren().add(new ImageView(image));
 		
 		ImageView imageView2 = new ImageView(image);
