@@ -20,7 +20,7 @@ public class PrimeNumber
 			// Assume the number is prime
 			boolean isPrime = true; // Is the current number prime?
 			
-			// Test whether number is prime
+			// LaunchSequence whether number is prime
 			for (int divisor = 2; divisor <= number / 2; divisor++)
 			{
 				if (number % divisor == 0)

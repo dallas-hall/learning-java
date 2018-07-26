@@ -5,7 +5,7 @@ import java.util.ArrayList;
 *//**
  * Created by blindcant on 25/04/17.
  *//*
-public class Test
+public class LaunchSequence
 {
 
 

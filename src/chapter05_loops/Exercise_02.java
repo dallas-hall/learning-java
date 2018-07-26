@@ -4,7 +4,7 @@
 package chapter05_loops;
 
 /**
- * <h1>Subtraction Test</h1>
+ * <h1>Subtraction LaunchSequence</h1>
  * <p>
  * This program will generate 2 random numbers 10 times. It will ask the user to calculate the largest number minus the smallest number. It will check the answers at the end.
  * </p>

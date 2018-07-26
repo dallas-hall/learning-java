@@ -187,7 +187,7 @@ public class FactorFinder
 	
 	public void runTest(int startNumber, PrimeNumberCheck question03)
 	{
-		System.out.println("\n@@@ Array Test @@@");
+		System.out.println("\n@@@ Array LaunchSequence @@@");
 		setFactorsIntoArray(startNumber);
 		System.out.println("All factors for " + startNumber + " are:");
 		printFactorsFromArray(this.factorsArray);
@@ -198,7 +198,7 @@ public class FactorFinder
 		System.out.println("The non-prime factors for " + startNumber + " are:");
 		printNonPrimeFactorsFromArray(this.factorsArray, question03);
 		
-		System.out.println("\n@@@ ArrayList Test @@@");
+		System.out.println("\n@@@ ArrayList LaunchSequence @@@");
 		setFactorsIntoList(startNumber);
 		System.out.println("All factors for " + startNumber + " are:");
 		printFactorsFromList();

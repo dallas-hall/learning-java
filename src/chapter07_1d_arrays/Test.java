@@ -2,7 +2,7 @@
 
 import java.util.Date;
 
-public class Test
+public class LaunchSequence
 {
     private int id;
     public void m1()
@@ -11,6 +11,6 @@ public class Test
     }
     public void m2()
     {
-        Test.id = 45;
+        LaunchSequence.id = 45;
     }
 }*/

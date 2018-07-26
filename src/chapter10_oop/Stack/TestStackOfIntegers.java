@@ -1,7 +1,7 @@
 package chapter10_oop.Stack;
 
 /**
- * <h1>Test StackOfIntegers</h1>
+ * <h1>LaunchSequence StackOfIntegers</h1>
  * <p>
  * This program has the main method for the StackOfIntegers class.
  * </p>

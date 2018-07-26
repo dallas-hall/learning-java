@@ -24,12 +24,12 @@ public class MySplit
 	//@@@ MAIN METHOD @@@
 	public static void main(String[] args)
 	{
-		System.out.println("[INFO] Test 1.");
+		System.out.println("[INFO] LaunchSequence 1.");
 		MySplit runtime = new MySplit("Blind;Can't;Likes;Java", ";");
 		System.out.println("Starting string: " + runtime.getOriginal());
 		System.out.println("String.split(delimiter): " + Arrays.toString("Blind;Can't;Likes;Java".split(";")));
 		System.out.println("Regex.split(String): " + Arrays.toString(runtime.getResult()));
-		System.out.println("\n[INFO] Test 2.");
+		System.out.println("\n[INFO] LaunchSequence 2.");
 		MySplit runtime2 = new MySplit("Blind<>Can't<>Likes<>Java", "<>");
 		System.out.println("Starting string: " + runtime2.getOriginal());
 		System.out.println("String.split(delimiter): " + Arrays.toString("Blind<>Can't<>Likes<>Java".split("<>")));

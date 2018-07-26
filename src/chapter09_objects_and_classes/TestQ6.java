@@ -4,7 +4,7 @@ import java.util.Arrays;
 import java.util.concurrent.ThreadLocalRandom;
 
 /**
- * <h1>Q6 Test</h1>
+ * <h1>Q6 LaunchSequence</h1>
  * <p>
  * This program will time the sorting of 100,000 doubles in an array.
  * </p>
