@@ -19,7 +19,7 @@ public class Main
 	//@@@ MAIN METHOD @@@
 	public static void main(String[] args)
 	{
-		System.out.println("[INFORMATION] Test 1.");
+		System.out.println("[INFORMATION] LaunchSequence 1.");
 		ArrayListManipulation runtime = new ArrayListManipulation();
 		runtime.populateList(20);
 		runtime.printList("The original list is: ");
@@ -36,7 +36,7 @@ public class Main
 		runtime.removeDuplicates();
 		runtime.printList("The distinct list is: ");
 		
-		System.out.println("\n[INFORMATION] Test 2.");
+		System.out.println("\n[INFORMATION] LaunchSequence 2.");
 		ArrayListManipulation runtime2 = new ArrayListManipulation();
 		runtime2.populateList();
 		runtime2.printList("The original list is: ");

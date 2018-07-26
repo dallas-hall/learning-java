@@ -81,7 +81,7 @@ public class PrimeNumberPrinting
 	private boolean isPrime(int numberToCheck)
 	{
 		StringBuffer aStringBuffer = new StringBuffer();
-		// Test whether number is prime
+		// LaunchSequence whether number is prime
 		if (numberToCheck < 2) {
 			//System.out.println(numberToCheck + " is not prime.  Only numbers >= 2 can be prime.");
 			return false;

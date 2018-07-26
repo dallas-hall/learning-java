@@ -32,7 +32,7 @@ public class Question30
 		int[] rollResults = new int[rollAmount];
 		int currentGamePoint = 0;
 		
-		// Test di rolling
+		// LaunchSequence di rolling
 /*		System.out.println("Rolling " + di + sides + " sided di(ce) " + rollAmount + " time(s).");
 		for(int i = 0; i < 20; i++)
 		{
