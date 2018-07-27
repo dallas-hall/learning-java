@@ -16,10 +16,10 @@ import javafx.stage.Stage;
 /**
  * <h1>HBoxVBoxExample</h1>
  * <p>
- * This program
+ * This program shows how to use HBoxes and VBoxes.
  * </p>
  * <p>
- * tags:	<insert concept tags here for training code only>
+ * tags:	HBox; VBox; Image; ImageView;
  * </p>
  *
  * @author blindcant
@@ -49,9 +49,6 @@ public class HBoxVBoxExample extends Application
 		primaryStage.show();
 		
 	}
-	
-	//@@@ CONSTRUCTOR(S) @@@
-	
 	//@@@ METHODS @@@
 	//### GETTERS ###
 	private HBox getHbox()
