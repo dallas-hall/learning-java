@@ -14,7 +14,7 @@ import javafx.stage.Stage;
  * This program shows how to use the Rectangle class.
  * </p>
  * <p>
- * tags:	<insert concept tags here for training code only>
+ * tags:	setStroke; setFill; Color.COLOR_NAME;
  * </p>
  *
  * @author blindcant
