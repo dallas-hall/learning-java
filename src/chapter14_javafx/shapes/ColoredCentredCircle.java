@@ -1,4 +1,4 @@
-package chapter14_javafx;/**
+package chapter14_javafx.shapes;/**
  * <h1>ColoredCentredCircle</h1>
  * <p>
  * This program shows how to make shapes and use the Color class.
