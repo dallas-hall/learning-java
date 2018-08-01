@@ -1,4 +1,4 @@
-package chapter14_javafx;
+package chapter14_javafx.shapes;
 
 import javafx.application.Application;
 import javafx.scene.Scene;

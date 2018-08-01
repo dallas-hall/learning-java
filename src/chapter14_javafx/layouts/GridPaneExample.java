@@ -1,4 +1,4 @@
-package chapter14_javafx;
+package chapter14_javafx.layouts;
 /**
  * <h1>GridPaneExample</h1>
  * <p>
