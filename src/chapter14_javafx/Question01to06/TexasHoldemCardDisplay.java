@@ -29,10 +29,11 @@ public class TexasHoldemCardDisplay extends Application
 	//@@@ CLASS VARIABLES @@@
 	private String[] suits = {"Spades", "Clubs", "Hearts", "Diamonds"};
 	private String[] ranks = {"AceOf", "TwoOf", "ThreeOf", "FourOf", "FiveOf", "SixOf", "SevenOf", "EightOf", "NineOf", "TenOf", "JackOf", "QueenOf", "KingOf"};
-	private boolean[] inDeck = {true, true, true, true, true, true, true, true, true, true, true, true, true, true, // Spades
-								true, true, true, true, true, true, true, true, true, true, true, true, true, true, // Clubs
-								true, true, true, true, true, true, true, true, true, true, true, true, true, true, // Hearts
-								true, true, true, true, true, true, true, true, true, true, true, true, true, true  // Diamonds
+	private boolean[] inDeck = {
+		true, true, true, true, true, true, true, true, true, true, true, true, true, true, // Spades
+		true, true, true, true, true, true, true, true, true, true, true, true, true, true, // Clubs
+		true, true, true, true, true, true, true, true, true, true, true, true, true, true, // Hearts
+		true, true, true, true, true, true, true, true, true, true, true, true, true, true  // Diamonds
 	};
 	private Map<String, String> cards;
 	
