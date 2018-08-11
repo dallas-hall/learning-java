@@ -15,10 +15,10 @@ import java.util.Map;
 /**
  * <h1>TicTacToeBoard</h1>
  * <p>
- * This program
+ * This program places x's and o's on a naughts and crosses board with barely any intelligence. It just checks if that board position is in use, nothing else.
  * </p>
  * <p>
- * tags:	<insert concept tags here for training code only>
+ * tags:	Image; ImageView; GridPane; Scene; Math.random; HashMap;
  * </p>
  *
  * @author blindcant
