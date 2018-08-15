@@ -41,13 +41,18 @@ public class EventHandling extends Application
 	{
 		HBox hBox = new HBox(10);
 		hBox.setAlignment(Pos.CENTER);
+		// The event sources are created.
 		Button button_Ok = new Button("OK");
 		Button button_Cancel = new Button("Cancel");
 		
+		// The listener is created.
 		OkHandlerClass handler_buttonOk = new OkHandlerClass();
+		// The event source has a listener bound against an event.
 		button_Ok.setOnAction(handler_buttonOk);
 		
+		// The listener is created.
 		CancelHandlerClass handler_buttonCancel = new CancelHandlerClass();
+		// The event source has a listener bound against an event.
 		button_Cancel.setOnAction(handler_buttonCancel);
 		
 		hBox.getChildren().addAll(button_Ok, button_Cancel);
@@ -59,6 +64,7 @@ public class EventHandling extends Application
 	}
 	
 	//@@@ INNER CLASS(ES) @@@
+	// The event handler classes are defined.
 	class OkHandlerClass implements EventHandler<ActionEvent>
 	{
 		@Override
