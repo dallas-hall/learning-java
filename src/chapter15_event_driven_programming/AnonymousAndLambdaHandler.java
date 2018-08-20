@@ -15,7 +15,7 @@ import javafx.stage.Stage;
  * This program shows how to use anonymous classes and lambdas to handle events.
  * </p>
  * <p>
- * tags:	<insert concept tags here for training code only>
+ * tags:	HBox; Button; EventHandler<ActionEvent>; anonymous inner class; lambda;
  * </p>
  *
  * @author blindcant
