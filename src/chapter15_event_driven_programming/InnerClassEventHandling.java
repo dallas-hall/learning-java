@@ -10,18 +10,18 @@ import javafx.scene.layout.HBox;
 import javafx.stage.Stage;
 
 /**
- * <h1>EventHandling</h1>
+ * <h1>InnerClassEventHandling</h1>
  * <p>
- * This program shows how to do primitive event handling for buttons.
+ * This program shows how to do primitive event handling for buttons, using inner classes.
  * </p>
  * <p>
- * tags:	HBox; Button; EventHandler<ActionEvent>;
+ * tags:	HBox; Button; EventHandler<ActionEvent>; inner class;
  * </p>
  *
  * @author blindcant
  * @version 0.1.0 - 2018-08-13
  */
-public class EventHandling extends Application
+public class InnerClassEventHandling extends Application
 {
 	//@@@ CLASS VARIABLES @@@
 	
@@ -58,7 +58,7 @@ public class EventHandling extends Application
 		hBox.getChildren().addAll(button_Ok, button_Cancel);
 		
 		Scene scene = new Scene(hBox);
-		primaryStage.setTitle("EventHandling");
+		primaryStage.setTitle("InnerClassEventHandling");
 		primaryStage.setScene(scene);
 		primaryStage.show();
 	}
