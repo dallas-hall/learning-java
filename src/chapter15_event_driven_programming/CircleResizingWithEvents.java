@@ -6,6 +6,8 @@ import javafx.event.EventHandler;
 import javafx.geometry.Pos;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
+import javafx.scene.input.KeyCode;
+import javafx.scene.input.MouseButton;
 import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.StackPane;
@@ -55,9 +57,28 @@ public class CircleResizingWithEvents extends Application
 		hBox.getChildren().add(button_enlarge);
 		hBox.getChildren().add(button_shrink);
 		
-		// Create and register the event handler
+		// Create and register the event handler with inner event handler classes
 		button_enlarge.setOnAction(new EnlargeHandler());
-		button_shrink.setOnAction(new ShrinkHandler());
+		// Use lambda
+		button_shrink.setOnAction(e -> circlePane.shrink());
+		
+		circlePane.setOnMouseClicked(e -> {
+			if (e.getButton() == MouseButton.PRIMARY) {
+				circlePane.enlarge();
+			}
+			else if (e.getButton() == MouseButton.SECONDARY) {
+				circlePane.shrink();
+			}
+		});
+		
+		circlePane.setOnKeyPressed(e -> {
+			if (e.getCode() == KeyCode.U) {
+				circlePane.enlarge();
+			}
+			else if (e.getCode() == KeyCode.D) {
+				circlePane.shrink();
+			}
+		});
 		
 		// Create the main layout container
 		BorderPane borderPane = new BorderPane();
@@ -71,6 +92,8 @@ public class CircleResizingWithEvents extends Application
 		primaryStage.setScene(scene);
 		primaryStage.show();
 		
+		// Request input focus
+		circlePane.requestFocus();
 	}
 	
 	//@@@ INNER CLASS(ES) @@@
@@ -103,15 +126,6 @@ public class CircleResizingWithEvents extends Application
 		public void handle(ActionEvent actionEvent)
 		{
 			circlePane.enlarge();
-		}
-	}
-	
-	private class ShrinkHandler implements EventHandler<ActionEvent>
-	{
-		@Override
-		public void handle(ActionEvent actionEvent)
-		{
-			circlePane.shrink();
 		}
 	}
 }
