@@ -52,7 +52,9 @@ public class RecursionExamples
 	}
 
 	/**
-	 * This method converts a binary number to a decimal.
+	 * This method converts a binary number to a decimal. This works because of using the recursive print in reverse trick.
+	 * This reverse printing tricks mimics converting decimal to binary by hand, which is writing the powers of 2 right to left.
+	 *
 	 * @param i
 	 */
 	private void convertDecimalToBinary(int i)
@@ -79,6 +81,7 @@ public class RecursionExamples
 			Once the recursion is over, the println is executed before the stack frames are popped.
 
 			Using modulo to get the remainder, which is 0 for even and 1 for odd.
+			By printing this in reverse, it shows the binary number.
 			 */
 			System.out.print(i % 2);
 		}
