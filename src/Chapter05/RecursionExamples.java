@@ -1,13 +1,15 @@
 package Chapter05;
 
-public class CountdownRecursion
+public class RecursionExamples
 {
 	public static void main(String[] args)
 	{
-		CountdownRecursion countdownRecursion = new CountdownRecursion();
+		RecursionExamples countdownRecursion = new RecursionExamples();
 		countdownRecursion.countdown(10);
 		System.out.println();
 		countdownRecursion.countup(3);
+		System.out.println();
+		countdownRecursion.convertDecimalToBinary(32);
 	}
 
 	private void countdown(int i)
@@ -16,8 +18,7 @@ public class CountdownRecursion
 		if (i < 0) {
 			System.out.println("Input must be greater than 0.");
 			return;
-		}
-		else if (i > 0) {
+		} else if (i > 0) {
 			System.out.println(i + "...");
 			countdown(i - 1);
 		}
@@ -37,8 +38,7 @@ public class CountdownRecursion
 		// This is the base case (the final stack frame) for the stack diagram. This ends the recursion.
 		else if (i == 0) {
 			System.out.println("Blast off!");
-		}
-		else {
+		} else {
 			/*
 			The recursive calls here delay the println from executing.
 			Each time the call is made, a new frame is added to the stack, which holds the current value of i.
@@ -48,6 +48,39 @@ public class CountdownRecursion
 			Once the recursion is over, the println is executed before the stack frames are popped.
 			 */
 			System.out.println(i + "...");
+		}
+	}
+
+	/**
+	 * This method converts a binary number to a decimal.
+	 * @param i
+	 */
+	private void convertDecimalToBinary(int i)
+	{
+		// Error check.
+		if (i < 0) {
+			System.out.println("Input must be greater than 0.");
+			return;
+		}
+		/*
+		This handles the base case (the final stack frame) for the stack diagram. This ends the recursion.
+		It also handles every other case.
+
+		 */
+		else if (i > 0) {
+			/*
+			The recursive calls here delay the println from executing.
+			Each time the call is made, a new frame is added to the stack, which holds the current value of i.
+
+			Using integer division to halve the number before the recursive call.
+			*/
+			convertDecimalToBinary(i / 2);
+			/*
+			Once the recursion is over, the println is executed before the stack frames are popped.
+
+			Using modulo to get the remainder, which is 0 for even and 1 for odd.
+			 */
+			System.out.print(i % 2);
 		}
 	}
 }
