@@ -12,6 +12,7 @@ public class CountdownRecursion
 
 	private void countdown(int i)
 	{
+		// Error check.
 		if (i < 0) {
 			System.out.println("Input must be greater than 0.");
 			return;
@@ -20,6 +21,7 @@ public class CountdownRecursion
 			System.out.println(i + "...");
 			countdown(i - 1);
 		}
+		// This is the base case (the final stack frame) for the stack diagram. This ends the recursion.
 		else {
 			System.out.println("Blast off!");
 		}
@@ -27,10 +29,12 @@ public class CountdownRecursion
 
 	private void countup(int i)
 	{
+		// Error check.
 		if (i < 0) {
 			System.out.println("Input must be greater than 0.");
 			return;
 		}
+		// This is the base case (the final stack frame) for the stack diagram. This ends the recursion.
 		else if (i == 0) {
 			System.out.println("Blast off!");
 		}
