@@ -1,4 +1,4 @@
-package Chapter05;
+package Chapter06;
 
 /**
  * <h1>FactorialRecursion</h1>

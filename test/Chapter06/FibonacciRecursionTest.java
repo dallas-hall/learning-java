@@ -1,5 +1,6 @@
-package Chapter05;
+package Chapter06;
 
+import Chapter06.FibonacciRecursion;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
