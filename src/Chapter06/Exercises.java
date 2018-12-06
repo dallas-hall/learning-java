@@ -26,6 +26,15 @@ public class Exercises
 		Thread.sleep(005);
 		System.out.println("1 * 2 + 3 = " + runtime.multaddOperation(1, 2, 3));
 		System.out.println("2 * 4 + 8 = " + runtime.multaddOperation(2, 4, 8));
+
+		logger.log(Level.INFO, "Exercise 6");
+		Thread.sleep(005);
+		System.out.println(runtime.prod(1, 4));
+		System.out.println(runtime.prodRewrite(1, 4));
+
+		logger.log(Level.INFO, "Exercise 7");
+		Thread.sleep(005);
+		System.out.println(runtime.oddSum(10));
 	}
 
 	public boolean isDivisible(int n, int m)
@@ -61,5 +70,54 @@ public class Exercises
 	public double multaddOperation(double a, double b, double c)
 	{
 		return a * b + c;
+	}
+
+	public static int prod(int m, int n) {
+		if (m == n) {
+			return n;
+		} else {
+			int recurse = prod(m, n - 1);
+			int result = n * recurse;
+			return result;
+		}
+	}
+
+	public static int prodRewrite(int m, int n) {
+		if (m == n) {
+			return n;
+		} else {
+			return prod(m, n - 1) * n;
+		}
+	}
+
+	public int oddSum(int n)
+	{
+		int sum = 0;
+		int recursionResult = 0;
+
+		// Base case, return 1 when n is 1
+		if( n == 1) {
+			return 1;
+		}
+
+		/*
+		If n is odd, decrement by 2 and do recursive call
+		The result of the recursion needs to be added with n and then added to sum. This is the returned value.
+		*/
+		if (n % 2 == 1) {
+			recursionResult = oddSum(n - 2);
+			sum += (recursionResult + n);
+		}
+		/*
+		If n is even, decrement by 1 and do recursive call.
+		The result of the recursion needs to be added with sum. n doesn't need to be added here because we are only
+		summing odd numbers, so this covers the case where n starts as an even number. This is the returned value.
+		*/
+		else if (n % 2 == 0) {
+			recursionResult = oddSum(n - 1);
+			sum += recursionResult;
+		}
+
+		return sum;
 	}
 }
