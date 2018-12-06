@@ -1,7 +1,5 @@
 package Chapter06;
 
-import Chapter06.Exercises;
-
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 class ExercisesTest
@@ -35,4 +33,22 @@ class ExercisesTest
 		assertEquals(16.0, runtime.multaddOperation(2, 4, 8));
 	}
 
+	@org.junit.jupiter.api.Test
+	void prod()
+	{
+		assertEquals(24.0, runtime.prod(1, 4));
+	}
+
+	@org.junit.jupiter.api.Test
+	void prodRewrite()
+	{
+		assertEquals(24.0, runtime.prodRewrite(1, 4));
+	}
+
+	@org.junit.jupiter.api.Test
+	void oddSum()
+	{
+		assertEquals(9, runtime.oddSum(5));
+		assertEquals(25, runtime.oddSum(10));
+	}
 }
