@@ -35,6 +35,11 @@ public class Exercises
 		logger.log(Level.INFO, "Exercise 7");
 		Thread.sleep(005);
 		System.out.println(runtime.oddSum(10));
+
+		logger.log(Level.INFO, "Exercise 8");
+		Thread.sleep(005);
+		// https://en.wikipedia.org/wiki/Ackermann_function#Example_expansions
+		System.out.println(runtime.ackermann(1, 2));
 	}
 
 	public boolean isDivisible(int n, int m)
@@ -119,5 +124,21 @@ public class Exercises
 		}
 
 		return sum;
+	}
+
+	public long ackermann(int m, int n)
+	{
+		long result = 0;
+		if(m == 0) {
+			result = n + 1;
+		}
+		else if (m > 0 && n == 0) {
+			result = ackermann(m - 1, 1);
+		}
+		else if (m > 0 && n > 0) {
+			result = ackermann(m - 1, (int) ackermann(m, n - 1));
+		}
+
+		return result;
 	}
 }
