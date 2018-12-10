@@ -1,7 +1,5 @@
 package Chapter07;
 
-import Chapter06.FibonacciRecursion;
-
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
@@ -15,7 +13,7 @@ Example, how many 2s do we need to get 8?
 public class LogarithmTable
 {
 	//@@@ CLASS VARIABLES @@@
-	private static final Logger logger = Logger.getLogger(FibonacciRecursion.class.getName());
+	private static final Logger logger = Logger.getLogger(MultiplicationTable.class.getName());
 
 	//@@@ INSTANCE VARIABLES @@@
 	public static final String PROGRAM_VERSION = "0.1.0";
@@ -39,6 +37,8 @@ public class LogarithmTable
 		runtime.printLogarithmTableBase2ArithmeticSequence(100);
 	}
 
+	//@@@ METHODS @@@
+	//### HELPERS ###
 	public void printLogarithmTableBaseE(int n)
 	{
 		int i = 1;

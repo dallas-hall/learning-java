@@ -1,14 +1,12 @@
 package Chapter07;
 
-import Chapter06.FibonacciRecursion;
-
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
 public class CollatzConjecture
 {
 	//@@@ CLASS VARIABLES @@@
-	private static final Logger logger = Logger.getLogger(FibonacciRecursion.class.getName());
+	private static final Logger logger = Logger.getLogger(CollatzConjecture.class.getName());
 
 	//@@@ INSTANCE VARIABLES @@@
 	public static final String PROGRAM_VERSION = "0.1.0";
@@ -26,6 +24,8 @@ public class CollatzConjecture
 		runtime.printCollatzConjecture(3);
 	}
 
+	//@@@ METHODS @@@
+	//### HELPERS ###
 	/**
 	 * This method performs the Collatz Conjecture - https://en.wikipedia.org/wiki/Collatz_conjecture
 	 *
