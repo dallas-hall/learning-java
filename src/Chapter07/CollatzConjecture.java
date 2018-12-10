@@ -1,10 +1,28 @@
 package Chapter07;
 
+import Chapter06.FibonacciRecursion;
+
+import java.util.logging.Level;
+import java.util.logging.Logger;
+
 public class CollatzConjecture
 {
-	public static void main(String[] args)
+	//@@@ CLASS VARIABLES @@@
+	private static final Logger logger = Logger.getLogger(FibonacciRecursion.class.getName());
+
+	//@@@ INSTANCE VARIABLES @@@
+	public static final String PROGRAM_VERSION = "0.1.0";
+	private int limit;
+
+	//@@@ MAIN METHOD @@@
+	public static void main(String[] args) throws InterruptedException
 	{
+		logger.log(Level.INFO, "Program starting.");
+		Thread.sleep(005);
 		CollatzConjecture runtime = new CollatzConjecture();
+
+		logger.log(Level.INFO, "Collatz Conjecture.");
+		Thread.sleep(005);
 		runtime.printCollatzConjecture(3);
 	}
 
