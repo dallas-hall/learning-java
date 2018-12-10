@@ -21,14 +21,26 @@ public class MultiplicationTable
 
 		logger.log(Level.INFO, "Multiplication Table (while)");
 		Thread.sleep(005);
-		runtime.printMultiplicationTableWhile(2, 50);
+		runtime.printMultiplicationTableWhile(10);
 
 		logger.log(Level.INFO, "Multiplication Table (for)");
 		Thread.sleep(005);
-		runtime.printMultiplicationTableFor(2, 50);
+		runtime.printMultiplicationTableFor(10);
 	}
 
-	public void printMultiplicationTableWhile(int n, int limit)
+
+	//@@@ METHODS @@@
+	//### HELPERS ###
+	public void printMultiplicationTableWhile(int limit)
+	{
+		int i = 1;
+		while (i <= limit) {
+			printMultiplicationRowWhile(i, limit);
+			i++;
+		}
+	}
+
+	private void printMultiplicationRowWhile(int n, int limit)
 	{
 		int i = 1;
 		while (i <= limit) {
@@ -42,7 +54,14 @@ public class MultiplicationTable
 		}
 	}
 
-	public void printMultiplicationTableFor(int n, int limit)
+	public void printMultiplicationTableFor(int limit)
+	{
+		for (int i = 1; i <= limit; i++) {
+			printMultiplicationRowFor(i, limit);
+		}
+	}
+
+	private void printMultiplicationRowFor(int n, int limit)
 	{
 		for (int i = 1; i <= limit; i++) {
 			System.out.printf("%4d", n * i);
