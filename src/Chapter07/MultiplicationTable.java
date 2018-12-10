@@ -19,56 +19,71 @@ public class MultiplicationTable
 		Thread.sleep(005);
 		MultiplicationTable runtime = new MultiplicationTable();
 
-		logger.log(Level.INFO, "Multiplication Table (while)");
+		logger.log(Level.INFO, "Complete Multiplication Table (while)");
 		Thread.sleep(005);
-		runtime.printMultiplicationTableWhile(10);
+		runtime.printMultiplicationCompleteTableWhile(10);
+		logger.log(Level.INFO, "Half Multiplication Table (while)");
+		Thread.sleep(005);
+		runtime.printMultiplicationHalfTableWhile(10);
 
-		logger.log(Level.INFO, "Multiplication Table (for)");
+		logger.log(Level.INFO, "Complete Multiplication Table (for)");
 		Thread.sleep(005);
-		runtime.printMultiplicationTableFor(10);
+		runtime.printMultiplicationCompleteTableFor(10);
+		logger.log(Level.INFO, "Half Multiplication Table (for)");
+		Thread.sleep(005);
+		runtime.printMultiplicationHalfTableFor(10);
 	}
 
 
 	//@@@ METHODS @@@
 	//### HELPERS ###
-	public void printMultiplicationTableWhile(int limit)
+	public void printMultiplicationCompleteTableWhile(int rows)
 	{
 		int i = 1;
-		while (i <= limit) {
-			printMultiplicationRowWhile(i, limit);
+		while (i <= rows) {
+			printMultiplicationRowWhile(i, rows);
 			i++;
 		}
 	}
 
-	private void printMultiplicationRowWhile(int n, int limit)
+	public void printMultiplicationHalfTableWhile(int rows)
 	{
 		int i = 1;
-		while (i <= limit) {
-			System.out.printf("%4d", n * i);
-
-			if (i % 10 == 0) {
-				System.out.println();
-			}
-
+		while (i <= rows) {
+			printMultiplicationRowWhile(i, i);
 			i++;
 		}
 	}
 
-	public void printMultiplicationTableFor(int limit)
+	private void printMultiplicationRowWhile(int n, int columns)
 	{
-		for (int i = 1; i <= limit; i++) {
-			printMultiplicationRowFor(i, limit);
+		int i = 1;
+		while (i <= columns) {
+			System.out.printf("%4d", n * i);
+			i++;
+		}
+		System.out.println();
+	}
+
+	public void printMultiplicationCompleteTableFor(int rows)
+	{
+		for (int i = 1; i <= rows; i++) {
+			printMultiplicationRowFor(i, rows);
 		}
 	}
 
-	private void printMultiplicationRowFor(int n, int limit)
+	public void printMultiplicationHalfTableFor(int rows)
 	{
-		for (int i = 1; i <= limit; i++) {
-			System.out.printf("%4d", n * i);
-
-			if (i % 10 == 0) {
-				System.out.println();
-			}
+		for (int i = 1; i <= rows; i++) {
+			printMultiplicationRowFor(i, i);
 		}
+	}
+
+	private void printMultiplicationRowFor(int n, int columns)
+	{
+		for (int i = 1; i <= columns; i++) {
+			System.out.printf("%4d", n * i);
+		}
+		System.out.println();
 	}
 }
