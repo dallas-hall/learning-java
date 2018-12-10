@@ -12,39 +12,44 @@ public class Exercises
 		logger.log(Level.INFO, "Chapter 5 - Exercises");
 		Exercises runtime = new Exercises();
 
-		logger.log(Level.INFO, "Exercise 2");
+		logger.log(Level.INFO, "Exercise 2 - isDivisible");
 		Thread.sleep(005);
-		System.out.println("Is 9 divisible by 3? " + runtime.isDivisible(9,3));
-		System.out.println("Is 9 divisible by 4? " + runtime.isDivisible(9,4));
+		System.out.println("Is 9 divisible by 3? " + runtime.isDivisible(9, 3));
+		System.out.println("Is 9 divisible by 4? " + runtime.isDivisible(9, 4));
 
-		logger.log(Level.INFO, "Exercise 3");
+		logger.log(Level.INFO, "Exercise 3 - isTriangle");
 		Thread.sleep(005);
 		System.out.println("Can you make a triangle from 1, 2, and 3? " + runtime.canCreateTriangle(1, 2, 3));
 		System.out.println("Can you make a triangle from 1, 2, and 4? " + runtime.canCreateTriangle(1, 2, 4));
 
-		logger.log(Level.INFO, "Exercise 4");
+		logger.log(Level.INFO, "Exercise 4 - multadd operation");
 		Thread.sleep(005);
 		System.out.println("1 * 2 + 3 = " + runtime.multaddOperation(1, 2, 3));
 		System.out.println("2 * 4 + 8 = " + runtime.multaddOperation(2, 4, 8));
 
-		logger.log(Level.INFO, "Exercise 6");
+		logger.log(Level.INFO, "Exercise 6 - prod recursion");
 		Thread.sleep(005);
 		System.out.println(runtime.prod(1, 4));
 		System.out.println(runtime.prodRewrite(1, 4));
 
-		logger.log(Level.INFO, "Exercise 7");
+		logger.log(Level.INFO, "Exercise 7 - oddSum recursion");
 		Thread.sleep(005);
 		System.out.println(runtime.oddSum(10));
 
-		logger.log(Level.INFO, "Exercise 8");
+		logger.log(Level.INFO, "Exercise 8 - Ackermann recursive function");
 		Thread.sleep(005);
 		// https://en.wikipedia.org/wiki/Ackermann_function#Example_expansions
 		System.out.println(runtime.ackermann(1, 2));
+
+		logger.log(Level.INFO, "Exercise 9 - power recursion");
+		Thread.sleep(005);
+		System.out.println(runtime.power(2, 3));
+
 	}
 
 	public boolean isDivisible(int n, int m)
 	{
-		if(n % m == 0)
+		if (n % m == 0)
 			return true;
 		else
 			return false;
@@ -53,20 +58,17 @@ public class Exercises
 	// If any of the three lengths is greater than the sum of the other 2, you cannot form a triangle.
 	public boolean canCreateTriangle(int a, int b, int c)
 	{
-		int sumAB =  a + b;
-		int sumAC =  a + c;
-		int sumBC =  b + c;
+		int sumAB = a + b;
+		int sumAC = a + c;
+		int sumBC = b + c;
 
 		if (a > sumBC) {
 			return false;
-		}
-		else if (b > sumAC) {
+		} else if (b > sumAC) {
 			return false;
-		}
-		else if (c > sumAB) {
+		} else if (c > sumAB) {
 			return false;
-		}
-		else {
+		} else {
 			return true;
 		}
 	}
@@ -77,7 +79,8 @@ public class Exercises
 		return a * b + c;
 	}
 
-	public static int prod(int m, int n) {
+	public static int prod(int m, int n)
+	{
 		if (m == n) {
 			return n;
 		} else {
@@ -87,7 +90,8 @@ public class Exercises
 		}
 	}
 
-	public static int prodRewrite(int m, int n) {
+	public static int prodRewrite(int m, int n)
+	{
 		if (m == n) {
 			return n;
 		} else {
@@ -101,7 +105,7 @@ public class Exercises
 		int recursionResult = 0;
 
 		// Base case, return 1 when n is 1
-		if( n == 1) {
+		if (n == 1) {
 			return 1;
 		}
 
@@ -129,16 +133,55 @@ public class Exercises
 	public long ackermann(int m, int n)
 	{
 		long result = 0;
-		if(m == 0) {
+
+		if (m == 0) {
 			result = n + 1;
-		}
-		else if (m > 0 && n == 0) {
+		} else if (m > 0 && n == 0) {
 			result = ackermann(m - 1, 1);
-		}
-		else if (m > 0 && n > 0) {
+		} else if (m > 0 && n > 0) {
 			result = ackermann(m - 1, (int) ackermann(m, n - 1));
 		}
 
 		return result;
+	}
+
+	/**
+	 * This method uses recursion to calculate exponents. The formula being use is x ^ n = x · x ^ n − 1.
+	 * When n is even, the formula being used is x ^ n = (x ^ (n / 2)) ^ 2
+	 *
+	 * @param x - the number to be used in the exponent operation.
+	 * @param n - how many times to raise x
+	 * @return - the result of the exponent operation.
+	 */
+	public double power(double x, int n)
+	{
+		double result = 0;
+
+		// 0 ^ n is always 0
+		if (x == 0) {
+			return 0;
+		}
+
+		// x ^ 0 is always 1
+		if (n == 0) {
+			return 1;
+		}
+		// x ^ 1 is always x
+		else if (n == 1) {
+			return x;
+		// This is needed to prevent a stack overflow from an infinite recursion call when using x ^ n = (x ^ (n / 2)) ^ 2
+		} else if (n == 2) {
+			return x * x;
+		}
+		else {
+			// Apparently this is more efficient when n is even.
+			if (n % 2 == 0) {
+				result = power(power(x, (n / 2)), 2);
+			} else {
+				result = x * power(x, n - 1);
+			}
+			//result = x * power(x, n - 1);
+			return result;
+		}
 	}
 }
