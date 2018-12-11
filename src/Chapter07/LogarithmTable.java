@@ -13,7 +13,7 @@ Example, how many 2s do we need to get 8?
 public class LogarithmTable
 {
 	//@@@ CLASS VARIABLES @@@
-	private static final Logger logger = Logger.getLogger(MultiplicationTable.class.getName());
+	private static final Logger logger = Logger.getLogger(LogarithmTable.class.getName());
 
 	//@@@ INSTANCE VARIABLES @@@
 	public static final String PROGRAM_VERSION = "0.1.0";
