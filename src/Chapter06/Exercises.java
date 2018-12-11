@@ -9,7 +9,7 @@ public class Exercises
 
 	public static void main(String[] args) throws InterruptedException
 	{
-		logger.log(Level.INFO, "Chapter 5 - Exercises");
+		logger.log(Level.INFO, "Chapter 6 - Exercises");
 		Exercises runtime = new Exercises();
 
 		logger.log(Level.INFO, "Exercise 2 - isDivisible");
