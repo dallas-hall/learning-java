@@ -15,7 +15,7 @@ import java.util.logging.Logger;
 public class FermatsLastTheorem
 {
 	//@@@ CLASS VARIABLES @@@
-	private static final Logger logger = Logger.getLogger(RecursionExamples.class.getName());
+	private static final Logger logger = Logger.getLogger(FermatsLastTheorem.class.getName());
 	
 	//@@@ INSTANCE VARIABLES @@@
 	public static final String PROGRAM_VERSION = "0.1.0";

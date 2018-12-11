@@ -5,7 +5,7 @@ import java.util.logging.Logger;
 
 public class Exercises
 {
-	private static final Logger logger = Logger.getLogger(FactorialRecursion.class.getName());
+	private static final Logger logger = Logger.getLogger(Exercises.class.getName());
 
 	public static void main(String[] args) throws InterruptedException
 	{
