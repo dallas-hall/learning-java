@@ -24,6 +24,21 @@ public class Exercises
 		System.out.println(runtime.approximateSquareRoot(64));
 		System.out.println(runtime.approximateSquareRoot(83));
 		System.out.println(runtime.approximateSquareRoot(100));
+
+		logger.log(Level.INFO, "Exercise 3 - Exponents With Iteration");
+		Thread.sleep(005);
+		System.out.println(runtime.powerIterative(2, 0));
+		System.out.println(runtime.powerIterative(2, 1));
+		System.out.println(runtime.powerIterative(2, 2));
+		System.out.println(runtime.powerIterative(2, 3));
+		System.out.println(runtime.powerIterative(2, 4));
+
+		logger.log(Level.INFO, "Exercise 4 - Factorial With Iteration");
+		Thread.sleep(005);
+		System.out.println(runtime.factorialIterative(1));
+		System.out.println(runtime.factorialIterative(2));
+		System.out.println(runtime.factorialIterative(3));
+		System.out.println(runtime.factorialIterative(4));
 	}
 
 	public double approximateSquareRoot(double startNumber)
@@ -46,5 +61,40 @@ public class Exercises
 				guess1 = (guess2 + startNumber / guess2) / 2;
 			}
 		}
+	}
+
+	public double powerIterative(double x, int n)
+	{
+		if (x == 0) {
+			return 0;
+		}
+		else if (n == 0) {
+			return 1;
+		}
+		else {
+			double result = 1;
+			for (int i = 1; i <= n; i++) {
+				// result * x is the formula needed to calculate powers
+				/*
+				This works because initially x * 1 = x ^ 1. The result is stored.
+				Then result * 2 = x ^ 2 and so on.
+				*/
+				result = result * x;
+			}
+			return result;
+		}
+	}
+
+	public int factorialIterative(int n)
+	{
+		if (n == 0) {
+			return 0;
+		}
+
+		int result = 1;
+		for (int i = 1; i <= n; i++) {
+			result = result * i;
+		}
+		return result;
 	}
 }
