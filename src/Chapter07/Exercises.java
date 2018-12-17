@@ -39,6 +39,10 @@ public class Exercises
 		System.out.println(runtime.factorialIterative(2));
 		System.out.println(runtime.factorialIterative(3));
 		System.out.println(runtime.factorialIterative(4));
+
+		logger.log(Level.INFO, "Exercise 5 - Infinite Series Expansion");
+		Thread.sleep(005);
+		System.out.println(runtime.myExponent(2, 2));
 	}
 
 	public double approximateSquareRoot(double startNumber)
@@ -97,4 +101,41 @@ public class Exercises
 		}
 		return result;
 	}
+
+	public double myExponent(double e, int x)
+	{
+		double result = 0;
+
+		// e ^ x = 1 + x + x ^ 2 / 2! + ... + x ^ i / i!
+		// ! means factorial, thus result of power divided by result of factorial
+		for (int i = 0; i <= x; i++) {
+			if (i == 0) {
+				result += 1;
+			}
+			else if(i == 1) {
+				result += x;
+			}
+			else {
+				result += Math.pow(x, i) / factorialIterative(i);
+			}
+		}
+		return result;
+	}
+
+	/*public double myExponent2(double e, int x) {
+		double result = 0;
+
+		for (int i = 0; i <= x; i++) {
+			if (i == 0) {
+				result += 1;
+			}
+			else if(i == 1) {
+				result += x;
+			}
+			else {
+				result +=
+			}
+		}
+		return result;
+	}*/
 }
