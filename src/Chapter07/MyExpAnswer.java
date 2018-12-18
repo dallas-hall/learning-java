@@ -5,13 +5,10 @@ public class MyExpAnswer
 	// https://github.com/AllenDowney/thinkjavasolutions5/blob/master/old_solutions/Exp.java
 	public static void main(String[] args)
 	{
-		System.out.println(myexp(2, 0));
-		System.out.println(myexp(2, 1));
-		System.out.println(myexp(2, 2));
-		System.out.println(myexp(2, 3));
+		System.out.println(myexp(1, 20));
 		System.out.println();
 
-		for (int i = 1; i < 10; i++) {
+		for (int i = 1; i < 2; i++) {
 			check(i);
 		}
 	}
