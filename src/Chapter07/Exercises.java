@@ -12,6 +12,7 @@ public class Exercises
 		logger.log(Level.INFO, "Chapter 7 - Exercises");
 		Exercises runtime = new Exercises();
 
+
 		logger.log(Level.INFO, "Exercise 2 - Approximate Square Root");
 		Thread.sleep(005);
 		System.out.println(runtime.approximateSquareRoot(1));
@@ -35,10 +36,9 @@ public class Exercises
 
 		logger.log(Level.INFO, "Exercise 4 - Factorial With Iteration");
 		Thread.sleep(005);
-		System.out.println(runtime.factorialIterative(1));
-		System.out.println(runtime.factorialIterative(2));
-		System.out.println(runtime.factorialIterative(3));
-		System.out.println(runtime.factorialIterative(4));
+		for (int i = 0; i < 20; i++) {
+			System.out.println(i + " factorial = "+ runtime.factorialIterative(i));
+		}
 
 		logger.log(Level.INFO, "Exercise 5 - Infinite Series Expansion");
 		Thread.sleep(005);
@@ -89,9 +89,9 @@ public class Exercises
 		}
 	}
 
-	public int factorialIterative(int n)
+	public long factorialIterative(int n)
 	{
-		int result = 1;
+		long result = 1;
 
 		// http://mathforum.org/library/drmath/view/57128.html & https://www.mathsisfun.com/numbers/factorial.html
 		if (n == 0) {
@@ -134,7 +134,7 @@ public class Exercises
 			double numerator = Math.pow(x, i);
 			double denominator = factorialIterative(i);
 			total = total + numerator / denominator;
-			System.out.println(i + " = " + total);
+			//System.out.println(i + " = " + total);
 		}
 
 		return total;
@@ -148,10 +148,11 @@ public class Exercises
 		double denominator = 1.0;
 
 		for (int i = 1; i <= n; i++) {
+			// e = 1 / 0! + 1 / 1! + ... + 1 / i!
 			numerator = numerator * x;
 			denominator = denominator * i;
 			total = total + numerator / denominator;
-			System.out.println(i + " = " + total);
+			//System.out.println(i + " = " + total);
 		}
 		return total;
 	}
