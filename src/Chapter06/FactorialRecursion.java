@@ -26,13 +26,20 @@ public class FactorialRecursion
 	public static void main(String[] args)
 	{
 		logger.log(Level.INFO, "Program starting.");
-		FactorialRecursion runtime = new FactorialRecursion(4);
+		FactorialRecursion runtime = new FactorialRecursion();
 		
 		System.out.println("A factorial is the result of multiplying the start number by every number between itself and 1, inclusive.");
-		System.out.println("The factorial of " + runtime.getStartNumber() + " is " + runtime.factorial(runtime.getStartNumber()));
+		for (int i = 0; i < 20; i++) {
+			System.out.println("The factorial of " + i + " is " + runtime.factorial(i));
+		}
 	}
 	
 	//@@@ CONSTRUCTOR(S) @@@
+	public FactorialRecursion()
+	{
+
+	}
+
 	public FactorialRecursion(int startNumber)
 	{
 		this.startNumber = startNumber;
@@ -44,7 +51,13 @@ public class FactorialRecursion
 	{
 		return startNumber;
 	}
-	
+
+	//### SETTERS ###
+	public void setStartNumber(int startNumber)
+	{
+		this.startNumber =  startNumber;
+	}
+
 	//### HELPERS ###
 	
 	/**
@@ -53,9 +66,9 @@ public class FactorialRecursion
 	 * @param n - This parameter stores the current number to be used for the factorial. It is decremented by 1 on each
 	 * recursive call.
 	 * @return - During recursion this will return the result of the current step to the previous stack frame. At the
-	 * end of recursion it will return the value to the caller.
+	 * end of recursion it will return the value to the caller. Returns long otherwise integer overflow at 13.
 	 */
-	public int factorial(int n)
+	public long factorial(int n)
 	{
 		/*
 		https://www.mathsisfun.com/numbers/factorial.html
@@ -72,9 +85,9 @@ public class FactorialRecursion
 		recursionResult is only calculated once all the recursive function calls are completed. This will hold the value
 		that is being returned from the previous stack frame calculation (i.e. n - 1)
 		*/
-		int recursionResult = factorial(n - 1);
+		long recursionResult = factorial(n - 1);
 		// Once recursion has finished, unwind the stack and start calculating each part of the equation
-		int result = n * recursionResult;
+		long result = n * recursionResult;
 		/*
 		For each recursive step, return the intermediary result. This will be stored in recursionResult of the previous
 		stack frame.
