@@ -42,7 +42,9 @@ public class Exercises
 
 		logger.log(Level.INFO, "Exercise 5 - Infinite Series Expansion");
 		Thread.sleep(005);
-		System.out.println(runtime.myExponent(2, 2));
+		System.out.println("myExp(1, 20)\t" + runtime.myExp(1, 20));
+		System.out.println("myExp2(1, 20)\t" + runtime.myExp2(1, 20));
+		System.out.println("Math.exp(1)\t\t" + Math.exp(1));
 	}
 
 	public double approximateSquareRoot(double startNumber)
@@ -71,11 +73,9 @@ public class Exercises
 	{
 		if (x == 0) {
 			return 0;
-		}
-		else if (n == 0) {
+		} else if (n == 0) {
 			return 1;
-		}
-		else {
+		} else {
 			double result = 1;
 			for (int i = 1; i <= n; i++) {
 				// result * x is the formula needed to calculate powers
@@ -91,51 +91,68 @@ public class Exercises
 
 	public int factorialIterative(int n)
 	{
+		int result = 1;
+
+		// http://mathforum.org/library/drmath/view/57128.html & https://www.mathsisfun.com/numbers/factorial.html
 		if (n == 0) {
-			return 0;
+			return result;
 		}
 
-		int result = 1;
+
 		for (int i = 1; i <= n; i++) {
 			result = result * i;
 		}
 		return result;
 	}
 
-	public double myExponent(double e, int x)
+	// https://docs.oracle.com/javase/8/docs/api/java/lang/Math.html#exp-double- returns Euler's number raised to the provided power.
+	public double myExp(double x, int n)
 	{
-		double result = 0;
+		double total = 0;
 
-		// e ^ x = 1 + x + x ^ 2 / 2! + ... + x ^ i / i!
+		// e is euler's number - https://www.mathsisfun.com/numbers/e-eulers-number.html
+		// e ^ x = 1 + x + (x ^ 2) / (2!) + ... + (x ^ i) / (i!)
 		// ! means factorial, thus result of power divided by result of factorial
-		for (int i = 0; i <= x; i++) {
+/*		for (int i = 0; i <= n; i++) {
 			if (i == 0) {
-				result += 1;
+				total += 1;
+			} else if (i == 1) {
+				total += x;
+			} else {
+				// http://mathforum.org/library/drmath/view/57493.html
+				double numerator = Math.pow(x, i);
+				double denominator = factorialIterative(i);
+				total = total + numerator / denominator;
 			}
-			else if(i == 1) {
-				result += x;
-			}
-			else {
-				result += Math.pow(x, i) / factorialIterative(i);
-			}
+			System.out.println(i + " = " + total);
+		}*/
+
+		// Can also be, because 0! and 1! is 1
+		for (int i = 0; i <= n; i++) {
+
+			// http://mathforum.org/library/drmath/view/57493.html
+			double numerator = Math.pow(x, i);
+			double denominator = factorialIterative(i);
+			total = total + numerator / denominator;
+			System.out.println(i + " = " + total);
 		}
-		return result;
+
+		return total;
 	}
 
-	/*public double myExponent2(double e, int x) {
-		double result = 0;
+	public double myExp2(double x, int n)
+	{
+		// Start at 1 to avoid division by 0 error
+		double total = 1.0;
+		double numerator = 1.0;
+		double denominator = 1.0;
 
-		for (int i = 0; i <= x; i++) {
-			if (i == 0) {
-				result += 1;
-			}
-			else if(i == 1) {
-				result += x;
-			}
-			else {
-				result +=
-			}
+		for (int i = 1; i <= n; i++) {
+			numerator = numerator * x;
+			denominator = denominator * i;
+			total = total + numerator / denominator;
+			System.out.println(i + " = " + total);
 		}
-		return result;
-	}*/
+		return total;
+	}
 }
