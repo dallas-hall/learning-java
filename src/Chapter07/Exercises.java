@@ -15,24 +15,15 @@ public class Exercises
 
 		logger.log(Level.INFO, "Exercise 2 - Approximate Square Root");
 		Thread.sleep(005);
-		System.out.println(runtime.approximateSquareRoot(1));
-		System.out.println(runtime.approximateSquareRoot(4));
-		System.out.println(runtime.approximateSquareRoot(9));
-		System.out.println(runtime.approximateSquareRoot(16));
-		System.out.println(runtime.approximateSquareRoot(25));
-		System.out.println(runtime.approximateSquareRoot(36));
-		System.out.println(runtime.approximateSquareRoot(49));
-		System.out.println(runtime.approximateSquareRoot(64));
-		System.out.println(runtime.approximateSquareRoot(83));
-		System.out.println(runtime.approximateSquareRoot(100));
+		for (int i = 1; i <= 10; i++) {
+			System.out.println(runtime.approximateSquareRoot(i * i));
+		}
 
 		logger.log(Level.INFO, "Exercise 3 - Exponents With Iteration");
 		Thread.sleep(005);
-		System.out.println(runtime.powerIterative(2, 0));
-		System.out.println(runtime.powerIterative(2, 1));
-		System.out.println(runtime.powerIterative(2, 2));
-		System.out.println(runtime.powerIterative(2, 3));
-		System.out.println(runtime.powerIterative(2, 4));
+		for (int i = 0; i < 8; i++) {
+			System.out.println(runtime.powerIterative(2, i));
+		}
 
 		logger.log(Level.INFO, "Exercise 4 - Factorial With Iteration");
 		Thread.sleep(005);
@@ -97,7 +88,6 @@ public class Exercises
 		if (n == 0) {
 			return result;
 		}
-
 
 		for (int i = 1; i <= n; i++) {
 			result = result * i;
