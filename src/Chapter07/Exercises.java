@@ -12,11 +12,12 @@ public class Exercises
 		logger.log(Level.INFO, "Chapter 7 - Exercises");
 		Exercises runtime = new Exercises();
 
-
 		logger.log(Level.INFO, "Exercise 2 - Approximate Square Root");
 		Thread.sleep(005);
 		for (int i = 1; i <= 10; i++) {
-			System.out.println(runtime.approximateSquareRoot(i * i));
+			// If we decrease this number there will be more iterations and a more accurate result returned
+			// E.g. 0.0001 and 9 returns 3.0000000000393214 but 0.00001 returns 3.0
+			System.out.println(runtime.approximateSquareRoot(i * i, 0.0001));
 		}
 
 		logger.log(Level.INFO, "Exercise 3 - Exponents With Iteration");
@@ -27,18 +28,38 @@ public class Exercises
 
 		logger.log(Level.INFO, "Exercise 4 - Factorial With Iteration");
 		Thread.sleep(005);
-		for (int i = 0; i < 20; i++) {
+		// Overflow at 21
+		for (int i = 0; i <= 21; i++) {
 			System.out.println(i + " factorial = "+ runtime.factorialIterative(i));
 		}
 
 		logger.log(Level.INFO, "Exercise 5 - Infinite Series Expansion");
 		Thread.sleep(005);
-		System.out.println("myExp(1, 20)\t" + runtime.myExp(1, 20));
-		System.out.println("myExp2(1, 20)\t" + runtime.myExp2(1, 20));
-		System.out.println("Math.exp(1)\t\t" + Math.exp(1));
+
+		// The number of rounds influences how accurate it is, factorialIterative() overflows at 20
+		int rounds = 20;
+		for (int i = 1; i < 5; i++) {
+
+			runtime.checkMyExp(i, rounds);
+		}
+
+		// The approximation accuracy appears to get worse with larger positive numbers.
+		double x = 0.10;
+		for (int i = 1; i < 5; i++) {
+			runtime.checkMyExp(x, rounds);
+			x *= 10;
+		}
+
+		// The approximation accuracy appears to get worse with smaller negative numbers.
+		x = -0.10;
+		for (int i = 1; i < 5; i++) {
+			runtime.checkMyExp(x, rounds);
+			x *= 10;
+		}
+
 	}
 
-	public double approximateSquareRoot(double startNumber)
+	public double approximateSquareRoot(double startNumber, double checkDifference)
 	{
 		// The initial guess is half the starting number
 		double guess1 = startNumber / 2;
@@ -48,9 +69,7 @@ public class Exercises
 			// We are using the absolute number of the difference so we can always compare a positive integer.
 			double difference = Math.abs(guess1 - guess2);
 
-			// If we decrease this number there will be more iterations and a more accurate result returned
-			// E.g. 0.0001 and 9 returns 3.0000000000393214 but 0.00001 returns 3.0
-			if (difference < 0.0001) {
+			if (difference < checkDifference) {
 				return guess1;
 			} else {
 				// Improve the guesses with the following formula
@@ -145,5 +164,14 @@ public class Exercises
 			//System.out.println(i + " = " + total);
 		}
 		return total;
+	}
+
+	public void checkMyExp(double x, int rounds)
+	{
+		// Using .19 and g incase we get scientific notation back
+		System.out.printf("%-18s\t%.19g\n", "myExp(" + x + ", " + rounds + ")", myExp(x, rounds));
+		System.out.printf("%-18s\t%.19g\n", "myExp2(" + x + ", " + rounds + ")", myExp2(x, rounds));
+		System.out.printf("%-18s\t%.19g\n", "Math.exp(" + x + ")", Math.exp(x));
+		System.out.println();
 	}
 }
