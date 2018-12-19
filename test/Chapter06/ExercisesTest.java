@@ -2,17 +2,26 @@ package Chapter06;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
-
 class ExercisesTest
 {
 	private static IsDivisible isDivisible;
 	private static CanCreateTriangle canCreateTriangle;
+	private static MultAdd multAdd;
+	private static Prod prod;
+	private static OddSum oddSum;
+	private static Ackermann ackermann;
+	private static PowersRecursion powersRecursion;
 
 	@org.junit.jupiter.api.BeforeAll
 	static void initAll()
 	{
 		isDivisible = new IsDivisible();
 		canCreateTriangle = new CanCreateTriangle();
+		multAdd = new MultAdd();
+		prod = new Prod();
+		oddSum = new OddSum();
+		ackermann = new Ackermann();
+		powersRecursion = new PowersRecursion();
 	}
 
 	@org.junit.jupiter.api.Test
@@ -50,45 +59,44 @@ class ExercisesTest
 		}
 	}
 
-	/*@org.junit.jupiter.api.Test
+	@org.junit.jupiter.api.Test
 	void multaddOperation()
 	{
-		assertEquals(5.0, runtime.multaddOperation(1, 2, 3));
-		assertEquals(16.0, runtime.multaddOperation(2, 4, 8));
+		assertEquals(5.0, multAdd.multaddOperation(1, 2, 3));
+		assertEquals(16.0, multAdd.multaddOperation(2, 4, 8));
 	}
 
 	@org.junit.jupiter.api.Test
 	void prod()
 	{
-		assertEquals(24.0, runtime.prod(1, 4));
+		assertEquals(24.0, prod.prod(1, 4));
 	}
 
 	@org.junit.jupiter.api.Test
 	void prodRewrite()
 	{
-		assertEquals(24.0, runtime.prodRewrite(1, 4));
+		assertEquals(24.0, prod.prodRewrite(1, 4));
 	}
 
 	@org.junit.jupiter.api.Test
 	void oddSum()
 	{
-		assertEquals(9, runtime.oddSum(5));
-		assertEquals(25, runtime.oddSum(10));
+		assertEquals(9, oddSum.oddSum(5));
+		assertEquals(25, oddSum.oddSum(10));
 	}
 
 	@org.junit.jupiter.api.Test
 	void ackermann()
 	{
-		assertEquals(2, runtime.ackermann(0, 1));
-		assertEquals(4, runtime.ackermann(1, 2));
+		assertEquals(2, ackermann.ackermann(0, 1));
+		assertEquals(4, ackermann.ackermann(1, 2));
 	}
 
 	@org.junit.jupiter.api.Test
 	void power()
 	{
-		assertEquals(1.0, runtime.power(2, 0));
-		assertEquals(2.0, runtime.power(2, 1));
-		assertEquals(128.0, runtime.power(2, 7));
-		assertEquals(256.0, runtime.power(2, 8));
-	}*/
+		for (int i = 0; i < 17; i++) {
+			assertEquals(Math.pow(2, i), powersRecursion.power(2, i));
+		}
+	}
 }
