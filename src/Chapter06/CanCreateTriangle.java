@@ -10,7 +10,7 @@ public class CanCreateTriangle
 	public static void main(String[] args) throws InterruptedException
 	{
 		CanCreateTriangle runtime = new CanCreateTriangle();
-		logger.log(Level.INFO, "Running canCreateTriangle");
+		logger.log(Level.INFO, "Exercise 3 - CanCreateTriangle");
 		Thread.sleep(005);
 
 		System.out.println("If any of the three lengths is greater than the sum of the other 2, you cannot form a triangle.");
