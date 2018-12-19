@@ -5,7 +5,7 @@ import java.util.logging.Logger;
 
 public class CanCreateTriangle
 {
-	private static final Logger logger = Logger.getLogger(IsDivisible.class.getName());
+	private static final Logger logger = Logger.getLogger(CanCreateTriangle.class.getName());
 
 	public static void main(String[] args) throws InterruptedException
 	{
