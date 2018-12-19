@@ -1,3 +1,4 @@
+/*
 package Chapter06;
 
 import java.util.logging.Level;
@@ -12,10 +13,6 @@ public class Exercises
 		logger.log(Level.INFO, "Chapter 6 - Exercises");
 		Exercises runtime = new Exercises();
 
-		logger.log(Level.INFO, "Exercise 2 - isDivisible");
-		Thread.sleep(005);
-		System.out.println("Is 9 divisible by 3? " + runtime.isDivisible(9, 3));
-		System.out.println("Is 9 divisible by 4? " + runtime.isDivisible(9, 4));
 
 		logger.log(Level.INFO, "Exercise 3 - isTriangle");
 		Thread.sleep(005);
@@ -47,31 +44,6 @@ public class Exercises
 
 	}
 
-	public boolean isDivisible(int n, int m)
-	{
-		if (n % m == 0)
-			return true;
-		else
-			return false;
-	}
-
-	// If any of the three lengths is greater than the sum of the other 2, you cannot form a triangle.
-	public boolean canCreateTriangle(int a, int b, int c)
-	{
-		int sumAB = a + b;
-		int sumAC = a + c;
-		int sumBC = b + c;
-
-		if (a > sumBC) {
-			return false;
-		} else if (b > sumAC) {
-			return false;
-		} else if (c > sumAB) {
-			return false;
-		} else {
-			return true;
-		}
-	}
 
 	// multadd operation is a * b + c, this can concisely represent many computations.
 	public double multaddOperation(double a, double b, double c)
@@ -109,19 +81,23 @@ public class Exercises
 			return 1;
 		}
 
-		/*
+		*/
+/*
 		If n is odd, decrement by 2 and do recursive call
 		The result of the recursion needs to be added with n and then added to sum. This is the returned value.
-		*/
+		*//*
+
 		if (n % 2 == 1) {
 			recursionResult = oddSum(n - 2);
 			sum += (recursionResult + n);
 		}
-		/*
+		*/
+/*
 		If n is even, decrement by 1 and do recursive call.
 		The result of the recursion needs to be added with sum. n doesn't need to be added here because we are only
 		summing odd numbers, so this covers the case where n starts as an even number. This is the returned value.
-		*/
+		*//*
+
 		else if (n % 2 == 0) {
 			recursionResult = oddSum(n - 1);
 			sum += recursionResult;
@@ -145,14 +121,16 @@ public class Exercises
 		return result;
 	}
 
-	/**
+	*/
+/**
 	 * This method uses recursion to calculate exponents. The formula being use is x ^ n = x · x ^ n − 1.
 	 * When n is even, the formula being used is x ^ n = (x ^ (n / 2)) ^ 2
 	 *
 	 * @param x - the number to be used in the exponent operation.
 	 * @param n - how many times to raise x
 	 * @return - the result of the exponent operation.
-	 */
+	 *//*
+
 	public double power(double x, int n)
 	{
 		double result = 0;
@@ -185,3 +163,4 @@ public class Exercises
 		}
 	}
 }
+*/
