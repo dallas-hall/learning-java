@@ -98,7 +98,7 @@ public class EulersNumberExponent
 
 	public long factorial(int n)
 	{
-		// Explained in chapter 6 FactorialRecursion class
+		// Explained in chapter 6 FactorialRecursion class, repeated here so unit tests pass
 		if (n == 0) {
 			return 1;
 		}
