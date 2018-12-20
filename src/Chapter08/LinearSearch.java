@@ -11,19 +11,23 @@ public class LinearSearch
 
 	public static void main(String[] args) throws InterruptedException
 	{
-		logger.log(Level.INFO, "Linear search on arrays.");
+		logger.log(Level.INFO, "Iterative linear search on arrays.");
 		Thread.sleep(005);
 		LinearSearch runtime = new LinearSearch();
 
-		int[] a = runtime.createArray(1000, 1000);
+		int[] a = runtime.createArray(10, 100);
 		System.out.println(Arrays.toString(a));
 
 		Random prn = new Random();
-		int searchValue = prn.nextInt(1000);
+		int searchValue = prn.nextInt(100);
 
-		System.out.printf("%s %s\n", "linearSearchBoolean searched for " + searchValue + " and returned", runtime.linearSearchBoolean(a, searchValue));
-		System.out.printf("%s %s\n", "linearSearchIndex searched for " + searchValue + " and returned", runtime.linearSearchIndex(a, searchValue));
-		System.out.printf("%s %s\n", "linearSearchValue searched for " + searchValue + " and returned", runtime.linearSearchValue(a, searchValue));
+		System.out.printf("%s %s\n", "linearSearchBoolean searched for " + searchValue + " and returned", runtime.iterativeLinearSearchBoolean(a, searchValue));
+		System.out.printf("%s %s\n", "linearSearchIndex searched for " + searchValue + " and returned", runtime.iterativeLinearSearchIndex(a, searchValue));
+		System.out.printf("%s %s\n", "linearSearchValue searched for " + searchValue + " and returned", runtime.iterativeLinearSearchValue(a, searchValue));
+
+		logger.log(Level.INFO, "Iterative linear search on arrays.");
+		Thread.sleep(005);
+		System.out.printf("%s %s\n", "recursiveLinearSearchBoolean searched for " + searchValue + " and returned", runtime.recursiveLinearSearchBoolean(a, searchValue, 0));
 	}
 
 	public int[] createArray(int size, int prnLimit)
@@ -37,7 +41,7 @@ public class LinearSearch
 		return a;
 	}
 
-	public boolean linearSearchBoolean(int[] inputArray, int searchValue)
+	public boolean iterativeLinearSearchBoolean(int[] inputArray, int searchValue)
 	{
 		for (int i = 0; i < inputArray.length; i++) {
 			if (inputArray[i] == searchValue) {
@@ -47,7 +51,7 @@ public class LinearSearch
 		return false;
 	}
 
-	public int linearSearchIndex(int[] inputArray, int searchValue)
+	public int iterativeLinearSearchIndex(int[] inputArray, int searchValue)
 	{
 		for (int i = 0; i < inputArray.length; i++) {
 			if (inputArray[i] == searchValue) {
@@ -57,7 +61,7 @@ public class LinearSearch
 		return -1;
 	}
 
-	public Integer linearSearchValue(int[] inputArray, int searchValue)
+	public Integer iterativeLinearSearchValue(int[] inputArray, int searchValue)
 	{
 		for (int i = 0; i < inputArray.length; i++) {
 			if (inputArray[i] == searchValue) {
@@ -65,5 +69,17 @@ public class LinearSearch
 			}
 		}
 		return null;
+	}
+
+	public boolean recursiveLinearSearchBoolean(int[] inputArray, int searchValue, int searchIndex) {
+		if(searchIndex < inputArray.length) {
+			if (inputArray[searchIndex] == searchValue) {
+				return true;
+			}
+			else {
+				recursiveLinearSearchBoolean(inputArray, searchValue, searchIndex + 1);
+			}
+		}
+		return false;
 	}
 }
