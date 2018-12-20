@@ -15,7 +15,7 @@ public class LinearSearch
 		Thread.sleep(005);
 		LinearSearch runtime = new LinearSearch();
 
-		int[] a = runtime.createArray(10, 100);
+		int[] a = runtime.createArray(100, 100);
 		System.out.println(Arrays.toString(a));
 
 		Random prn = new Random();
@@ -25,9 +25,11 @@ public class LinearSearch
 		System.out.printf("%s %s\n", "linearSearchIndex searched for " + searchValue + " and returned", runtime.iterativeLinearSearchIndex(a, searchValue));
 		System.out.printf("%s %s\n", "linearSearchValue searched for " + searchValue + " and returned", runtime.iterativeLinearSearchValue(a, searchValue));
 
-		logger.log(Level.INFO, "Iterative linear search on arrays.");
+		logger.log(Level.INFO, "Recursive linear search on arrays.");
 		Thread.sleep(005);
 		System.out.printf("%s %s\n", "recursiveLinearSearchBoolean searched for " + searchValue + " and returned", runtime.recursiveLinearSearchBoolean(a, searchValue, 0));
+		System.out.printf("%s %s\n", "recursiveLinearSearchIndex searched for " + searchValue + " and returned", runtime.recursiveLinearSearchIndex(a, searchValue, 0));
+		System.out.printf("%s %s\n", "recursiveLinearSearchValue searched for " + searchValue + " and returned", runtime.recursiveLinearSearchValue(a, searchValue, 0));
 	}
 
 	public int[] createArray(int size, int prnLimit)
@@ -72,14 +74,41 @@ public class LinearSearch
 	}
 
 	public boolean recursiveLinearSearchBoolean(int[] inputArray, int searchValue, int searchIndex) {
+		boolean result = false;
 		if(searchIndex < inputArray.length) {
 			if (inputArray[searchIndex] == searchValue) {
 				return true;
 			}
 			else {
-				recursiveLinearSearchBoolean(inputArray, searchValue, searchIndex + 1);
+				result = recursiveLinearSearchBoolean(inputArray, searchValue, searchIndex + 1);
 			}
 		}
-		return false;
+		return result;
+	}
+
+	public int recursiveLinearSearchIndex(int[] inputArray, int searchValue, int searchIndex) {
+		int index = -1;
+		if(searchIndex < inputArray.length) {
+			if (inputArray[searchIndex] == searchValue) {
+				return searchIndex;
+			}
+			else {
+				index = recursiveLinearSearchIndex(inputArray, searchValue, searchIndex + 1);
+			}
+		}
+		return index;
+	}
+
+	public Integer recursiveLinearSearchValue(int[] inputArray, int searchValue, int searchIndex) {
+		Integer value = null;
+		if(searchIndex < inputArray.length) {
+			if (inputArray[searchIndex] == searchValue) {
+				return inputArray[searchIndex];
+			}
+			else {
+				value = recursiveLinearSearchValue(inputArray, searchValue, searchIndex + 1);
+			}
+		}
+		return value;
 	}
 }
