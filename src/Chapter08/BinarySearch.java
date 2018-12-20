@@ -16,11 +16,11 @@ public class BinarySearch
 		Thread.sleep(005);
 		BinarySearch runtime = new BinarySearch();
 
-		int[] a = runtime.createArray(100, 1000);
+		int[] a = runtime.createArray(20, 100);
 		//int[] a = {1, 2, 3, 4, 5, 6, 7, 8, 9, 10};
 		System.out.println(Arrays.toString(a));
 
-		int searchValue = ThreadLocalRandom.current().nextInt(1, 1000);
+		int searchValue = ThreadLocalRandom.current().nextInt(1, 100);
 		//int searchValue = 10;
 
 		// Binary searching needs a sorted array
@@ -73,11 +73,11 @@ public class BinarySearch
 			currentValue = inputArray[currentIndex];
 
 			if (searchValue == currentValue) {
-				System.out.println("Attempt " + attempts);
+				System.out.println("Attempts " + attempts);
 				return true;
 			}
 			else if (currentIndex == previousIndex) {
-				System.out.println("Attempt " + attempts);
+				System.out.println("Attempts " + attempts);
 				return false;
 			}
 			else if (searchValue < currentValue) {
@@ -109,11 +109,11 @@ public class BinarySearch
 			currentValue = inputArray[currentIndex];
 
 			if (searchValue == currentValue) {
-				System.out.println("Attempt " + attempts);
+				System.out.println("Attempts " + attempts);
 				return currentIndex;
 			}
 			else if (currentIndex == previousIndex) {
-				System.out.println("Attempt " + attempts);
+				System.out.println("Attempts " + attempts);
 				return -1;
 			}
 			else if (searchValue < currentValue) {
@@ -145,11 +145,11 @@ public class BinarySearch
 			currentValue = inputArray[currentIndex];
 
 			if (searchValue == currentValue) {
-				System.out.println("Attempt " + attempts);
+				System.out.println("Attempts " + attempts);
 				return currentValue;
 			}
 			else if (currentIndex == previousIndex) {
-				System.out.println("Attempt " + attempts);
+				System.out.println("Attempts " + attempts);
 				return -1;
 			}
 			else if (searchValue < currentValue) {
