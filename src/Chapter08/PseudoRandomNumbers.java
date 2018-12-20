@@ -2,6 +2,7 @@ package Chapter08;
 
 import java.util.Arrays;
 import java.util.Random;
+import java.util.concurrent.ThreadLocalRandom;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
@@ -16,19 +17,29 @@ public class PseudoRandomNumbers
 		logger.log(Level.INFO, "Create int[] with pseudo random numbers.");
 		Thread.sleep(005);
 		PseudoRandomNumbers prn = new PseudoRandomNumbers();
-		prn.setNumbers(prn.createArray());
-		System.out.println(Arrays.toString(prn.getNumbers()));
+		int[] a = prn.createArrayRandom();
+		int[] b = prn.createArrayThreadLocalRandom();
+		System.out.println("createArrayRandom\n" + Arrays.toString(a));
+		System.out.println("createArrayThreadLocalRandom\n" + Arrays.toString(b));
 		logger.log(Level.INFO, "Print some numbers with different start seeds.");
 		Thread.sleep(005);
 		prn.printPrn(10);
 	}
 
-	public int[] createArray() {
+	public int[] createArrayRandom() {
 		Random prn = new Random();
 
 		int[] numbers = new int[prn.nextInt(32)];
 		for (int i = 0; i < numbers.length; i++) {
 			numbers[i] = prn.nextInt(100);
+		}
+		return numbers;
+	}
+
+	public int[] createArrayThreadLocalRandom() {
+		int[] numbers = new int[ThreadLocalRandom.current().nextInt(0, 100)];
+		for (int i = 0; i < numbers.length; i++) {
+			numbers[i] = ThreadLocalRandom.current().nextInt(0, 100);
 		}
 		return numbers;
 	}
@@ -51,11 +62,12 @@ public class PseudoRandomNumbers
 		Random prn512 = new Random(512);
 
 		for(int i = 0; i < limit; i++) {
-			System.out.printf("%-6s\t%1d\t%-6s\t%1d\t%-6s\t%1d\t%-6s\t%1d\n"
+			System.out.printf("%-6s\t%1d\t%-6s\t%1d\t%-6s\t%1d\t%-6s\t%1d\t%-6s\t%1d\n"
 					,"prn", prn.nextInt()
 					,"prn128", prn128.nextInt()
 					,"prn256", prn256.nextInt()
 					,"prn512", prn512.nextInt()
+					,"ThreadLocalRandom", ThreadLocalRandom.current().nextInt()
 			);
 		}
 	}
