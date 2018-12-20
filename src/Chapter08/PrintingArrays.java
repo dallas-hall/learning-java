@@ -15,7 +15,7 @@ public class PrintingArrays
 		PrintingArrays printingArrays = new PrintingArrays();
 		PseudoRandomNumbers prn = new PseudoRandomNumbers();
 
-		int[] numbers = prn.createArray();
+		int[] numbers = prn.createArrayThreadLocalRandom();
 		System.out.println(printingArrays.getArrayString(numbers));
 		System.out.println(Arrays.toString(numbers));
 	}

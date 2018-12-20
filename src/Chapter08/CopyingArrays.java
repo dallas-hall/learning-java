@@ -14,7 +14,7 @@ public class CopyingArrays
 		Thread.sleep(005);
 		CopyingArrays runtime = new CopyingArrays();
 		PseudoRandomNumbers prn = new PseudoRandomNumbers();
-		int[] a = prn.createArray();
+		int[] a = prn.createArrayRandom();
 		System.out.println(a + " = " + Arrays.toString(a));
 		// Copy full array manually
 		int[] b = runtime.copyIntArray(a);
