@@ -4,7 +4,8 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 
 public class StringComparison
-{	private static final Logger logger = Logger.getLogger(StringComparison.class.getName());
+{
+	private static final Logger logger = Logger.getLogger(StringComparison.class.getName());
 
 	public static void main(String[] args) throws InterruptedException
 	{
