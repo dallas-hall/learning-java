@@ -15,15 +15,23 @@ public class Factors
 		Factors runtime = new Factors();
 		runtime.printPrimes(121);
 
+		int[][] factors = {
+				{2, 4, 8, 1},
+				{2, 4, 8, 1, 9},
+				{1, 3},
+				{3}
+		};
+		int checkNumber = 8;
 
-		int number = 8;
-		int[] numbers = {2, 4, 8, 1};
-		System.out.println("Are "+ Arrays.toString(numbers) + " factors of " + number + "?");
-		System.out.println(runtime.areFactors(number, numbers));
-
-		int[] numbers2 = {2, 4, 8, 1, 9};
-		System.out.println("Are "+ Arrays.toString(numbers2) + " factors of " + number + "?");
-		System.out.println(runtime.areFactors(number, numbers2));
+		for (int i = 0; i < factors.length; i++) {
+			if (i != 0 && i != 1) {
+				checkNumber = 3;
+			}
+			System.out.println("Are "+ Arrays.toString(factors[i]) + " factors of " + checkNumber + "?");
+			System.out.println(runtime.areFactors(checkNumber, factors[i]));
+			System.out.println("Are "+ Arrays.toString(factors[i]) + " factors of " + checkNumber + " and prime only?");
+			System.out.println(runtime.arePrimerFactors(checkNumber, factors[i]));
+		}
 	}
 
 	public boolean areFactors(int n, int[] numbers)
@@ -38,7 +46,18 @@ public class Factors
 
 	public boolean arePrimerFactors(int n, int[] numbers)
 	{
-		return false;
+		boolean areFactors = areFactors(n, numbers);
+		if (!areFactors) {
+			return false;
+		}
+		else {
+			for (int i = 0; i < numbers.length; i++) {
+				if(!isPrime(numbers[i])) {
+					return false;
+				}
+			}
+		}
+		return true;
 	}
 
 	public boolean isPrime(int n)
