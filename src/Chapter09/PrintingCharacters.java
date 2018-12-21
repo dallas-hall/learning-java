@@ -25,7 +25,21 @@ public class PrintingCharacters
 		Thread.sleep(005);
 		runtime.printCharacterRange('\u3131', '\u318E');
 
+		logger.log(Level.INFO, "Printing all characters from a string (for loop).");
+		Thread.sleep(005);
+		runtime.printAllStringCharactersForLoop("Hi, I am a string.");
 
+		logger.log(Level.INFO, "Printing all characters from a string (for each loop).");
+		Thread.sleep(005);
+		runtime.printAllStringCharactersForEachLoop("Hi, I am a string.");
+
+		logger.log(Level.INFO, "Print reversed string (for loop)");
+		Thread.sleep(005);
+		runtime.printReveredStringForLoop("Hi, I am a string.");
+
+		logger.log(Level.INFO, "Print reversed string (for each loop)");
+		Thread.sleep(005);
+		runtime.printReveredStringForEachLoop("Hi, I am a string.");
 	}
 
 	public void printCharacterRange(char firstChar, char endChar)
