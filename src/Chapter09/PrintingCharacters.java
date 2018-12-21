@@ -25,13 +25,7 @@ public class PrintingCharacters
 		Thread.sleep(005);
 		runtime.printCharacterRange('\u3131', '\u318E');
 
-		logger.log(Level.INFO, "Printing all characters from a string (for loop).");
-		Thread.sleep(005);
-		runtime.printAllStringCharactersForLoop("Hi, I am a string.");
 
-		logger.log(Level.INFO, "Printing all characters from a string (for each loop).");
-		Thread.sleep(005);
-		runtime.printAllStringCharactersForEachLoop("Hi, I am a string.");
 	}
 
 	public void printCharacterRange(char firstChar, char endChar)
@@ -70,5 +64,31 @@ public class PrintingCharacters
 			i++;
 		}
 		System.out.println("}");
+	}
+
+	public void printReveredStringForLoop(String s)
+	{
+		for(int i = s.length() - 1; i >= 0; i--) {
+			System.out.print(s.charAt(i));
+		}
+		System.out.println();
+	}
+
+	public void printReveredStringForEachLoop(String s)
+	{
+		String r = reverseStringForLoop(s);
+		for(char c: r.toCharArray()) {
+			System.out.print(c);
+		}
+		System.out.println();
+	}
+
+	private String reverseStringForLoop(String s)
+	{
+		StringBuilder stringBuilder = new StringBuilder();
+		for(int i = s.length() - 1; i >= 0; i--) {
+			stringBuilder.append(s.charAt(i));
+		}
+		return stringBuilder.toString();
 	}
 }
