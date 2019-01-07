@@ -67,17 +67,22 @@ public class MatchingBrackets
 	//### HELPERS ###
 	public int checkMatchingBrackets(String inputString, char openBracket, char closeBracket)
 	{
-		int count = 0;
+		int openCount = 0;
+		int closeCount = 0;
 		for (int i = 0; i < inputString.length(); i++) {
 			char c = inputString.charAt(i);
 			if (c == openBracket) {
-				count++;
+				openCount++;
 			}
 			else if (c == closeBracket) {
-				count--;
+				closeCount++;
 			}
 		}
 		
-		return count;
+		if (openCount > closeCount) {
+			return openCount - closeCount;
+		} else{
+			return closeCount - openCount;
+		}
 	}
 }
