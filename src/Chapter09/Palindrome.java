@@ -28,9 +28,14 @@ public class Palindrome
 		logger.log(Level.INFO, "Chapter 9 - Exercise 4");
 		Thread.sleep(005);
 		String[] s = {
+				"a",
+				"aa",
+				"ab",
 				"otto",
 				"lotto",
-				"blotto"
+				"harrah",
+				"kayak",
+				"kayaks"
 		};
 		
 		Palindrome runtime = new Palindrome();
@@ -44,6 +49,8 @@ public class Palindrome
 			runtime.printString(s[i]);
 			runtime.printBackward(s[i]);
 			System.out.println(runtime.getReversedString(s[i]));
+			System.out.println("Is \"" + s[i] + "\" a palindrome? " + runtime.isPalindromeRecursive(s[i]));
+			System.out.println("Is \"" + s[i] + "\" a palindrome? " + runtime.isPalindromeLoop(s[i]));
 		}
 		
 	}
@@ -57,12 +64,22 @@ public class Palindrome
 	
 	public String getAllButFirstChar(String s)
 	{
-		return s.substring(1);
+		if(s.length() > 1) {
+			return s.substring(1);
+		}
+		else {
+			return "";
+		}
 	}
 	
 	public String getAllButFirstAndLastChar(String s)
 	{
-		return s.substring(1, s.length() - 1);
+		if(s.length() > 1) {
+			return s.substring(1, s.length() - 1);
+		}
+		else {
+			return "";
+		}
 	}
 	
 	public char getLastChar(String s)
@@ -99,8 +116,50 @@ public class Palindrome
 		}
 	}
 	
-	public boolean isPalindrome(String s)
+	/**
+	 * A single letter is a palindrome. A two letter word is a palindrome if both letters are the same. Any other word
+	 * is a palindrome if the first letter is the same as the last letter and the middle is a palindrome.
+	 * @param s
+	 * @return
+	 */
+	public boolean isPalindromeRecursive(String s)
 	{
-		return false;
+		boolean recursionResult = false;
+		char firstChar = getFirstChar(s);
+		char lastChar = getLastChar(s);
+		String rest = getAllButFirstAndLastChar(s);
+		
+		if(s.length() == 1) {
+			recursionResult = true;
+		// Check if firstChar is the same as lastChar
+		} else if(s.length() == 2 && firstChar == lastChar) {
+			recursionResult = true;
+		} else if(s.length() == 2 && firstChar != lastChar) {
+			recursionResult = false;
+		} else if (s.length() > 2 && firstChar == lastChar) {
+			recursionResult = isPalindromeRecursive(rest);
+		} else if (s.length() > 2 && firstChar != lastChar) {
+			recursionResult = false;
+		} else {
+			recursionResult = false;
+		}
+		return recursionResult;
+	}
+	
+	// https://stackoverflow.com/a/8444800
+	public boolean isPalindromeLoop(String s)
+	{
+		boolean result = true;
+		char[] chars = s.toCharArray();
+		for (int i = 0; i < chars.length / 2; i++) {
+			char c1 = chars[i];
+			char c2 = chars[(chars.length - 1) - i];
+			if(c1 != c2) {
+				result = false;
+				break;
+			}
+		}
+		return result;
 	}
 }
+
