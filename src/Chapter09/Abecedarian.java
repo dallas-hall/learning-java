@@ -1,10 +1,7 @@
 package Chapter09;/**
  * <h1>Abecedarian</h1>
  * <p>
- * This program
- * </p>
- * <p>
- * tags:	<insert concept tags here for training code only>
+ * This program checks if a String is an Abecedaraian, which means all letters are in alphabetical order.
  * </p>
  *
  * @author blindcant
