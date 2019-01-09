@@ -1,10 +1,7 @@
 package Chapter10;/**
  * <h1>BigIntegerPowerRecursive</h1>
  * <p>
- * This program
- * </p>
- * <p>
- * tags:	<insert concept tags here for training code only>
+ * This program overcomes integer overflows using BigInteger. It does this by calculating exponents using recursion.
  * </p>
  *
  * @author blindcant
