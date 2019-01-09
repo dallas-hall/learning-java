@@ -8,11 +8,13 @@ import static org.junit.jupiter.api.Assertions.assertTrue;
 public class ExercisesTest
 {
 	private static ScrabbleLetterTile scrabbleLetterTile;
+	private static RationalNumber rationalNumber;
 	
 	@org.junit.jupiter.api.BeforeAll
 	static void initAll()
 	{
 		scrabbleLetterTile = new ScrabbleLetterTile();
+		rationalNumber = new RationalNumber();
 	}
 	
 	@org.junit.jupiter.api.Test
@@ -66,5 +68,35 @@ public class ExercisesTest
 		assertEquals("D has the value 2.", new ScrabbleLetterTile('D').toString());
 		assertEquals("P has the value 3.", new ScrabbleLetterTile('P').toString());
 		assertEquals("V has the value 4.", new ScrabbleLetterTile('V').toString());
+	}
+	
+	@org.junit.jupiter.api.Test
+	void gcdEuclidSubtractionRecursion()
+	{
+		System.out.println("Testing gcdEuclidSubtractionRecursion with\n" +
+			"(13, 13, 13) - trick case: a = b\n" +
+			"(37, 600, 1) - first argument is a prime\n" +
+			"(20, 100, 20) - one is multiplum of other\n" +
+			"(624129, 2061517, 18913) - straight case");
+			
+		assertEquals(13, rationalNumber.gcdEuclidSubtractionRecursion(13, 13));
+		assertEquals(1, rationalNumber.gcdEuclidSubtractionRecursion(37, 600));
+		assertEquals(20, rationalNumber.gcdEuclidSubtractionRecursion(20, 100));
+		assertEquals(18913, rationalNumber.gcdEuclidSubtractionRecursion(624129, 2061517));
+	}
+	
+	@org.junit.jupiter.api.Test
+	void gcdEuclidModuloRecursion()
+	{
+		System.out.println("Testing gcdEuclidModuloRecursion with\n" +
+						   "(13, 13, 13) - trick case: a = b\n" +
+						   "(37, 600, 1) - first argument is a prime\n" +
+						   "(20, 100, 20) - one is multiplum of other\n" +
+						   "(624129, 2061517, 18913) - straight case");
+		
+		assertEquals(13, rationalNumber.gcdEuclidModuloRecursion(13, 13));
+		assertEquals(1, rationalNumber.gcdEuclidModuloRecursion(37, 600));
+		assertEquals(20, rationalNumber.gcdEuclidModuloRecursion(20, 100));
+		assertEquals(18913, rationalNumber.gcdEuclidModuloRecursion(624129, 2061517));
 	}
 }
