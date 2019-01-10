@@ -149,37 +149,17 @@ public class RationalNumber
 		}
 	}
 	
+	public RationalNumber reduce()
+	{
+		// https://www.mathsisfun.com/least-common-denominator.html
+		// https://www.mathsisfun.com/numbers/common-denominator.html
+		int gcd = gcdEuclidModuloRecursion(numerator, denominator);
+		return new RationalNumber(numerator / gcd, denominator / gcd);
+	}
+	
 	public RationalNumber addRationals(int numerator, int denominator)
 	{
 		// https://www.mathsisfun.com/fractions_addition.html
 		return new RationalNumber(this.numerator + numerator, this.denominator + denominator);
-	}
-	
-	public BigInteger getLcdLoop(int a, int b)
-	{
-		// https://www.mathsisfun.com/least-common-denominator.html
-		// This number is a problem, because sometimes you need to go really high to find the factor.
-		int threshold = 128;
-		BigInteger[] aMultiples = new BigInteger[threshold];
-		BigInteger[] bMultiples = new BigInteger[threshold];
-		
-		BigInteger lcd = BigInteger.valueOf(0);
-		
-		for (int i = 0; i < threshold; i++) {
-			aMultiples[i] = BigInteger.valueOf(a * (i + 1));
-		}
-		
-		for (int i = 0; i < threshold; i++) {
-			bMultiples[i] = BigInteger.valueOf(b * (i + 1));
-		}
-		
-		for (int i = 0; i < threshold; i++) {
-			int result = Arrays.binarySearch(bMultiples, aMultiples[i]);
-			if (result >= 0) {
-				lcd = aMultiples[i];
-				break;
-			}
-		}
-		return lcd;
 	}
 }
