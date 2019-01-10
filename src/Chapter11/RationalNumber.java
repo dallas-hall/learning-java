@@ -160,6 +160,12 @@ public class RationalNumber
 	public RationalNumber addRationals(int numerator, int denominator)
 	{
 		// https://www.mathsisfun.com/fractions_addition.html
-		return new RationalNumber(this.numerator + numerator, this.denominator + denominator);
+		int lcd = this.denominator * denominator;
+		int numeratorA = this.numerator * (lcd / this.denominator);
+		int numeratorB = numerator * (lcd / denominator);
+		RationalNumber t = new RationalNumber(numeratorA + numeratorB, lcd);
+		this.numerator = t.getNumerator();
+		this.denominator = t.getDenominator();
+		return this.reduce();
 	}
 }
