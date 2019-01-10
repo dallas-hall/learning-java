@@ -166,9 +166,18 @@ public class RationalNumber
 	public RationalNumber addRationals(int numerator, int denominator)
 	{
 		// https://www.mathsisfun.com/fractions_addition.html
-		int lcd = this.denominator * denominator;
-		int numeratorA = this.numerator * (lcd / this.denominator);
-		int numeratorB = numerator * (lcd / denominator);
+		// Reduce fractions first
+		RationalNumber a = this.reduce();
+		RationalNumber b = new RationalNumber(numerator, denominator).reduce();
+		
+		// Find lowest common denominator
+		int lcd = a.denominator * b.denominator;
+		
+		// Create new numerators using lcd
+		int numeratorA = a.numerator * (lcd / a.denominator);
+		int numeratorB = b.numerator * (lcd / b.denominator);
+		
+		// Return a new RationalNumber that has been reduced
 		RationalNumber t = new RationalNumber(numeratorA + numeratorB, lcd);
 		this.numerator = t.getNumerator();
 		this.denominator = t.getDenominator();
