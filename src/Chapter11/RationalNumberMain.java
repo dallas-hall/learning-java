@@ -56,6 +56,12 @@ public class RationalNumberMain
 		rationalNumber = new RationalNumber(8, 10);
 		System.out.println(rationalNumber.toString() + " is reduced to " + rationalNumber.reduce());
 		
+		logger.log(Level.INFO, "Add rational numbers.");
+		Thread.sleep(005);
+		rationalNumber = new RationalNumber(1, 3);
+		System.out.println("1/3 + 1/6 = " + rationalNumber.addRationals(1, 6));
+		
+		
 		logger.log(Level.INFO, "GCD / GCF using Euclidean subtraction algorithm.");
 		Thread.sleep(005);
 		System.out.println(rationalNumber.gcdEuclidSubtractionRecursion(13, 13));
