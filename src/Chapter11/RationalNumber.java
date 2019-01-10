@@ -68,6 +68,12 @@ public class RationalNumber
 		return String.format("%d/%d", numerator, denominator);
 	}
 	
+	public boolean equals(RationalNumber that)
+	{
+		return this.numerator == that.numerator &&
+			this.denominator == that.denominator;
+	}
+	
 	public void printRationalNumber()
 	{
 		System.out.println(this.toString());
