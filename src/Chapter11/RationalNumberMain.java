@@ -9,7 +9,6 @@ package Chapter11;
  * @version 0.1.0 - 2019-01-09
  */
 
-import java.math.BigInteger;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
@@ -49,7 +48,14 @@ public class RationalNumberMain
 		System.out.printf("%s %f\n", rationalNumber.toString() + " as a decimal is ", rationalNumber.toDouble());
 		rationalNumber.flipRationalNumber();
 		System.out.printf("%s %f\n", rationalNumber.toString() + " as a decimal is ", rationalNumber.toDouble());
-
+		
+		logger.log(Level.INFO, "Reduce rational number to .");
+		Thread.sleep(005);
+		rationalNumber = new RationalNumber(3, 9);
+		System.out.println(rationalNumber.toString() + " is reduced to " + rationalNumber.reduce());
+		rationalNumber = new RationalNumber(8, 10);
+		System.out.println(rationalNumber.toString() + " is reduced to " + rationalNumber.reduce());
+		
 		logger.log(Level.INFO, "GCD / GCF using Euclidean subtraction algorithm.");
 		Thread.sleep(005);
 		System.out.println(rationalNumber.gcdEuclidSubtractionRecursion(13, 13));
