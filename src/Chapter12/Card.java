@@ -106,7 +106,19 @@ public class Card
 			return 1;
 		}
 	}
-	
+
+	public int compareToRankAceHigh(Card that)
+	{
+		if(this.rank == 0 && that.rank != 0) {
+			return 1;
+		} else if (this.rank != 0 && that.rank == 0) {
+			return -1;
+		}
+		else {
+			return compareToRank(that);
+		}
+	}
+
 	public int getSortedDeckPosition()
 	{
 		return this.suit * 13 + this.rank;
