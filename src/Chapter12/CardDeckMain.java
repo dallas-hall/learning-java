@@ -56,6 +56,21 @@ public class CardDeckMain
 		} else {
 			System.out.println("Didn't find the target card.");
 		}
-		
+
+		logger.log(Level.INFO, "Compare Ace to all cards when Ace is lowest.");
+		Thread.sleep(005);
+		for(int i = 0; i < 13; i++) {
+			System.out.println("With Ace being the lowest, compare " + RANKS[0] + " of " + SUITS[0] + " to "
+			+ RANKS[i] + " of " + SUITS[0]);
+			System.out.println(new Card(0, 0).compareToRank(new Card(i, 0)));
+		}
+
+		logger.log(Level.INFO, "Compare Ace to all cards when Ace is highest.");
+		Thread.sleep(005);
+		for(int i = 0; i < 13; i++) {
+			System.out.println("With Ace being the highest, compare " + RANKS[0] + " of " + SUITS[0] + " to "
+					+ RANKS[i] + " of " + SUITS[0]);
+			System.out.println(new Card(0, 0).compareToRankAceHigh(new Card(i, 0)));
+		}
 	}
 }
