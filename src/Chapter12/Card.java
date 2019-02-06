@@ -20,10 +20,10 @@ public class Card
 			"Clubs", "Diamonds", "Hearts", "Spades"};
 	
 	//@@@ INSTANCE VARIABLES @@@
-	// ace is 0 (start) through to king is 12(end)
+	// ace is 0 (start) through to king is 12(end) - final to make immutable.
 	private final int rank;
 	
-	// 0 = clubs, 1 = diamonds, 2 = hearts, and 3 = spades
+	// 0 = clubs, 1 = diamonds, 2 = hearts, and 3 = spades - final to make immutable.
 	private final int suit;
 
 	//@@@ CONSTRUCTOR(S) @@@
@@ -68,21 +68,20 @@ public class Card
 			this.rank == that.rank;
 	}
 	
+	// Return 1 if this wins, -1 if that wins, or 0 if equivalent. Suit first, rank second.
 	public int compareTo(Card that)
 	{
 		if (this.suit < that.suit) {
 			return -1;
 		} else if (this.suit > that.suit) {
 			return 1;
-		}
-		
-		if (this.rank < that.rank) {
+		} else if (this.rank < that.rank) {
 			return -1;
 		} else if (this.rank > that.rank) {
 			return 1;
+		} else {
+			return 0;
 		}
-		
-		return 0;
 	}
 	
 	public int compareToSuit(Card that)

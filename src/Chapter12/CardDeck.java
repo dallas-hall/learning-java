@@ -26,7 +26,7 @@ public class CardDeck
 	public CardDeck()
 	{
 		cards = new Card[52];
-		createCards();
+		makeDeck();
 	}
 	
 	//@@@ METHODS @@@
@@ -37,7 +37,7 @@ public class CardDeck
 	}
 	
 	//### HELPERS ###
-	private void createCards()
+	private void makeDeck()
 	{
 		int index = 0;
 		// 0 = clubs, 1 = diamonds, 2 = hearts, and 3 = spades
