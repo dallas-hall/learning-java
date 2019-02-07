@@ -1,7 +1,8 @@
 package Chapter12;
 
-import static org.junit.jupiter.api.Assertions.assertEquals;
-import static org.junit.jupiter.api.Assertions.assertNotEquals;
+import java.util.concurrent.ThreadLocalRandom;
+
+import static org.junit.jupiter.api.Assertions.*;
 
 public class CardsAndDeckTest
 {
@@ -51,10 +52,52 @@ public class CardsAndDeckTest
 	@org.junit.jupiter.api.Test
 	void SequentialSearch()
 	{
-		System.out.println("Search for cards in a sorted deck of cards.");
+		System.out.println("Sequential search for 5 cards in a sorted deck of cards.");
 		CardDeck deck1 = new CardDeck();
+		for (int i = 0; i < 5; i++) {
+			int result = deck1.sequentialSearch(new Card(ThreadLocalRandom.current().nextInt(0, 13), ThreadLocalRandom.current().nextInt(0, 4)));
+			assertTrue(result >= 0);
+		}
 		
+		System.out.println("Sequential search for 5 cards not in a sorted deck of cards.");
+		for (int i = 0; i < 5; i++) {
+			int result = deck1.sequentialSearch(new Card(ThreadLocalRandom.current().nextInt(13, 27), ThreadLocalRandom.current().nextInt(4, 9)));
+			assertTrue(result == -1);
+		}
+	}
+	
+	@org.junit.jupiter.api.Test
+	void BinarySearchIterative()
+	{
+		System.out.println("Iterative binary search for 5 cards in a sorted deck of cards.");
+		CardDeck deck1 = new CardDeck();
+		for (int i = 0; i < 5; i++) {
+			int result = deck1.binarySearchLoop(new Card(ThreadLocalRandom.current().nextInt(0, 13), ThreadLocalRandom.current().nextInt(0, 4)));
+			assertTrue(result >= 0);
+		}
 		
+		System.out.println("Iterative binary search for 5 cards not in a sorted deck of cards.");
+		for (int i = 0; i < 5; i++) {
+			int result = deck1.binarySearchLoop(new Card(ThreadLocalRandom.current().nextInt(13, 27), ThreadLocalRandom.current().nextInt(4, 9)));
+			assertTrue(result == -1);
+		}
+	}
+	
+	@org.junit.jupiter.api.Test
+	void BinarySearchRecursive()
+	{
+		System.out.println("Recursive binary search for 5 cards in a sorted deck of cards.");
+		CardDeck deck1 = new CardDeck();
+		for (int i = 0; i < 5; i++) {
+			int result = deck1.binarySearchRecursive(new Card(ThreadLocalRandom.current().nextInt(0, 13), ThreadLocalRandom.current().nextInt(0, 4)), 0, 51);
+			assertTrue(result >= 0);
+		}
+		
+		System.out.println("Recursive binary search for 5 cards not in a sorted deck of cards.");
+		for (int i = 0; i < 5; i++) {
+			int result = deck1.binarySearchRecursive(new Card(ThreadLocalRandom.current().nextInt(13, 27), ThreadLocalRandom.current().nextInt(4, 9)), 0, 51);
+			assertTrue(result == -1);
+		}
 	}
 }
 
