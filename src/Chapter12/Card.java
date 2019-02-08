@@ -25,12 +25,14 @@ public class Card
 	
 	// 0 = clubs, 1 = diamonds, 2 = hearts, and 3 = spades - final to make immutable.
 	private final int suit;
-
+	private boolean available;
+	
 	//@@@ CONSTRUCTOR(S) @@@
 	public Card(int rank, int suit)
 	{
 		this.rank = rank;
 		this.suit = suit;
+		this.available = true;
 	}
 	
 	//@@@ METHODS @@@
@@ -53,6 +55,17 @@ public class Card
 	public String getSuitName()
 	{
 		return SUITS[suit];
+	}
+	
+	public boolean isAvailable()
+	{
+		return available;
+	}
+	
+	//### SETTERS ###
+	public void setAvailable(boolean available)
+	{
+		this.available = available;
 	}
 	
 	//### HELPERS ###

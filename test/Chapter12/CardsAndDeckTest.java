@@ -44,8 +44,8 @@ public class CardsAndDeckTest
 		CardDeck deck2 = new CardDeck();
 		
 		// Check that the sorting is the same
-		for (int i = 0; i < deck1.getCards().length; i++) {
-			assertEquals(deck1.getCards()[i].toString(), deck2.getCards()[i].toString());
+		for (int i = 0; i < deck1.getAvailableCards().length; i++) {
+			assertEquals(deck1.getAvailableCards()[i].toString(), deck2.getAvailableCards()[i].toString());
 		}
 	}
 	
@@ -99,5 +99,6 @@ public class CardsAndDeckTest
 			assertTrue(result == -1);
 		}
 	}
+	
 }
 
