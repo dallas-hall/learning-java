@@ -1,7 +1,6 @@
 import java.awt.*;
 import java.awt.event.*;
 import javax.swing.*;
-import javax.swing.border.*;
 
 /**
  * ImageViewer is the main class of the image viewer application. It builds and
@@ -68,11 +67,11 @@ public class ImageViewer
         //add a dialog box here
         /*JOptionPane aboutDialog = new JOptionPane();
         aboutDialog.showMessageDialog(null
-        ,"Author: blindcant\nVersion: 1.0\nDick size: ~5 inches"
+        ,"Author: dhall\nVersion: 1.0\nDick size: ~5 inches"
         ,"About ImageViewer"
         ,JOptionPane.INFORMATION_MESSAGE);*/
 
-        JOptionPane.showMessageDialog(frame, "Author: blindcant\nVersion: 1.0\nDick size: ~5 inches", "About stuff", JOptionPane.INFORMATION_MESSAGE); 
+        JOptionPane.showMessageDialog(frame, "Author: dhall\nVersion: 1.0\nDick size: ~5 inches", "About stuff", JOptionPane.INFORMATION_MESSAGE); 
     }
 
     private void changeStatusMessage()
@@ -147,18 +146,13 @@ public class ImageViewer
         
         //make the menubar and attach to the frame
         makeMenuBar(frame);
-        
-        //create the content pane - need to cast to JPanel so we can use borders
-        JPanel contentPane = (JPanel) frame.getContentPane();
 
-        //set the content pane layout manager and add a border for spacing
-        contentPane.setBorder(new EmptyBorder(16, 16, 16, 16));
-        contentPane.setLayout(new BorderLayout(8, 8));
+        //create the content pane
+        Container contentPane = frame.getContentPane();
 
-        
-        //create the toolbar and attach to the conten pane
-        makeToolBar(contentPane);
-        
+        //set the content pane layout manager
+        contentPane.setLayout(new BorderLayout());
+
         //create a text label and add it to they content pane
         JLabel filenameLabel = new JLabel();
         contentPane.add(filenameLabel, BorderLayout.NORTH);
@@ -166,58 +160,31 @@ public class ImageViewer
         //create an image panel and add it to they content pane        
         imagePanel = new ImagePanel();
         contentPane.add(imagePanel, BorderLayout.CENTER);
-        imagePanel.setBorder(new EtchedBorder());
 
         //create a text label and add it to they content pane
         statusLabel = new JLabel("Version 1.0 bitches!");
         contentPane.add(statusLabel, BorderLayout.SOUTH);
 
-        //arrange the components       
+        //create a panel and attach it to the content pane
+        JPanel buttonPanel = new JPanel();
+        contentPane.add(buttonPanel, BorderLayout.WEST);
+
+        //set the panel layout to have 1 column only
+        buttonPanel.setLayout(new GridLayout(0,1));
+
+        //create some buttons for the panel and attach it
+        JButton addButton = new JButton("Add");
+        JButton removeButton = new JButton("Remove");
+        JButton compareButton = new JButton("Compare");
+        buttonPanel.add(addButton);
+        buttonPanel.add(removeButton);
+        buttonPanel.add(compareButton);
+
+        // building is done - arrange the components and show        
         frame.pack();
-        
-        // place the frame at the center of the screen and show
-        Dimension d = Toolkit.getDefaultToolkit().getScreenSize();
-        frame.setLocation(d.width/2 - frame.getWidth()/2, d.height/2 - frame.getHeight()/2);
         frame.setVisible(true);
     }
 
-    private void makeToolBar(Container contentPane)
-    {
-        //create a JPanel that using FlowLayout to create space around teh buttons
-        JPanel buttonSpacing = new JPanel();
-        buttonSpacing.setLayout(new FlowLayout());
-
-        //create a JPanel that using GridLayout to align the buttons (rows = 0 and columns = 1)         
-        JPanel buttonPanel = new JPanel();
-        buttonPanel.setLayout(new GridLayout(0,1));
-        
-        //create some buttons for the panel and attach it
-        JButton aboutButton = new JButton("About");
-        JButton statusButton = new JButton("Status");
-        JButton quitButton = new JButton("Quit");
-        
-        buttonPanel.add(aboutButton);
-        buttonPanel.add(statusButton);
-        buttonPanel.add(quitButton);
-        
-        //create event listeners and handlers
-        aboutButton.addActionListener(new ActionListener() {
-                public void actionPerformed(ActionEvent e) { about(); }
-            });
-        statusButton.addActionListener(new ActionListener() {
-                public void actionPerformed(ActionEvent e) { changeStatusMessage(); }
-            });
-        quitButton.addActionListener(new ActionListener() {
-                public void actionPerformed(ActionEvent e) { quit(); }
-            });
-            
-        //create spacing around the buttons by attaching the panel to another panel
-        buttonSpacing.add(buttonPanel);
-        
-        //attach the spaced panel and the grid panel (with buttons) to the container on the left
-        contentPane.add(buttonSpacing, BorderLayout.WEST);
-    }
-    
     /**
      * Create the main frame's menu bar.
      * @param frame   The frame that the menu bar should be added to.
@@ -238,24 +205,19 @@ public class ImageViewer
         menubar.add(fileMenu);
 
         //### MENU ITEMS ###
-        //create the menu items
+        //create the menu items and their actionevent listener and handlers
         JMenuItem openItem = new JMenuItem("Open");
-        JMenuItem quitItem = new JMenuItem("Quit");
-        
-        //create the keyboard shortcuts
         openItem.setAccelerator(KeyStroke.getKeyStroke(KeyEvent.VK_O, SHORTCUT_MASK));
-        quitItem.setAccelerator(KeyStroke.getKeyStroke(KeyEvent.VK_Q, SHORTCUT_MASK));
-        
-        //create the event listeners and handlers
         openItem.addActionListener(new ActionListener() {
                 public void actionPerformed(ActionEvent e) { openFile(); }
             });
+        fileMenu.add(openItem);
+
+        JMenuItem quitItem = new JMenuItem("Quit");
+        quitItem.setAccelerator(KeyStroke.getKeyStroke(KeyEvent.VK_Q, SHORTCUT_MASK));
         quitItem.addActionListener(new ActionListener() {
                 public void actionPerformed(ActionEvent e) { quit(); }
             });
-
-        //add the items to the menu
-        fileMenu.add(openItem);
         fileMenu.add(quitItem);
 
         //@@@ FILTER MENU @@@
@@ -273,9 +235,11 @@ public class ImageViewer
         darkFilterMenuItem.addActionListener(new ActionListener() {
                 public void actionPerformed(ActionEvent e) { makeDarker(); }
             });
+
         lightFilterMenuItem.addActionListener(new ActionListener() {
                 public void actionPerformed(ActionEvent e) { makeLighter(); }
             });
+
         thresholdFilterMenuItem.addActionListener(new ActionListener() {
                 public void actionPerformed(ActionEvent e) { threshold(); }
             });
@@ -284,7 +248,6 @@ public class ImageViewer
         filterMenu.add(darkFilterMenuItem);
         filterMenu.add(lightFilterMenuItem);
         filterMenu.add(thresholdFilterMenuItem);
-        
         //@@@ ABOUT MENU @@@
         JMenu helpMenu = new JMenu("Help");
         menubar.add(helpMenu);
@@ -298,6 +261,7 @@ public class ImageViewer
         aboutMenuItem.addActionListener(new ActionListener() {
                 public void actionPerformed(ActionEvent e) { about(); }
             });
+
         statusMenuItem.addActionListener(new ActionListener() {
                 public void actionPerformed(ActionEvent e) { changeStatusMessage(); }
             });

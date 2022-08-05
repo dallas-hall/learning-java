@@ -82,7 +82,7 @@ public class Game
         //create players
         int prn = (int) Math.random() * 4;
         currentRoom = spawns[prn];
-        p1 = new Player("blindcant", currentRoom);
+        p1 = new Player("dhall", currentRoom);
         //players.add(p1);
     }
 
