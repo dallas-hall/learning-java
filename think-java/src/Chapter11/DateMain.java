@@ -4,7 +4,7 @@ package Chapter11;
  * <p>
  * This program is the main class for Date.
  *
- * @author blindcant
+ * @author dhall
  * @version 0.1.0 - 2019-01-09
  */
 

@@ -4,7 +4,7 @@ package Chapter09;/**
  * This program checks if 2 Strings are an anagram. An anagram means they both have the same number of letters.
  * </p>
  *
- * @author blindcant
+ * @author dhall
  * @version 0.1.0 - 2019-01-08
  */
 

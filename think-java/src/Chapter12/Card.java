@@ -5,7 +5,7 @@ package Chapter12;
  * This class represents a French playing card, with an integer representing rank and suit.
  * </p>
  *
- * @author blindcant
+ * @author dhall
  * @version 0.1.0 - 2019-01-11
  */
 

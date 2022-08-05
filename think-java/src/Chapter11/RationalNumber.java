@@ -10,7 +10,7 @@ import java.util.concurrent.ThreadLocalRandom;
  * This program creates rational numbers and ways to manipulate them.
  * </p>
  *
- * @author blindcant
+ * @author dhall
  * @version 0.1.0 - 2019-01-09
  */
 

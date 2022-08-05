@@ -12,7 +12,7 @@ import java.util.logging.Logger;
  * tags:	<insert concept tags here for training code only>
  * </p>
  *
- * @author blindcant
+ * @author dhall
  * @version 0.1.0 - 2018-12-06
  */
 public class BottlesOfBeerSong

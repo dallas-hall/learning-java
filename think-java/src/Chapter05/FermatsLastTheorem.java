@@ -9,7 +9,7 @@ import java.util.logging.Logger;
  * This program calculates Fermat's last theorem. Which states that there are no integers a, b, and c such that a ^ n + b ^ n = c ^ n, except when n <= 2.
  * </p>
  *
- * @author blindcant
+ * @author dhall
  * @version 0.1.0 - 2018-12-06
  */
 public class FermatsLastTheorem

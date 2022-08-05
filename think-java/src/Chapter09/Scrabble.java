@@ -5,7 +5,7 @@ package Chapter09;
  * This program creates a random set of letters for a Scrabble rack and sees if a set of words can be spelled from it. Uses histograms.
  * </p>
  *
- * @author blindcant
+ * @author dhall
  * @version 0.1.0 - 2019-01-08
  */
 

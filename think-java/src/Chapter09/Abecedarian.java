@@ -4,7 +4,7 @@ package Chapter09;/**
  * This program checks if a String is an Abecedaraian, which means all letters are in alphabetical order.
  * </p>
  *
- * @author blindcant
+ * @author dhall
  * @version 0.1.0 - 2019-01-08
  */
 

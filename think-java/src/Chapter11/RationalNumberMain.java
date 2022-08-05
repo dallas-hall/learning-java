@@ -5,7 +5,7 @@ package Chapter11;
  * This program is the main class for RationalNumber.
  * </p>
  *
- * @author blindcant
+ * @author dhall
  * @version 0.1.0 - 2019-01-09
  */
 

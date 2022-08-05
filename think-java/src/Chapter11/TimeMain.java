@@ -5,7 +5,7 @@ package Chapter11;
  * This driver class for the Time class.
  * </p>
  *
- * @author blindcant
+ * @author dhall
  * @version 0.1.0 - 2019-01-09
  */
 

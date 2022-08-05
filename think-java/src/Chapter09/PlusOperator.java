@@ -5,7 +5,7 @@ package Chapter09;
  * This program shows what the + operator does between data types.
  * </p>
  *
- * @author blindcant
+ * @author dhall
  * @version 0.1.0 - 2019-01-07
  */
 

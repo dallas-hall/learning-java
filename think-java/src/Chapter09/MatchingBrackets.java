@@ -5,7 +5,7 @@ package Chapter09;
  * This program takes a string and checks if there is an equal amount of the specified brackets within it.
  * </p>
  *
- * @author blindcant
+ * @author dhall
  * @version 0.1.0 - 2019-01-07
  */
 
