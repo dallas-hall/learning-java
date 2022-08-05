@@ -6,7 +6,7 @@ package Chapter09;
  * This program checks if a string is a doubloon, which is a word where all letters appear twice only.
  * </p>
  *
- * @author blindcant
+ * @author dhall
  * @version 0.1.0 - 2019-01-08
  */
 

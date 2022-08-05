@@ -1,0 +1,7 @@
+These questions were about implementing interfaces.
+They have all been done in the chapter11_inheritance.Question01 classes.
+05 - GeometricObject implements Comparable (between creation date)
+06 - All shapes implement Comparable interface method compareTo (between Area)
+07 - All shapes implement Colourable interface, which returns a String explaing how to colour the shape.
+08 - Skipped, CallStack question.  Unrelated.
+09 & 10 - All shapes implement java.lang.Object's equals method

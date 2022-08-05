@@ -5,7 +5,7 @@ package Chapter10;
  * This program shows how using BigInteger can mitigate overflows. It shows this using factorials.
  * </p>
  *
- * @author blindcant
+ * @author dhall
  * @version 0.1.0 - 2019-01-09
  */
 

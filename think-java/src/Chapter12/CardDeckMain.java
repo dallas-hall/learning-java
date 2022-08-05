@@ -5,7 +5,7 @@ package Chapter12;
  * This program creates a deck of cards and manipulates them.
  * </p>
  *
- * @author blindcant
+ * @author dhall
  * @version 0.1.0 - 2019-01-11
  */
 

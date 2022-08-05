@@ -4,7 +4,7 @@ package Chapter10;/**
  * This program overcomes integer overflows using BigInteger. It does this by calculating exponents using recursion.
  * </p>
  *
- * @author blindcant
+ * @author dhall
  * @version 0.1.0 - 2019-01-09
  */
 

@@ -6,7 +6,7 @@ package Chapter06;
  * This program uses recursion to calculate a factorial.
  * </p>
  *
- * @author blindcant
+ * @author dhall
  * @version 0.1.0 - 2018-12-06
  */
 

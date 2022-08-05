@@ -6,7 +6,7 @@ package Chapter11;
  * a US date. Constructor and methods take int's but uses short and byte internally.
  * </p>
  *
- * @author blindcant
+ * @author dhall
  * @version 0.1.0 - 2019-01-09
  */
 

@@ -6,7 +6,7 @@ package Chapter11;
  * points values.
  * </p>
  *
- * @author blindcant
+ * @author dhall
  * @version 0.1.0 - 2019-01-09
  */
 

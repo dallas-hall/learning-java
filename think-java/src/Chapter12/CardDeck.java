@@ -8,7 +8,7 @@ import java.util.*;
  * This program creates a deck of cards and fills them with cards in suited and ranked order.
  * </p>
  *
- * @author blindcant
+ * @author dhall
  * @version 0.1.0 - 2019-01-11
  */
 
