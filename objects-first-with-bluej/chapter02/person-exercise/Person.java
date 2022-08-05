@@ -3,7 +3,7 @@
  * Dis class holds da most importent info about any
  * mudda fukka who uses it.  
  * 
- * @author blindcant 
+ * @author dhall 
  * @version 2015-06-14_v1
  */
 public class Person
