@@ -20,7 +20,7 @@ import java.io.IOException;
  * tags:	FileReader; FileWriter; character stream;
  * </p>
  *
- * @author blindcant
+ * @author dhall
  * @version 0.1 - 2018-06-01
  */
 public class FileReadAndWriteCharacterStream

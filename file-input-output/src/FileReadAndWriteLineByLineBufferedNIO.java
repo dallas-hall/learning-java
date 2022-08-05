@@ -13,7 +13,7 @@ import java.nio.file.Paths;
  * tags:	BufferedReader; newBufferedReader; BufferedWriter; newBufferedWriter; character stream;
  * </p>
  *
- * @author blindcant
+ * @author dhall
  * @version 0.1 - 2018-06-01
  */
 public class FileReadAndWriteLineByLineBufferedNIO

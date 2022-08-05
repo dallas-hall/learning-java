@@ -24,7 +24,7 @@ import java.util.logging.Logger;
  * tags:	try with resources; BufferedReader; InputStreamReader; FileInputStream; BufferedWriter; OutputStreamWriter; FileOutputStream; byte stream; character stream;
  * </p>
  *
- * @author blindcant
+ * @author dhall
  * @version 0.1 - 2018-06-01
  */
 public class TryWithResources

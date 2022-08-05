@@ -14,7 +14,7 @@ import java.io.IOException;
  * tags:	FileInputStream; FileOutputStream; byte stream;
  * </p>
  *
- * @author blindcant
+ * @author dhall
  * @version 0.1 - 2018-06-01
  */
 public class FileReadAndWriteByteStream

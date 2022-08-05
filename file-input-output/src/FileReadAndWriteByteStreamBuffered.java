@@ -12,7 +12,7 @@ import java.io.*;
  * tags:	BufferedInputStream; FileInputStream; BufferedOutputStream; FileOutputStream; byte stream;
  * </p>
  *
- * @author blindcant
+ * @author dhall
  * @version 0.1 - 2018-06-01
  */
 public class FileReadAndWriteByteStreamBuffered
