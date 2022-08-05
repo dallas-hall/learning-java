@@ -1,0 +1,41 @@
+K 25
+svn:wc:ra_dav:version-url
+V 30
+/svn/bluej/!svn/ver/13/auction
+END
+README.TXT
+K 25
+svn:wc:ra_dav:version-url
+V 41
+/svn/bluej/!svn/ver/14/auction/README.TXT
+END
+Bid.java
+K 25
+svn:wc:ra_dav:version-url
+V 39
+/svn/bluej/!svn/ver/14/auction/Bid.java
+END
+package.bluej
+K 25
+svn:wc:ra_dav:version-url
+V 44
+/svn/bluej/!svn/ver/14/auction/package.bluej
+END
+Person.java
+K 25
+svn:wc:ra_dav:version-url
+V 42
+/svn/bluej/!svn/ver/14/auction/Person.java
+END
+Auction.java
+K 25
+svn:wc:ra_dav:version-url
+V 43
+/svn/bluej/!svn/ver/14/auction/Auction.java
+END
+Lot.java
+K 25
+svn:wc:ra_dav:version-url
+V 39
+/svn/bluej/!svn/ver/14/auction/Lot.java
+END

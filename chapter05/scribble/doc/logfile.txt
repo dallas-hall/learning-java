@@ -1,0 +1,29 @@
+Class documentation
+<---- javadoc command: ---->
+/usr/java/jdk1.8.0_131/bin/javadoc
+-author
+-version
+-nodeprecated
+-package
+-noindex
+-notree
+-nohelp
+-nonavbar
+-source
+1.8
+-classpath
+/usr/share/bluej/bluejcore.jar:/usr/share/bluej/junit-4.8.2.jar:/usr/share/bluej/userlib/pi4j-service.jar:/usr/share/bluej/userlib/pi4j-gpio-extension.jar:/usr/share/bluej/userlib/pi4j-device.jar:/usr/share/bluej/userlib/pi4j-core.jar:/home/blindcant/Documents/Study/Java/BlueJ-Book/projects/chapter05/scribble
+-d
+/home/blindcant/Documents/Study/Java/BlueJ-Book/projects/chapter05/scribble/doc
+-encoding
+UTF-8
+-charset
+UTF-8
+-docletpath
+/usr/share/bluej/bjdoclet.jar
+-doclet
+bluej.doclet.doclets.formats.html.HtmlDoclet
+/home/blindcant/Documents/Study/Java/BlueJ-Book/projects/chapter05/scribble/Canvas.java
+<---- end of javadoc command ---->
+javadoc: error - fatal error
+1 error
